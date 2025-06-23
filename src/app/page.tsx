@@ -1,9 +1,13 @@
-import Image from "next/image";
+import { AboutMe, Contact, Hero, Projects, Qualifications } from "./_ui";
 
 export default function Home() {
   return (
-    <div className="bg-red-400 p-16">
-      <p>배경</p>
-    </div>
+    <>
+      <Hero />
+      <AboutMe />
+      <Qualifications />
+      <Projects />
+      <Contact />
+    </>
   );
 }
