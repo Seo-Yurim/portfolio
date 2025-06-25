@@ -47,6 +47,21 @@ const config = {
           background: "var(--text-background)",
         },
       },
+      keyframes: {
+        bounceAndShake: {
+          "0%": { transform: "scale(0.8)" },
+          "10%": { transform: "scale(1)" },
+          "30%": { transform: "rotate(-5deg) scale(1)" },
+          "40%": { transform: "rotate(5deg) scale(1)" },
+          "50%": { transform: "rotate(-5deg) scale(1)" },
+          "60%": { transform: "rotate(0deg) scale(1)" },
+          "80%": { transform: "scale(0.8)" },
+          "100%": { transform: "scale(0.8)" },
+        },
+      },
+      animation: {
+        bounceAndShake: "bounceAndShake 2.5s ease-in-out infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
