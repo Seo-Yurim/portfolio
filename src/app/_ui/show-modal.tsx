@@ -5,7 +5,18 @@ import Modal from "@/components/modal";
 const btnStyle =
   "flex-1 w-full rounded-2xl px-8 py-2 font-bold text-lg max-md:text-sm transition-colors duration-300";
 
-export default function ShowModal({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) {
+export default function ShowModal({
+  setIsOpen,
+  onShow,
+}: {
+  onShow: () => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) {
+  const handleShow = () => {
+    setIsOpen(false);
+    onShow();
+  };
+
   return (
     <Modal>
       <div className="flex flex-col items-center gap-8">
@@ -21,7 +32,12 @@ export default function ShowModal({ setIsOpen }: { setIsOpen: Dispatch<SetStateA
           >
             아니요
           </button>
-          <button className={`${btnStyle} bg-primary text-white hover:bg-primary/60`}>예</button>
+          <button
+            onClick={handleShow}
+            className={`${btnStyle} bg-primary text-white hover:bg-primary/60`}
+          >
+            예
+          </button>
         </div>
       </div>
     </Modal>
