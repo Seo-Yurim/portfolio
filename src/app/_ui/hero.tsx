@@ -2,11 +2,9 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <>
-      <div className="pointer-events-none absolute inset-0 z-0 mt-8 bg-[url('/images/mobile-background.svg')] bg-contain bg-center bg-no-repeat md:hidden" />
-      <div className="pointer-events-none absolute inset-0 z-0 mt-8 bg-[url('/images/background.svg')] bg-contain bg-center bg-no-repeat max-md:hidden" />
-      <section className="container relative flex h-screen flex-col items-center justify-center gap-8 pb-52 pt-28 font-GWT max-lg:pb-40 max-md:gap-16 max-md:pb-12">
-        <h1 className="text-primary text-[80px] max-lg:text-5xl">PortFolio</h1>
+    <section className="container h-screen bg-primary py-12">
+      <div className="mx-auto flex h-[700px] max-w-[1080px] flex-col items-center justify-center gap-8 rounded-2xl border-[42px] border-black bg-background px-24 py-16 font-GWT shadow-2xl max-md:border-[24px] max-md:border-y-[56px] max-md:px-12 max-md:py-24">
+        <h1 className="text-[80px] text-primary max-lg:text-5xl">PortFolio</h1>
         <div className="flex gap-16 max-md:flex-col max-md:items-center">
           <Image
             className="max-lg:h-[150px] max-lg:w-[200px]"
@@ -15,8 +13,8 @@ export function Hero() {
             height={250}
             alt="folder"
           />
-          <div className="flex flex-col gap-6 py-4 max-lg:gap-2 max-lg:py-2 max-md:p-0">
-            <p className="text-2xl max-lg:text-lg max-lg:leading-tight">
+          <div className="flex flex-col gap-6 py-4 max-md:p-0">
+            <p className="text-2xl">
               사용자 경험을 우선시하며, <br />
               효율적이고 깔끔한 코드를 지향하는
             </p>
@@ -27,7 +25,7 @@ export function Hero() {
             </p>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
