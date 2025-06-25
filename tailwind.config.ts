@@ -23,28 +23,28 @@ const config = {
         GWT: ["GWT"],
       },
       colors: {
-        white: "var(--white)",
-        black: "var(--black)",
-        yellow: "var(--yellow)",
+        white: "hsl(var(--white))",
+        black: "hsl(var(--black))",
+        yellow: "hsl(var(--yellow))",
         blue: {
-          "100": "var(--blue-100)",
-          "200": "var(--blue-200)",
+          "100": "hsl(var(--blue-100))",
+          "200": "hsl(var(--blue-200))",
         },
         gray: {
-          "100": "var(--gray-100)",
-          "200": "var(--gray-200)",
+          "100": "hsl(var(--gray-100))",
+          "200": "hsl(var(--gray-200))",
         },
 
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        highlight: "var(--highlight)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        highlight: "hsl(var(--highlight))",
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         text: {
-          secondary: "var(--text-secondary)",
-          background: "var(--text-background)",
+          secondary: "hsl(var(--text-secondary))",
+          background: "hsl(var(--text-background))",
         },
       },
       keyframes: {
