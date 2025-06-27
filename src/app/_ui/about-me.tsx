@@ -1,7 +1,7 @@
 export function AboutMe() {
   return (
-    <section className="container relative h-screen border-[48px] border-black">
+    <div className="h-screen">
       <p className="font-GWT">About Me</p>
-    </section>
+    </div>
   );
 }

@@ -8,12 +8,7 @@ import ShowModal from "./show-modal";
 
 const responsiveStyle = "max-md:gap-8 max-md:border-[24px] max-md:border-y-[56px] max-md:px-4";
 
-type HeroProps = {
-  isShow: boolean;
-  onShow: () => void;
-};
-
-export function Hero({ isShow, onShow }: HeroProps) {
+export function Hero({ onShow }: { onShow: () => void }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const controls = useAnimation();
