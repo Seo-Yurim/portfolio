@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { AboutMe, Contact, Hero, Projects, Qualifications } from "./components";
 
 export default function Home() {

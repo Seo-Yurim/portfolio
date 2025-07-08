@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Accordion from "./accordion";
+
+const listStyle = "button cursor-pointer w-fit";
 
 export default function Header() {
   const [show, setShow] = useState(false);
@@ -13,7 +16,7 @@ export default function Header() {
       ([entry]) => {
         setShow(!entry.isIntersecting);
       },
-      { threshold: 0.1 },
+      { threshold: 0.2 },
     );
 
     observer.observe(hero);
@@ -22,12 +25,18 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 h-screen w-[240px] bg-primary py-[120px] px-[60px] text-white transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      className={`fixed top-0 left-0 h-screen w-[240px] bg-primary py-20 px-9 text-white transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <div className="flex flex-col gap-4">
-        <p>About Me</p>
-        <p>Projects</p>
-      </div>
+      <nav className="flex flex-col gap-8 list-none">
+        <Accordion title="About Me">
+          <li className={listStyle}>Profile</li>
+          <li className={listStyle}>Qualifications</li>
+        </Accordion>
+        <Accordion title="Projects">
+          <li className={listStyle}>List</li>
+          <li className={listStyle}>Peer Review</li>
+        </Accordion>
+      </nav>
     </header>
   );
 }
