@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Accordion from "./accordion";
+import ThemeSwitcher from "./theme-switcher";
 
 const listStyle = "button cursor-pointer w-fit";
 
@@ -32,9 +33,9 @@ export default function Header() {
         opacity: show ? 1 : 0,
         transition: { duration: 0.4, ease: "easeOut" },
       }}
-      className={`fixed top-0 left-0 h-screen w-[240px] bg-primary py-20 px-9 text-white transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      className={`fixed top-0 left-0 h-screen flex flex-col justify-between w-[240px] bg-primary py-20 px-9 transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <nav className="flex flex-col gap-8 list-none">
+      <nav className="flex flex-col gap-8 list-none text-white">
         <Accordion title="About Me">
           <li className={listStyle}>Profile</li>
           <li className={listStyle}>Qualifications</li>
@@ -44,6 +45,7 @@ export default function Header() {
           <li className={listStyle}>Peer Review</li>
         </Accordion>
       </nav>
+      <ThemeSwitcher />
     </motion.header>
   );
 }

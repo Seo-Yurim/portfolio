@@ -48,6 +48,8 @@
   --background: var(--black);
   --foreground: var(--white);
 
+  --primary: var(--blue-200);
+
   --text-background: var(--blue-200);
 }
 

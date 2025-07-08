@@ -51,6 +51,12 @@ const config = {
       dropShadow: {
         title: "22px 18px 0px rgba(229, 229, 229, 1)",
       },
+      boxShadow: {
+        "right-down": "4px 4px 4px rgba(0, 0, 0, 0.25)",
+        "left-up": "-4px -4px 4px rgba(0, 0, 0, 0.25)",
+        "inner-right": "inset -4px -4px 4px rgba(0, 0, 0, 0.25)",
+        "inner-left": "inset 4px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
       keyframes: {
         bounceAndShake: {
           "0%": { transform: "scale(0.8)" },
