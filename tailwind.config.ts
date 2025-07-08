@@ -14,7 +14,7 @@ const config = {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1920px",
+        "2xl": "1440px",
       },
     },
     extend: {
@@ -47,6 +47,9 @@ const config = {
           secondary: "hsl(var(--text-secondary))",
           background: "hsl(var(--text-background))",
         },
+      },
+      dropShadow: {
+        title: "22px 18px 0px rgba(229, 229, 229, 1)",
       },
       keyframes: {
         bounceAndShake: {
