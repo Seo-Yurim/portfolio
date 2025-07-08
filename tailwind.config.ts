@@ -21,6 +21,7 @@ const config = {
       fontFamily: {
         notoSansKR: ["var(--font-notoSansKR)"],
         GWT: ["GWT"],
+        GWS: ["GWS"],
       },
       colors: {
         white: "hsl(var(--white))",
