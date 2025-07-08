@@ -28,22 +28,13 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="w-full h-screen border-[48px] border-black"
+        className="w-full ml-[240px]"
       >
         <AboutMe />
         <Qualifications />
         <Projects />
         <Contact />
       </motion.div>
-
-      {/* {isShow && (
-        <motion.section
-          className="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-screen border-black border-[48px] rounded-2xl"
-          initial={{ scale: 0.7, opacity: 1 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        />
-      )} */}
     </main>
   );
 }

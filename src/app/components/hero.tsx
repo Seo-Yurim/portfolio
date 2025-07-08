@@ -28,6 +28,7 @@ export function Hero({ onShow }: { onShow: () => void }) {
   return (
     <>
       <div
+        id="hero"
         className={`mx-auto flex max-h-[700px] w-full max-w-[1200px] flex-col items-center justify-center gap-24 rounded-2xl border-[42px] border-black bg-background px-4 py-16 font-GWT shadow-2xl ${responsiveStyle}`}
       >
         <Title title="PortFolio" />
