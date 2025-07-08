@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Accordion from "./accordion";
 
 const listStyle = "button cursor-pointer w-fit";
@@ -24,7 +25,13 @@ export default function Header() {
   }, []);
 
   return (
-    <header
+    <motion.header
+      initial={{ x: -240, opacity: 0 }}
+      animate={{
+        x: show ? 0 : -240,
+        opacity: show ? 1 : 0,
+        transition: { duration: 0.4, ease: "easeOut" },
+      }}
       className={`fixed top-0 left-0 h-screen w-[240px] bg-primary py-20 px-9 text-white transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
       <nav className="flex flex-col gap-8 list-none">
@@ -37,6 +44,6 @@ export default function Header() {
           <li className={listStyle}>Peer Review</li>
         </Accordion>
       </nav>
-    </header>
+    </motion.header>
   );
 }
