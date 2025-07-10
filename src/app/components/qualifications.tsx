@@ -1,5 +1,6 @@
 import CertificateCard from "./qualification-cards/certificate-card";
 import EducationCard from "./qualification-cards/education-card";
+import InternshipCard from "./qualification-cards/internship-card";
 import SkillCard from "./qualification-cards/skill-card";
 
 export function Qualifications() {
@@ -15,8 +16,9 @@ export function Qualifications() {
       </div>
       <div className="flex overflow-hidden">
         {/* <SkillCard />
-        <EducationCard /> */}
-        <CertificateCard />
+        <EducationCard />
+        <CertificateCard /> */}
+        <InternshipCard />
       </div>
     </section>
   );
