@@ -1,3 +1,4 @@
+import CertificateCard from "./qualification-cards/certificate-card";
 import EducationCard from "./qualification-cards/education-card";
 import SkillCard from "./qualification-cards/skill-card";
 
@@ -13,8 +14,9 @@ export function Qualifications() {
         </button>
       </div>
       <div className="flex overflow-hidden">
-        <SkillCard />
-        <EducationCard />
+        {/* <SkillCard />
+        <EducationCard /> */}
+        <CertificateCard />
       </div>
     </section>
   );
