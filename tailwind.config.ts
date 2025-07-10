@@ -50,6 +50,7 @@ const config = {
       },
       dropShadow: {
         title: "22px 18px 0px rgba(229, 229, 229, 1)",
+        darkTitle: "22px 18px 0px rgba(43, 39, 68, 1)",
       },
       boxShadow: {
         "right-down": "4px 4px 4px rgba(0, 0, 0, 0.25)",

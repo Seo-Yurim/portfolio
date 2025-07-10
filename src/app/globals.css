@@ -49,14 +49,21 @@
   --foreground: var(--white);
 
   --primary: var(--blue-200);
+  --primary-foreground: var(--blue-100);
 
+  --text-secondary: var(--gray-200);
   --text-background: var(--blue-200);
+
+  --highlight: var(--yellow);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-family: var(--font-notoSansKR);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
 
 .button {

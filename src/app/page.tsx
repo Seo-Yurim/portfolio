@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { AboutMe, Contact, Hero, Projects, Qualifications } from "./components";
+import { Contact, Hero, Profile, Projects, Qualifications } from "./components";
 
 export default function Home() {
   const [isShow, setIsShow] = useState(false);
@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main className={"flex flex-col"}>
-      <section className="container flex h-screen items-center bg-primary justify-center py-12 max-md:px-4 max-md:py-4">
+      <section className="container flex h-screen items-center justify-center bg-primary py-12 max-md:px-4 max-md:py-4">
         <Hero onShow={() => setIsShow(true)} />
       </section>
       <motion.div
@@ -30,7 +30,7 @@ export default function Home() {
         transition={{ duration: 1 }}
         className="ml-[240px]"
       >
-        <AboutMe />
+        <Profile />
         <Qualifications />
         <Projects />
         <Contact />
