@@ -1,9 +1,16 @@
-import CertificateCard from "./qualification-cards/certificate-card";
-import EducationCard from "./qualification-cards/education-card";
-import InternshipCard from "./qualification-cards/internship-card";
-import SkillCard from "./qualification-cards/skill-card";
+import { useState } from "react";
+import { CertificateCard, EducationCard, InternshipCard, SkillCard } from "./qualification-cards";
+
+export interface QualificationCardProps {
+  expanded: boolean;
+  onClick: () => void;
+}
 
 export function Qualifications() {
+  const [expanded, setExpanded] = useState<"skill" | "education" | "certificate" | "internship">(
+    "skill",
+  );
+
   return (
     <section id="qualifications" className="container flex h-screen flex-col gap-8 py-16">
       <div className="flex items-center justify-between font-GWT">
@@ -14,11 +21,20 @@ export function Qualifications() {
           한 눈에 보기
         </button>
       </div>
-      <div className="flex overflow-hidden">
-        {/* <SkillCard />
-        <EducationCard />
-        <CertificateCard /> */}
-        <InternshipCard />
+      <div className="flex w-full gap-2">
+        <SkillCard expanded={expanded === "skill"} onClick={() => setExpanded("skill")} />
+        <EducationCard
+          expanded={expanded === "education"}
+          onClick={() => setExpanded("education")}
+        />
+        <CertificateCard
+          expanded={expanded === "certificate"}
+          onClick={() => setExpanded("certificate")}
+        />
+        <InternshipCard
+          expanded={expanded === "internship"}
+          onClick={() => setExpanded("internship")}
+        />
       </div>
     </section>
   );

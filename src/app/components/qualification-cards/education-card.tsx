@@ -1,13 +1,29 @@
 import Image from "next/image";
+import { BsFillMortarboardFill } from "react-icons/bs";
 import IconText from "@/components/icon-text";
+import { QualificationCardProps } from "../qualifications";
 
-export default function EducationCard() {
+export function EducationCard({ expanded, onClick }: QualificationCardProps) {
   return (
-    <div className="flex h-[524px] gap-8 rounded-2xl bg-primary/20 p-8 dark:bg-blue-200">
-      <p className="vertical-text h-fit w-fit rounded-2xl bg-white px-2 py-4 font-GWT text-2xl text-black shadow-right-down">
-        교육
-      </p>
-      <div className="flex flex-col gap-8">
+    <div
+      onClick={onClick}
+      className={`flex h-[524px] gap-8 rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
+        expanded ? "flex-grow" : "cursor-pointer"
+      }`}
+    >
+      <div className="flex flex-col items-center justify-between">
+        <p className="vertical-text h-fit w-fit rounded-2xl bg-white px-2 py-4 font-GWT text-2xl text-black shadow-right-down">
+          교육
+        </p>
+        <BsFillMortarboardFill className="h-10 w-10 text-foreground" />
+      </div>
+
+      <div
+        className={`flex flex-col gap-8 text-nowrap py-4 transition-all duration-500 ease-in-out ${
+          expanded ? "max-w-full opacity-100" : "max-w-0 opacity-0"
+        }`}
+        style={{ overflow: expanded ? "visible" : "hidden" }}
+      >
         <div className="flex flex-col gap-1">
           <IconText
             icon={<Image src="/images/icons/대전대.svg" width={30} height={30} alt="dju logo" />}
@@ -37,12 +53,9 @@ export default function EducationCard() {
                 <br />
                 SPA 및 SSR 기반 프론트엔드 개발 역량 강화
               </li>
+              <li>Express.js와 PostgreSQL을 이용한 RESTful API 및 데이터베이스 연동 경험</li>
               <li>
-                Express.js와 PostgreSQL을 이용한
-                <br /> RESTful API 및 데이터베이스 연동 경험
-              </li>
-              <li>
-                총 3회의 팀 프로젝트 중 2번의 파트장을 맡아 역할 분배 주도 및 일정 조율,
+                총 3회의 팀 프로젝트 중 2번의 파트장을 맡아 역할 분배와 일정 조율을 주도했고,
                 <br />
                 팀원 간의 효율적인 소통과 협업 문화를 형성하는 데 기여
               </li>
