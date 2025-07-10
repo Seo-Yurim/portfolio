@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Accordion from "./accordion";
@@ -33,16 +34,24 @@ export default function Header() {
         opacity: show ? 1 : 0,
         transition: { duration: 0.4, ease: "easeOut" },
       }}
-      className={`fixed top-0 left-0 h-screen flex flex-col justify-between w-[240px] bg-primary py-20 px-9 transition-opacity duration-300 ${show ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      className={`fixed left-0 top-0 flex h-screen w-[240px] flex-col justify-between bg-primary px-9 py-20 transition-opacity duration-300 ${show ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
-      <nav className="flex flex-col gap-8 list-none text-white">
+      <nav className="flex list-none flex-col gap-8 text-white">
         <Accordion title="About Me">
-          <li className={listStyle}>Profile</li>
-          <li className={listStyle}>Qualifications</li>
+          <Link href="#profile">
+            <li className={listStyle}>Profile</li>
+          </Link>
+          <Link href="#qualifications">
+            <li className={listStyle}>Qualifications</li>
+          </Link>
         </Accordion>
         <Accordion title="Projects">
-          <li className={listStyle}>List</li>
-          <li className={listStyle}>Peer Review</li>
+          <Link href="#project-list">
+            <li className={listStyle}>List</li>
+          </Link>
+          <Link href="#peer-review">
+            <li className={listStyle}>Peer Review</li>
+          </Link>
         </Accordion>
       </nav>
       <ThemeSwitcher />
