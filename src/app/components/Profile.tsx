@@ -15,7 +15,7 @@ export function Profile() {
           <h2 className="rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down">
             Profile
           </h2>
-          <div className="relative h-[200px] w-[200px] overflow-hidden rounded-full bg-primary">
+          <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full bg-primary">
             <Image
               className="h-full w-full object-cover"
               src="/images/미모티콘.png"
