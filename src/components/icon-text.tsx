@@ -5,6 +5,7 @@ interface IconTextProps {
   icon: ReactNode;
   iconStyle?: string;
   text: string;
+  textStyle?: string;
   type?: "default" | "link";
   link?: string;
   linkText?: string;
@@ -14,6 +15,7 @@ export default function IconText({
   icon,
   iconStyle,
   text,
+  textStyle,
   type = "default",
   link = "",
   linkText,
@@ -21,7 +23,7 @@ export default function IconText({
   return (
     <div className="flex items-center gap-2">
       <div className={`flex items-center justify-center rounded-full ${iconStyle}`}>{icon}</div>
-      <p className="font-semibold">{text}</p>
+      <p className={`font-semibold ${textStyle}`}>{text}</p>
       {type === "link" && (
         <Link
           className="text-text-secondary underline"
