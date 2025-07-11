@@ -1,6 +1,6 @@
 export function PeerReview() {
   return (
-    <section id="peer-review" className="container flex h-screen flex-col gap-8">
+    <section id="peer-review" className="container flex h-screen flex-col gap-8 py-16">
       <h2 className="w-fit rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down">
         Peer Reviews
       </h2>
