@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Contact, Hero, Profile, Projects, Qualifications } from "./components";
+import { Hero, PeerReview, Profile, ProjectList, Qualifications } from "./components";
 
 export default function Home() {
   const [isShow, setIsShow] = useState(false);
@@ -32,8 +32,8 @@ export default function Home() {
       >
         <Profile />
         <Qualifications />
-        <Projects />
-        <Contact />
+        <ProjectList />
+        <PeerReview />
       </motion.div>
     </main>
   );
