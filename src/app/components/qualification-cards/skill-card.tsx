@@ -6,8 +6,8 @@ export function SkillCard({ expanded, onClick }: QualificationCardProps) {
   return (
     <div
       onClick={onClick}
-      className={`flex h-[524px] gap-8 rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
-        expanded ? "flex-grow" : "cursor-pointer"
+      className={`flex h-[524px] gap-8 overflow-hidden rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
+        expanded ? "flex-grow" : "w-24 cursor-pointer"
       }`}
     >
       <div className="flex flex-col items-center justify-between">
@@ -17,12 +17,7 @@ export function SkillCard({ expanded, onClick }: QualificationCardProps) {
         <HiOutlineWrenchScrewdriver className="h-10 w-10 text-foreground" />
       </div>
 
-      <div
-        className={`flex flex-col transition-all duration-500 ease-in-out ${
-          expanded ? "max-w-full opacity-100" : "max-w-0 opacity-0"
-        }`}
-        style={{ overflow: expanded ? "visible" : "hidden" }}
-      >
+      <div className={`flex flex-col`}>
         <Tab />
         <div className="grid"></div>
       </div>

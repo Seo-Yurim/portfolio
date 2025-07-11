@@ -7,8 +7,8 @@ export function CertificateCard({ expanded, onClick }: QualificationCardProps) {
   return (
     <div
       onClick={onClick}
-      className={`flex h-[524px] gap-8 rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
-        expanded ? "flex-grow" : "cursor-pointer"
+      className={`flex h-[524px] gap-8 overflow-hidden rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
+        expanded ? "flex-grow" : "w-24 cursor-pointer"
       }`}
     >
       <div className="flex flex-col items-center justify-between">
@@ -17,12 +17,7 @@ export function CertificateCard({ expanded, onClick }: QualificationCardProps) {
         </p>
         <PiCertificate className="h-10 w-10 text-foreground" />
       </div>
-      <div
-        className={`grid grid-cols-2 gap-4 text-nowrap transition-all duration-500 ease-in-out ${
-          expanded ? "max-w-full opacity-100" : "max-w-0 opacity-0"
-        }`}
-        style={{ overflow: expanded ? "visible" : "hidden" }}
-      >
+      <div className={`grid w-full grid-cols-2 gap-4 text-nowrap`}>
         <Card
           icon="/images/icons/한국산업인력공단.svg"
           certificateName="정보처리기사"
@@ -49,12 +44,12 @@ interface CardProps {
 
 export function Card({ icon, certificateName, issueDate, issuer }: CardProps) {
   return (
-    <div className="relative flex h-fit w-full flex-col gap-1 rounded-2xl bg-white py-4 pl-4 pr-6 shadow-right-down">
+    <div className="relative flex h-fit flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-right-down">
       <Image
         className="absolute right-6 top-0"
         src="/images/icons/bookmark.svg"
-        width={20}
-        height={40}
+        width={30}
+        height={50}
         alt="bookmark icon"
       />
       <IconText
