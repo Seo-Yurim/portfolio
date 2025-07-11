@@ -15,12 +15,19 @@ export function Profile() {
           <h2 className="rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down">
             Profile
           </h2>
-          <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full bg-primary">
+          <div className="group relative h-[250px] w-[250px] overflow-hidden rounded-full bg-primary">
             <Image
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover group-hover:hidden"
               src="/images/미모티콘.png"
               alt="profile img"
               fill
+            />
+            <Image
+              className="mx-auto hidden py-6 group-hover:block"
+              src="/images/미모티콘2.png"
+              alt="profile img hover"
+              width={180}
+              height={180}
             />
           </div>
           <div className="flex flex-col items-center gap-1">
