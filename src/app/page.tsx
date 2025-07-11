@@ -6,7 +6,6 @@ import { Hero, PeerReview, Profile, ProjectList, Qualifications } from "./compon
 
 export default function Home() {
   const [isShow, setIsShow] = useState(false);
-  const [showContent, setShowContent] = useState(false);
 
   // useEffect(() => {
   //   if (isShow) {
