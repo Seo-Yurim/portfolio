@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { IoLogoGithub } from "react-icons/io";
-import { MdOutlineEmail } from "react-icons/md";
-import { SiTistory } from "react-icons/si";
-import IconText from "@/components/icon-text";
 import Title from "@/components/title";
+
+const highlight =
+  "text-primary-foreground font-extrabold text-xl group-hover:bg-highlight group-hover:py-1 group-hover:rounded-lg";
 
 export function Profile() {
   return (
-    <section id="profile" className="flex h-screen flex-col gap-16 py-16">
+    <section id="profile" className="animate flex h-screen flex-col gap-16 py-12">
       <Title title="About Me" />
 
       <div className="container flex items-center justify-center gap-16">
@@ -38,47 +37,30 @@ export function Profile() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-3">
-            <IconText
-              icon={<MdOutlineEmail className="h-4 w-4 text-background" />}
-              iconStyle="bg-foreground p-1"
-              text="E-mail:"
-              type="link"
-              link="mailto:yurim2204@gmail.com"
-              linkText="yurim2204@gmail.com"
-            />
-            <IconText
-              icon={<SiTistory className="h-3 w-3 text-background" />}
-              iconStyle="bg-foreground p-[6px]"
-              text="Blog:"
-              type="link"
-              link="https://y-flm.tistory.com"
-              linkText="https://y-flm.tistory.com"
-            />
-            <IconText
-              icon={<IoLogoGithub className="h-4 w-4 text-background" />}
-              iconStyle="bg-foreground p-1"
-              text="GitHub:"
-              type="link"
-              link="https://github.com/Seo-Yurim"
-              linkText="https://github.com/Seo-Yurim"
-            />
-          </div>
-          <div className="rounded-2xl bg-primary p-8">
-            <p className="text-lg text-white">
-              <span className="font-bold text-highlight">UI/UX</span> 뿐만 아니라{" "}
-              <span className="font-bold text-highlight">개발자 경험(DX)</span>까지 함께 고민하며,
-              <br />
-              <span className="font-bold text-highlight">깔끔하고 유지보수하기 쉬운</span> 코드를
-              지향합니다.
-              <br />
-              <span>새로운 기술</span>을 배우는 것을 즐기며,
-              <br />더 나은 방향이 있다면 항상{" "}
-              <span className="font-bold text-highlight">주도적으로 탐색</span>하고 적용하려
-              노력합니다.
-            </p>
-          </div>
+        <div className="group flex cursor-pointer flex-col gap-4 text-lg font-bold text-primary">
+          <p>
+            <span className={highlight}>사용자 경험(UI/UX)</span>은 물론,{" "}
+            <span className={highlight}>개발자 경험(DX)</span>까지 고려한 개발을 지향합니다.
+          </p>
+          <p>
+            <span className={highlight}>
+              깔끔하고 유지보수가 쉬운 구조, 협업에 도움이 되는 코드와 문서
+            </span>
+            를 통해
+            <br />
+            동료 개발자에게도 긍정적인 경험을 주는 것을 중요하게 생각합니다.
+          </p>
+          <p>
+            <span className={highlight}>새로운 기술과 도구를 탐구</span>하는 데 즐거움을 느끼며,
+            <br />더 나은 방향이 보인다면 <span className={highlight}>주도적</span>으로 실험하고
+            적용하는 것을 두려워하지 않습니다.
+          </p>
+          <p className="text-xl">
+            <span className={highlight}>지속적으로 성장하는 개발자</span>,
+            <br />
+            그리고 <span className={highlight}>함께 일하고 싶은 동료</span>가 되기 위해 노력하고
+            있습니다.
+          </p>
         </div>
       </div>
     </section>
