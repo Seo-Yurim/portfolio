@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { CertificateCard, EducationCard, InternshipCard, SkillCard } from "./qualification-cards";
 
+const MotionCard = motion.div;
 export interface QualificationCardProps {
   expanded: boolean;
   onClick: () => void;
@@ -14,8 +16,7 @@ export function Qualifications() {
 
   const handleView = () => {
     setViewAll((prev) => !prev);
-    setExpanded("All");
-    if (expanded === "All") setExpanded("skill");
+    setExpanded((prev) => (prev === "All" ? "skill" : "All"));
   };
 
   return (
@@ -26,26 +27,39 @@ export function Qualifications() {
         </h2>
         <button
           onClick={handleView}
-          className="rounded-3xl bg-blue-200 px-6 py-2 text-xl text-white shadow-right-down"
+          className={`${viewAll ? "border-[6px] border-primary-foreground bg-white px-4 py-1" : "bg-primary-foreground px-6 py-2 text-white"} rounded-3xl text-xl shadow-right-down`}
         >
           한 눈에 보기
         </button>
       </div>
-      <div className={`${viewAll ? "grid grid-cols-2 grid-rows-2 gap-1" : "flex gap-2"} w-full`}>
-        <SkillCard expanded={expanded === "skill"} onClick={() => setExpanded("skill")} />
-        <EducationCard
-          expanded={expanded === "education"}
-          onClick={() => setExpanded("education")}
-        />
-        <CertificateCard
-          expanded={expanded === "certificate"}
-          onClick={() => setExpanded("certificate")}
-        />
-        <InternshipCard
-          expanded={expanded === "internship"}
-          onClick={() => setExpanded("internship")}
-        />
-      </div>
+
+      <motion.div
+        layout
+        transition={{ duration: 0.5 }}
+        className={`${viewAll ? "grid grid-cols-2 grid-rows-2 gap-1" : "flex gap-2"} w-full`}
+      >
+        <MotionCard layout>
+          <SkillCard expanded={expanded === "skill"} onClick={() => setExpanded("skill")} />
+        </MotionCard>
+        <MotionCard layout>
+          <EducationCard
+            expanded={expanded === "education"}
+            onClick={() => setExpanded("education")}
+          />
+        </MotionCard>
+        <MotionCard layout>
+          <CertificateCard
+            expanded={expanded === "certificate"}
+            onClick={() => setExpanded("certificate")}
+          />
+        </MotionCard>
+        <MotionCard layout>
+          <InternshipCard
+            expanded={expanded === "internship"}
+            onClick={() => setExpanded("internship")}
+          />
+        </MotionCard>
+      </motion.div>
     </section>
   );
 }
