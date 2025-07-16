@@ -1,12 +1,32 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Title from "@/components/title";
 
-const highlight =
-  "text-primary-foreground font-extrabold text-xl group-hover:bg-highlight group-hover:py-1 group-hover:rounded-lg";
+const introduce = [
+  "지속적으로 성장하는 개발자",
+  "끊임없이 도전하는 개발자",
+  "함께 일하고 싶은 동료",
+  "긍정적인 에너지를 주는 동료",
+];
+const tags = ["열정", "협업", "자기주도적", "배려", "책임감"];
+const highlight = "text-primary-foreground font-extrabold text-3xl group-hover:underline";
 
 export function Profile() {
+  const [index, setIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % introduce.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="profile" className="animate flex h-screen flex-col gap-16 py-12">
+    <section
+      id="profile"
+      className="animate relative flex h-screen flex-col items-end gap-16 py-12"
+    >
       <Title title="About Me" />
 
       <div className="container flex items-center justify-center gap-16">
@@ -37,30 +57,50 @@ export function Profile() {
           </div>
         </div>
 
-        <div className="group flex cursor-pointer flex-col gap-4 text-lg font-bold text-primary">
-          <p>
-            <span className={highlight}>사용자 경험(UI/UX)</span>은 물론,{" "}
-            <span className={highlight}>개발자 경험(DX)</span>까지 고려한 개발을 지향합니다.
-          </p>
-          <p>
-            <span className={highlight}>
-              깔끔하고 유지보수가 쉬운 구조, 협업에 도움이 되는 코드와 문서
-            </span>
-            를 통해
-            <br />
-            동료 개발자에게도 긍정적인 경험을 주는 것을 중요하게 생각합니다.
-          </p>
-          <p>
-            <span className={highlight}>새로운 기술과 도구를 탐구</span>하는 데 즐거움을 느끼며,
-            <br />더 나은 방향이 보인다면 <span className={highlight}>주도적</span>으로 실험하고
-            적용하는 것을 두려워하지 않습니다.
-          </p>
-          <p className="text-xl">
-            <span className={highlight}>지속적으로 성장하는 개발자</span>,
-            <br />
-            그리고 <span className={highlight}>함께 일하고 싶은 동료</span>가 되기 위해 노력하고
-            있습니다.
-          </p>
+        <div className="group flex cursor-pointer flex-col gap-8 font-GWS text-2xl font-bold text-primary">
+          <div className="flex items-center gap-2">
+            <p className="font-GWT text-3xl">나의 지향점: </p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={introduce[index]}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="w-fit rounded-2xl bg-primary-foreground px-4 py-1 font-GWT text-3xl text-white shadow-right-down"
+              >
+                {introduce[index]}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+
+          <div className="flex flex-col gap-2 rounded-2xl border border-primary-foreground p-4">
+            <p>
+              <span className={highlight}>사용자 경험(UI/UX)</span>은 물론,{" "}
+              <span className={highlight}>개발자 경험(DX)</span>까지 고려한 개발을 지향합니다.
+            </p>
+            <p>
+              <span className={highlight}>
+                깔끔하고 유지보수가 쉬운 구조, 협업에 도움이 되는 코드와 문서
+              </span>
+              를 통해
+              <br />
+              동료 개발자에게도 긍정적인 경험을 주는 것을 중요하게 생각합니다.
+            </p>
+            <p>
+              <span className={highlight}>새로운 기술과 도구를 탐구</span>하는 데 즐거움을 느끼며,
+              <br />더 나은 방향이 보인다면 <span className={highlight}>주도적</span>으로 실험하고
+              적용하는 것을 두려워하지 않습니다.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {tags.map((tag) => (
+              <p key={tag} className="rounded-full bg-primary-foreground px-4 py-1 text-white">
+                #{tag}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
