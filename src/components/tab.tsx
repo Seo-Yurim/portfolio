@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const tabs = ["Menu 1", "Menu 2", "Menu 3", "Menu 4"];
-
-export default function Tab() {
+export default function Tab({ tabs }: { tabs: string[] }) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({
     left: 0,
@@ -29,7 +27,7 @@ export default function Tab() {
 
   return (
     <div className="relative inline-flex w-fit items-center gap-8 rounded-full bg-primary px-8 py-3">
-      {tabs.map((label, idx) => (
+      {tabs?.map((label, idx) => (
         <button
           key={label}
           ref={(el) => {

@@ -38,27 +38,19 @@ export function Qualifications() {
         transition={{ duration: 0.5 }}
         className={`${viewAll ? "grid grid-cols-2 grid-rows-2 gap-1" : "flex gap-2"} w-full`}
       >
-        <MotionCard layout>
-          <SkillCard expanded={expanded === "skill"} onClick={() => setExpanded("skill")} />
-        </MotionCard>
-        <MotionCard layout>
-          <EducationCard
-            expanded={expanded === "education"}
-            onClick={() => setExpanded("education")}
-          />
-        </MotionCard>
-        <MotionCard layout>
-          <CertificateCard
-            expanded={expanded === "certificate"}
-            onClick={() => setExpanded("certificate")}
-          />
-        </MotionCard>
-        <MotionCard layout>
-          <InternshipCard
-            expanded={expanded === "internship"}
-            onClick={() => setExpanded("internship")}
-          />
-        </MotionCard>
+        <SkillCard expanded={expanded === "skill"} onClick={() => setExpanded("skill")} />
+        <EducationCard
+          expanded={expanded === "education"}
+          onClick={() => setExpanded("education")}
+        />
+        <CertificateCard
+          expanded={expanded === "certificate"}
+          onClick={() => setExpanded("certificate")}
+        />
+        <InternshipCard
+          expanded={expanded === "internship"}
+          onClick={() => setExpanded("internship")}
+        />
       </motion.div>
     </section>
   );
