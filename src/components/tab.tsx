@@ -26,7 +26,7 @@ export default function Tab({ tabs }: { tabs: string[] }) {
   }, [activeIndex]);
 
   return (
-    <div className="relative inline-flex w-fit items-center gap-8 rounded-full bg-primary px-8 py-3">
+    <div className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3">
       {tabs?.map((label, idx) => (
         <button
           key={label}

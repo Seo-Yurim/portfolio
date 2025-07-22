@@ -1,24 +1,18 @@
 import Image from "next/image";
 import { BsFillMortarboardFill } from "react-icons/bs";
 import IconText from "@/components/icon-text";
-import { QualificationCardProps } from "../qualifications";
 
-export function EducationCard({ expanded, onClick }: QualificationCardProps) {
+export function EducationCard() {
   return (
-    <div
-      onClick={onClick}
-      className={`flex h-[524px] gap-8 overflow-hidden rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
-        expanded ? "flex-grow" : "w-24 cursor-pointer"
-      }`}
-    >
-      <div className="flex flex-col items-center justify-between">
-        <p className="vertical-text h-fit w-fit rounded-2xl bg-white px-2 py-4 font-GWT text-2xl text-black shadow-right-down">
+    <div className={`flex flex-col gap-4 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}>
+      <div className="flex items-center justify-between">
+        <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
           교육
         </p>
         <BsFillMortarboardFill className="h-10 w-10 text-foreground" />
       </div>
 
-      <div className={`flex flex-col gap-8 text-nowrap py-4`}>
+      <div className={`flex flex-col gap-8 py-4`}>
         <div className="flex flex-col gap-1">
           <IconText
             icon={<Image src="/images/icons/대전대.svg" width={30} height={30} alt="dju logo" />}

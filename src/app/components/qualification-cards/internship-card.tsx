@@ -7,24 +7,20 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { QualificationCardProps } from "../qualifications";
 
-export function InternshipCard({ expanded, onClick }: QualificationCardProps) {
+export function InternshipCard() {
   return (
     <div
-      onClick={onClick}
-      className={`flex h-[524px] gap-8 overflow-hidden rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
-        expanded ? "flex-grow" : "w-24 cursor-pointer"
-      }`}
+      className={`flex flex-col gap-4 overflow-hidden rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}
     >
-      <div className="flex flex-col items-center justify-between">
-        <p className="vertical-text h-fit w-fit rounded-2xl bg-white px-2 py-4 font-GWT text-2xl text-black shadow-right-down">
+      <div className="flex items-center justify-between">
+        <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
           인턴십
         </p>
         <FaBriefcase className="h-10 w-10 text-foreground" />
       </div>
 
-      <div className={`flex flex-col gap-3 text-nowrap py-4`}>
+      <div className={`flex flex-col gap-4 px-2 py-4`}>
         <div className="flex flex-col">
           <p className="font-GWT text-2xl">코드스테이션</p>
           <p className="text-sm font-medium text-text-secondary">2025.05 ~ 2025.06</p>
@@ -35,10 +31,14 @@ export function InternshipCard({ expanded, onClick }: QualificationCardProps) {
           <li>TypeScript와 Next.js 기반의 프론트엔드 개발 담당</li>
           <li>퍼블리싱 및 회원가입, 비밀번호 재설정 등의 로직 구현</li>
           <li>중복되는 UI 요소를 공통 컴포넌트로 구현</li>
-          <li>실무 관계자와 직접 소통하며 QA 피드백을 반영하고, UI/UX 품질을 개선하는 데 기여</li>
+          <li>
+            실무 관계자와 직접 소통하며 QA 피드백을 반영하고,
+            <br />
+            UI/UX 품질을 개선하는 데 기여
+          </li>
         </ul>
 
-        <div className="flex items-center gap-2 px-5 py-2">
+        <div className="flex items-center gap-4 px-5 py-2">
           <SiTypescript className="h-10 w-10 text-sky-600" />
           <SiNextdotjs className="h-10 w-10 text-black" />
           <div className="rounded-full bg-sky-950 p-1">

@@ -1,23 +1,17 @@
 import Image from "next/image";
 import { PiCertificate } from "react-icons/pi";
 import IconText from "@/components/icon-text";
-import { QualificationCardProps } from "../qualifications";
 
-export function CertificateCard({ expanded, onClick }: QualificationCardProps) {
+export function CertificateCard() {
   return (
-    <div
-      onClick={onClick}
-      className={`flex h-[524px] gap-8 overflow-hidden rounded-2xl bg-primary/20 p-6 transition-all duration-500 dark:bg-blue-200 ${
-        expanded ? "flex-grow" : "w-24 cursor-pointer"
-      }`}
-    >
-      <div className="flex flex-col items-center justify-between">
-        <p className="vertical-text h-fit w-fit rounded-2xl bg-white px-2 py-4 font-GWT text-2xl text-black shadow-right-down">
+    <div className={`flex flex-col gap-8 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}>
+      <div className="flex items-center justify-between">
+        <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
           자격증
         </p>
         <PiCertificate className="h-10 w-10 text-foreground" />
       </div>
-      <div className={`grid w-full grid-cols-2 gap-4 text-nowrap`}>
+      <div className={`grid w-full grid-cols-2 gap-4`}>
         <Card
           icon="/images/icons/한국산업인력공단.svg"
           certificateName="정보처리기사"
