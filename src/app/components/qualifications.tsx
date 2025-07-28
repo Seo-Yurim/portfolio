@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { CertificateCard, EducationCard, InternshipCard, SkillCard } from "./qualification-cards";
 
 export function Qualifications() {
@@ -10,15 +9,12 @@ export function Qualifications() {
         </h2>
       </div>
 
-      <motion.div
-        transition={{ duration: 0.5 }}
-        className={`grid auto-rows-[minmax(200px,_auto)] grid-cols-2 gap-4`}
-      >
+      <div className="grid auto-rows-[minmax(200px,_auto)] grid-cols-2 gap-4">
         <SkillCard />
         <CertificateCard />
         <EducationCard />
         <InternshipCard />
-      </motion.div>
+      </div>
     </section>
   );
 }

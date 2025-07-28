@@ -7,10 +7,14 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
 export function InternshipCard() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
       className={`flex flex-col gap-4 overflow-hidden rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}
     >
       <div className="flex items-center justify-between">
@@ -53,6 +57,6 @@ export function InternshipCard() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

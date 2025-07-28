@@ -1,12 +1,23 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Tab({ tabs }: { tabs: string[] }) {
+export default function Tab({
+  categorys,
+  setCategory,
+}: {
+  categorys: string[];
+  setCategory: React.Dispatch<React.SetStateAction<string>>;
+}) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({
     left: 0,
     width: 0,
   });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const handleClick = (label: string, idx: number) => {
+    setActiveIndex(idx);
+    setCategory(label);
+  };
 
   useEffect(() => {
     const currentTab = tabRefs.current[activeIndex];
@@ -27,13 +38,13 @@ export default function Tab({ tabs }: { tabs: string[] }) {
 
   return (
     <div className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3">
-      {tabs?.map((label, idx) => (
+      {categorys?.map((label, idx) => (
         <button
           key={label}
           ref={(el) => {
             tabRefs.current[idx] = el;
           }}
-          onClick={() => setActiveIndex(idx)}
+          onClick={() => handleClick(label, idx)}
           className={`z-10 text-nowrap text-center font-GWT text-lg transition-colors duration-300 hover:text-white ${
             activeIndex === idx ? "text-white" : "text-primary-foreground"
           }`}

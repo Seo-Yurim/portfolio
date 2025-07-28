@@ -1,10 +1,16 @@
 import Image from "next/image";
 import { PiCertificate } from "react-icons/pi";
+import { motion } from "framer-motion";
 import IconText from "@/components/icon-text";
 
 export function CertificateCard() {
   return (
-    <div className={`flex flex-col gap-8 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className={`flex flex-col gap-8 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}
+    >
       <div className="flex items-center justify-between">
         <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
           자격증
@@ -25,7 +31,7 @@ export function CertificateCard() {
           issuer="대한상공회의소"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
