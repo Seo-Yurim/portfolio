@@ -20,7 +20,7 @@ export function InternshipCard() {
         <FaBriefcase className="h-10 w-10 text-foreground" />
       </div>
 
-      <div className={`flex flex-col gap-4 px-2 py-4`}>
+      <div className={`flex flex-col gap-4 px-2 pt-4`}>
         <div className="flex flex-col">
           <p className="font-GWT text-2xl">코드스테이션</p>
           <p className="text-sm font-medium text-text-secondary">2025.05 ~ 2025.06</p>
