@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Tab from "@/components/tab";
 import Title from "@/components/title";
 
 const categorys = ["All", "Team", "Personal"];
 
 export function ProjectList() {
+  const [category, setCategory] = useState<string>(categorys[0]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export function ProjectList() {
     <section id="project-list" className="flex h-screen flex-col gap-8 py-16">
       <Title title="Projects" />
       <div className="container flex flex-col gap-4">
-        <Tab tabs={categorys} />
+        <Tab categorys={categorys} setCategory={setCategory} />
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
