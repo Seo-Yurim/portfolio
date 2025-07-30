@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Tab from "@/components/tab";
 import Title from "@/components/title";
+import ProjectPreview from "@/components/ui/project-list/project-preview";
 
 const categorys = ["All", "Team", "Personal"];
 
@@ -36,7 +37,7 @@ export function ProjectList() {
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
         >
           <div className="mb-2 flex h-[400px] w-max gap-4 rounded-2xl bg-primary p-8">
-            <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
+            <ProjectPreview />
             <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
             <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
             <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
