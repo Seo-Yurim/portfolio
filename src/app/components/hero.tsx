@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useAnimation, useInView } from "framer-motion";
 import Title from "@/components/title";
-import ShowModal from "./show-modal";
+import ShowModal from "../../components/ui/hero/show-modal";
 
 const responsiveStyle = "max-md:gap-8 max-md:border-[24px] max-md:border-y-[56px] max-md:px-4";
 

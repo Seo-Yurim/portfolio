@@ -1,4 +1,9 @@
-import { CertificateCard, EducationCard, InternshipCard, SkillCard } from "./qualification-cards";
+import {
+  CertificateCard,
+  EducationCard,
+  InternshipCard,
+  SkillCard,
+} from "../../components/ui/qualifications";
 
 export function Qualifications() {
   return (
