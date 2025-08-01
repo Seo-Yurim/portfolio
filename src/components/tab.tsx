@@ -3,9 +3,11 @@ import { useEffect, useRef, useState } from "react";
 export default function Tab({
   categorys,
   setCategory,
+  width = "100%",
 }: {
   categorys: string[];
   setCategory: React.Dispatch<React.SetStateAction<string>>;
+  width?: string;
 }) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({
@@ -37,7 +39,10 @@ export default function Tab({
   }, [activeIndex]);
 
   return (
-    <div className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3">
+    <div
+      style={{ width: width }}
+      className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3"
+    >
       {categorys?.map((label, idx) => (
         <button
           key={label}

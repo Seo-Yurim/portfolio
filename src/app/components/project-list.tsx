@@ -31,7 +31,7 @@ export function ProjectList() {
     <section id="project-list" className="flex h-screen flex-col gap-8 py-16">
       <Title title="Projects" />
       <div className="container flex flex-col gap-4">
-        <Tab categorys={categorys} setCategory={setCategory} />
+        <Tab width="30rem" categorys={categorys} setCategory={setCategory} />
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
