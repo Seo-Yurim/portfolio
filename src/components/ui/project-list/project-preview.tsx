@@ -4,7 +4,7 @@ export default function ProjectPreview() {
   return (
     <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-8">
       <Image src="/images/미모티콘.png" width={200} height={200} alt="project-img" />
-      <p className="w-fit rounded-full bg-primary px-4 py-1 font-GWT text-background">
+      <p className="w-fit rounded-full bg-[#18a8f1] px-4 py-1 font-GWT text-background">
         프로젝트 이름
       </p>
       <div className="flex items-center justify-between">
