@@ -1,5 +1,6 @@
 "use client";
 
+import { PROJECTS } from "@/constants/project";
 import { useEffect, useRef, useState } from "react";
 import Tab from "@/components/tab";
 import Title from "@/components/title";
@@ -37,11 +38,9 @@ export function ProjectList() {
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
         >
           <div className="mb-2 flex h-[400px] w-max gap-4 rounded-2xl bg-primary p-8">
-            <ProjectPreview />
-            <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
-            <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
-            <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
-            <div className="w-[400px] flex-shrink-0 rounded-2xl bg-text-background p-8"></div>
+            {PROJECTS.map((project) => (
+              <ProjectPreview key={project.title} project={project} />
+            ))}
           </div>
         </div>
       </div>

@@ -22,13 +22,14 @@ interface Link {
 export interface ProjectItem {
   title: string;
   subtitle: string;
-  type: "team" | "personal";
+  type: "Team" | "Personal";
   period: string;
   teamSize?: number;
   teamRoles?: RoleType[];
   myRole?: RoleType[];
   description: string;
   color: string;
+  tools: string[];
   features: TextBlock[];
   contribution: TextBlock[];
   issues: TroubleshootingItem[];
