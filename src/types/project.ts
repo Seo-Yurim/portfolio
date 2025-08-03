@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 interface RoleType {
   position: "FE" | "BE" | "Full-Stack" | "파트장";
   size?: number;
@@ -29,6 +31,7 @@ export interface ProjectItem {
   myRole?: RoleType[];
   description: string;
   color: string;
+  logo: ReactNode;
   tools: string[];
   features: TextBlock[];
   contribution: TextBlock[];

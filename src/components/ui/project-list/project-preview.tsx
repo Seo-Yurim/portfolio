@@ -6,14 +6,20 @@ import { ProjectItem } from "@/types/project";
 export default function ProjectPreview({ project }: { project: ProjectItem }) {
   return (
     <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-8">
-      <div className="relative h-[200px] w-full">
+      <div className="group relative h-[200px] w-full rounded-lg shadow-right-down">
         <Image
           src={PROJECTIMG[project.title] || "사진 업데이트 예정"}
           alt="project-img"
           fill
           className="rounded-lg object-cover object-center"
         />
-        <div className="absolute right-2 top-2 rounded-full bg-highlight px-2 py-1 font-GWT text-blue-200 underline shadow-right-down">
+
+        <div className="absolute inset-0 flex cursor-pointer flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="rounded-t-lg bg-blue-200 p-3">{project.logo}</div>
+          <div className="h-full rounded-b-lg bg-white/70"></div>
+        </div>
+
+        <div className="absolute right-2 top-2 rounded-full bg-highlight px-2 py-4 font-GWT text-blue-200 shadow-right-down">
           {project.type}
         </div>
       </div>
@@ -24,7 +30,7 @@ export default function ProjectPreview({ project }: { project: ProjectItem }) {
         {project.title}
       </p>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 px-2">
+        <div className="flex items-center gap-4 px-2">
           {project.tools.map((tool, idx) => (
             <div key={idx}>{SKILLS[tool]}</div>
           ))}

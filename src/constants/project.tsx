@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProjectItem } from "@/types/project";
 
 export const PROJECTIMG: Record<string, string> = {
@@ -21,6 +22,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "핏메이트는 운동 전문가(강사)와 운동을 배우고 싶은 유저를 연결하여, 1:1 맞춤형 운동 프로그램을 제공하는 서비스입니다.",
     color: "#18a8f1",
+    logo: <Image src="/images/fitmate_logo.png" width={200} height={100} alt="fitmate logo" />,
     tools: ["TypeScript", "Next.js", "React-Query", "Tailwind CSS"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],
@@ -47,6 +49,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "View My Startup은 개인 투자자들이 스타트업 정보를 쉽게 확인하고, 다양한 기준으로 비교하여 투자 시뮬레이션을 진행할 수 있는 모의 투자 서비스입니다.",
     color: "#fc5230",
+    logo: <Image src="/images/VMS_logo.svg" width={200} height={100} alt="VMS logo" />,
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],
@@ -59,7 +62,11 @@ export const PROJECTS: ProjectItem[] = [
         label: "서비스 발표 자료",
         url: "https://drive.google.com/file/d/1ExZtV_32sY927jh0KZfilNUoRRd2xMiV/view?usp=sharing",
       },
-      { label: "GitHub", url: "https://github.com/orgs/season2-3team/repositories" },
+      { label: "기존 GitHub", url: "https://github.com/orgs/season2-3team/repositories" },
+      {
+        label: "리팩토링 GitHub",
+        url: "https://github.com/Seo-Yurim/season2-View-My-Startup-3team-FE",
+      },
     ],
   },
   {
@@ -69,6 +76,7 @@ export const PROJECTS: ProjectItem[] = [
     period: "25.06.28 ~",
     description: "",
     color: "#6D7EE7",
+    logo: <Image src="/images/미모티콘.png" width={200} height={100} alt="portfolio logo" />,
     tools: ["TypeScript", "Next.js", "Tailwind CSS"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],

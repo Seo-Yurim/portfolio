@@ -5,13 +5,25 @@ import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiNextdotjs, SiPrisma, SiReactquery } from "react-icons/si";
 
 export const SKILLS: Record<string, ReactNode> = {
-  JavaScript: <RiJavascriptFill />,
-  TypeScript: <BiLogoTypescript />,
-  React: <FaReact />,
-  "Next.js": <SiNextdotjs />,
-  "Tailwind CSS": <RiTailwindCssFill />,
-  "React-Query": <SiReactquery />,
-  "Express.js": <SiExpress />,
-  "Prisma ORM": <SiPrisma />,
-  PostgreSQL: <BiLogoPostgresql />,
+  JavaScript: <RiJavascriptFill className="h-10 w-10 text-amber-400" />,
+  TypeScript: <BiLogoTypescript className="h-10 w-10 text-sky-600" />,
+  React: (
+    <div className="rounded-full bg-sky-950 p-1">
+      <FaReact className="h-6 w-6 text-sky-400" />
+    </div>
+  ),
+  "Next.js": <SiNextdotjs className="h-8 w-8 text-black" />,
+  "Tailwind CSS": (
+    <div className="rounded-full bg-sky-950 p-1">
+      <RiTailwindCssFill className="h-6 w-6 text-cyan-600" />
+    </div>
+  ),
+  "React-Query": <SiReactquery className="h-8 w-8 text-red-500" />,
+  "Express.js": (
+    <div className="rounded-full bg-black p-1">
+      <SiExpress className="h-6 w-6 text-white" />
+    </div>
+  ),
+  "Prisma ORM": <SiPrisma className="h-7 w-7 text-cyan-900" />,
+  PostgreSQL: <BiLogoPostgresql className="h-8 w-8 text-cyan-700" />,
 };
