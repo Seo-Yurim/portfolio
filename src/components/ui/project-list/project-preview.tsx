@@ -6,7 +6,7 @@ import { ProjectItem } from "@/types/project";
 export default function ProjectPreview({ project }: { project: ProjectItem }) {
   return (
     <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-8 shadow-right-down">
-      <div className="group relative h-[200px] w-full rounded-lg shadow-right-down">
+      <div className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105">
         <Image
           src={PROJECTIMG[project.title] || "사진 업데이트 예정"}
           alt="project-img"
