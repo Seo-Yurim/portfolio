@@ -18,14 +18,14 @@ export default function ShowModal({
   };
 
   return (
-    <Modal>
+    <Modal onClose={() => setIsOpen(false)}>
       <div className="flex flex-col items-center gap-8">
         <Image src="/images/folder.svg" width={190} height={143} alt="folder" />
-        <p className="text-background font-bold text-2xl text-center max-md:text-lg">
+        <p className="text-center text-2xl font-bold text-background max-md:text-lg">
           서유림님의 <span className="font-extrabold text-primary">포트폴리오</span>를
           <br className="md:hidden" /> 열람하시겠습니까?
         </p>
-        <div className="flex items-center w-full gap-4 max-md:flex-col">
+        <div className="flex w-full items-center gap-4 max-md:flex-col">
           <button
             onClick={() => setIsOpen(false)}
             className={`${btnStyle} bg-white text-primary hover:bg-text-secondary/60 hover:text-white`}

@@ -1,12 +1,20 @@
 import { PROJECTIMG } from "@/constants/project";
 import { SKILLS } from "@/constants/skill";
 import Image from "next/image";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { ProjectItem } from "@/types/project";
+import ProjectDetailModal from "./project-detail-modal";
 
 export default function ProjectPreview({ project }: { project: ProjectItem }) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-8 shadow-right-down">
-      <div className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105">
+      <div
+        onClick={() => setIsOpen(true)}
+        className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105"
+      >
         <Image
           src={PROJECTIMG[project.title] || "사진 업데이트 예정"}
           alt="project-img"
@@ -52,6 +60,10 @@ export default function ProjectPreview({ project }: { project: ProjectItem }) {
         </div>
         <p className="text-sm font-medium text-text-secondary">{project.period}</p>
       </div>
+
+      <AnimatePresence>
+        {isOpen && <ProjectDetailModal project={project} onClose={() => setIsOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
