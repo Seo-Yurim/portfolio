@@ -22,7 +22,15 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "핏메이트는 운동 전문가(강사)와 운동을 배우고 싶은 유저를 연결하여, 1:1 맞춤형 운동 프로그램을 제공하는 서비스입니다.",
     color: "#18a8f1",
-    logo: <Image src="/images/fitmate_logo.png" width={200} height={100} alt="fitmate logo" />,
+    logo: (
+      <Image
+        src="/images/fitmate_logo.png"
+        className="rounded-full bg-white px-2"
+        width={180}
+        height={100}
+        alt="fitmate logo"
+      />
+    ),
     tools: ["TypeScript", "Next.js", "React-Query", "Tailwind CSS"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],
@@ -49,7 +57,7 @@ export const PROJECTS: ProjectItem[] = [
     description:
       "View My Startup은 개인 투자자들이 스타트업 정보를 쉽게 확인하고, 다양한 기준으로 비교하여 투자 시뮬레이션을 진행할 수 있는 모의 투자 서비스입니다.",
     color: "#fc5230",
-    logo: <Image src="/images/VMS_logo.svg" width={200} height={100} alt="VMS logo" />,
+    logo: <Image src="/images/VMS_logo.svg" width={150} height={100} alt="VMS logo" />,
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],
@@ -71,12 +79,12 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "포트폴리오",
-    subtitle: "프론트엔드 개발자 서유림의 포트폴리오입니다.",
+    subtitle: "프론트엔드 개발자 서유림의 포트폴리오",
     type: "Personal",
     period: "25.06.28 ~",
     description: "",
     color: "#6D7EE7",
-    logo: <Image src="/images/미모티콘.png" width={200} height={100} alt="portfolio logo" />,
+    logo: <Image src="/images/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
     tools: ["TypeScript", "Next.js", "Tailwind CSS"],
     features: [{ title: "", description: "" }],
     contribution: [{ title: "", description: "" }],
