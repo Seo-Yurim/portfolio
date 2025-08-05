@@ -26,15 +26,15 @@ export default function ProjectDetailModal({
             className="flex w-[200px] flex-col rounded-l-xl p-4 text-white"
           >
             <p>{project.teamSize}명</p>
-            {project.teamRoles?.map((role) => (
-              <div className="flex gap-2">
+            {project.teamRoles?.map((role, idx) => (
+              <div key={idx} className="flex gap-2">
                 <p>{role.position}</p>
                 {role.size && <p>{role.size}명</p>}
               </div>
             ))}
             <div className="flex items-center gap-2">
-              {project.myRole?.map((role) => (
-                <p>{role.position}</p>
+              {project.myRole?.map((role, idx) => (
+                <p key={idx}>{role.position}</p>
               ))}
             </div>
           </div>
