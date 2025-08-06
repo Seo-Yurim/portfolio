@@ -12,33 +12,45 @@ export default function ProjectDetailModal({
 }) {
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center justify-between font-GWT">
-          <h1 style={{ color: project.color }} className="text-3xl">
-            {project.logo}
-          </h1>
-          <h2 className="text-xl text-white">{project.subtitle}</h2>
-        </div>
-
+      <div className="flex flex-col gap-4 text-white">
         <div className="flex">
           <div
             style={{ backgroundColor: project.color }}
-            className="flex w-[200px] flex-col rounded-l-xl p-4 text-white"
+            className="flex w-[200px] flex-col gap-6 rounded-l-xl p-4"
           >
-            <p>{project.teamSize}명</p>
-            {project.teamRoles?.map((role, idx) => (
-              <div key={idx} className="flex gap-2">
-                <p>{role.position}</p>
-                {role.size && <p>{role.size}명</p>}
+            <div className="flex flex-col items-center gap-4 font-GWT">
+              <div style={{ color: project.color }} className="text-3xl">
+                {project.logo}
               </div>
-            ))}
-            <div className="flex items-center gap-2">
-              {project.myRole?.map((role, idx) => (
-                <p key={idx}>{role.position}</p>
-              ))}
+              <h2 className="text-xs">{project.subtitle}</h2>
+            </div>
+
+            <div className="flex flex-col gap-3 px-2 text-xs font-semibold">
+              <p>{project.period}</p>
+              <p>{project.type} Proejct</p>
+              <div className="flex items-center gap-2">
+                <p>{project.teamSize}명</p>
+                <div className="flex items-center gap-2">
+                  (
+                  {project.teamRoles?.map((role, idx) => (
+                    <div key={idx} className="flex gap-1">
+                      <p>{role.position}:</p>
+                      {role.size && <p>{role.size}명</p>}
+                    </div>
+                  ))}
+                  )
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                {project.myRole?.map((role, idx) => (
+                  <p key={idx}>{role.position}</p>
+                ))}
+              </div>
             </div>
           </div>
-          <div className="relative h-[300px] w-[800px] shadow-right-down">
+
+          <div className="relative min-h-[300px] w-[800px] shadow-right-down">
             <Image
               src={PROJECTIMG[project.title]}
               fill
@@ -47,6 +59,8 @@ export default function ProjectDetailModal({
             />
           </div>
         </div>
+
+        <p className="text-center font-GWT">{project.description}</p>
       </div>
     </Modal>
   );
