@@ -15,6 +15,12 @@ export default function Modal({ children, onClose }: { children: ReactNode; onCl
         transition: { duration: 0.8, ease: "easeOut" },
       });
     }
+
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [inView, controls]);
 
   return (
@@ -28,9 +34,9 @@ export default function Modal({ children, onClose }: { children: ReactNode; onCl
         initial={{ opacity: 0, y: 40 }}
         animate={controls}
         exit={{ opacity: 0, y: 100, transition: { duration: 0.3, ease: "easeInOut" } }}
-        className="absolute mx-4 rounded-xl bg-gray-700/60 p-8 backdrop-blur-lg"
+        className="absolute max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
       >
-        {children}
+        <div className="mx-2 h-full rounded-xl bg-white p-8 shadow-right-down">{children}</div>
       </motion.div>
     </div>
   );

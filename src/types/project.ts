@@ -34,8 +34,8 @@ export interface ProjectItem {
   logo: ReactNode;
   tools: string[];
   features: TextBlock[];
-  contribution: TextBlock[];
+  contributions: TextBlock[];
   issues: TroubleshootingItem[];
-  retrospective: TextBlock[];
+  retrospectives: TextBlock[];
   links: Link[];
 }

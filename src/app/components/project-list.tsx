@@ -2,14 +2,19 @@
 
 import { PROJECTS } from "@/constants/project";
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { ProjectItem } from "@/types/project";
 import Tab from "@/components/tab";
 import Title from "@/components/title";
+import ProjectDetailModal from "@/components/ui/project-list/project-detail-modal";
 import ProjectPreview from "@/components/ui/project-list/project-preview";
 
 const categorys = ["All", "Team", "Personal"];
 
 export function ProjectList() {
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [category, setCategory] = useState<string>(categorys[0]);
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -17,6 +22,7 @@ export function ProjectList() {
     if (!container) return;
 
     const handleWheel = (e: WheelEvent) => {
+      if (selectedProject) return;
       container.scrollLeft += e.deltaY;
       e.preventDefault();
     };
@@ -39,11 +45,21 @@ export function ProjectList() {
         >
           <div className="mb-2 flex h-[400px] w-max gap-4 rounded-2xl bg-primary p-8">
             {PROJECTS.map((project) => (
-              <ProjectPreview key={project.title} project={project} />
+              <ProjectPreview
+                key={project.title}
+                project={project}
+                onClick={() => setSelectedProject(project)}
+              />
             ))}
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

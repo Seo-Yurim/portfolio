@@ -1,18 +1,18 @@
 import { PROJECTIMG } from "@/constants/project";
 import { SKILLS } from "@/constants/skill";
 import Image from "next/image";
-import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
 import { ProjectItem } from "@/types/project";
-import ProjectDetailModal from "./project-detail-modal";
 
-export default function ProjectPreview({ project }: { project: ProjectItem }) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+interface ProjectPreviewProps {
+  project: ProjectItem;
+  onClick: () => void;
+}
 
+export default function ProjectPreview({ project, onClick }: ProjectPreviewProps) {
   return (
-    <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-8 shadow-right-down">
+    <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-6 shadow-right-down">
       <div
-        onClick={() => setIsOpen(true)}
+        onClick={onClick}
         className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105"
       >
         <Image
@@ -52,6 +52,9 @@ export default function ProjectPreview({ project }: { project: ProjectItem }) {
           {project.subtitle}
         </p>
       </div>
+
+      <div className="w-full border-b border-text-background" />
+
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4 px-2">
           {project.tools.map((tool, idx) => (
@@ -60,10 +63,6 @@ export default function ProjectPreview({ project }: { project: ProjectItem }) {
         </div>
         <p className="text-sm font-medium text-text-secondary">{project.period}</p>
       </div>
-
-      <AnimatePresence>
-        {isOpen && <ProjectDetailModal project={project} onClose={() => setIsOpen(false)} />}
-      </AnimatePresence>
     </div>
   );
 }
