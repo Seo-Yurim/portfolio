@@ -1,6 +1,7 @@
-import { PROJECTIMG } from "@/constants/project";
+import { PROJECTIMG, PROJECT_LINKS } from "@/constants/project";
 import { SKILLS } from "@/constants/skill";
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectItem } from "@/types/project";
 import Modal from "@/components/modal";
 
@@ -13,7 +14,7 @@ export default function ProjectDetailModal({
 }) {
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 pb-8">
         <div className="flex w-full max-w-[1200px] rounded-xl text-white shadow-right-down">
           <div
             style={{ backgroundColor: project.color }}
@@ -84,51 +85,78 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 px-4 text-black">
+        <div className="flex flex-col gap-4 px-4 text-blue-200">
           <p className="font-medium">{project.description}</p>
 
           <div className="flex items-center gap-2">
-            <span className="">기술스택:</span>
+            <h2>기술스택</h2>
             {project.tools.map((tool, idx) => (
               <div key={idx}>{SKILLS[tool]}</div>
             ))}
           </div>
 
-          {project.features.map((feature, idx) => (
-            <div key={idx}>
-              <h2>{feature.title}</h2>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          <div className="flex flex-col gap-2">
+            <h2 className="border-b-2 border-blue-200 font-bold">주요 구현 기능</h2>
+            {project.features.map((feature, idx) => (
+              <div key={idx}>
+                <h2>{feature.title}</h2>
+                <p>{feature.description}</p>
+              </div>
+            ))}
+          </div>
 
-          {project.contributions.map((contribution, idx) => (
-            <div key={idx}>
-              <h2>{contribution.title}</h2>
-              <p>{contribution.description}</p>
-            </div>
-          ))}
+          <div className="flex flex-col gap-2">
+            <h2 className="border-b-2 border-blue-200 font-bold">작업기여도</h2>
+            {project.contributions.map((contribution, idx) => (
+              <div key={idx}>
+                <h2>{contribution.title}</h2>
+                <p>{contribution.description}</p>
+              </div>
+            ))}
+          </div>
 
-          {project.issues.map((issue, idx) => (
-            <div key={idx}>
-              <h2>{issue.problem}</h2>
-              <p>{issue.cause}</p>
-              <p>{issue.solution}</p>
-            </div>
-          ))}
+          <div className="flex flex-col gap-2">
+            <h2 className="border-b-2 border-blue-200 font-bold">트러블슈팅</h2>
+            {project.issues.map((issue, idx) => (
+              <div key={idx}>
+                <h3>{issue.problem}</h3>
+                <p>{issue.cause}</p>
+                <p>{issue.solution}</p>
+              </div>
+            ))}
+          </div>
 
-          {project.retrospectives.map((retrospective, idx) => (
-            <div key={idx}>
-              <h2>{retrospective.title}</h2>
-              <p>{retrospective.description}</p>
-            </div>
-          ))}
+          <div className="flex flex-col gap-2">
+            <h2 className="border-b-2 border-blue-200 font-bold">회고</h2>
+            {project.retrospectives.map((retrospective, idx) => (
+              <div key={idx}>
+                <h2>{retrospective.title}</h2>
+                <p>{retrospective.description}</p>
+              </div>
+            ))}
+          </div>
 
-          {project.links.map((link, idx) => (
-            <div key={idx} className="flex items-center">
-              <h2>{link.label}</h2>
-              <p>{link.url}</p>
+          <div className="flex flex-col gap-4">
+            <h2 className="border-b-2 border-blue-200 font-bold">서비스 관련 자료</h2>
+            <div className="flex items-center gap-6">
+              {project.links.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={link.url}
+                  className="group flex flex-col items-center gap-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="w-fit rounded-full border-2 border-blue-200 p-2">
+                    {PROJECT_LINKS[link.label]}
+                  </div>
+                  <div className="rounded-full bg-blue-200 px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="text-nowrap text-white">{link.label}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </Modal>
