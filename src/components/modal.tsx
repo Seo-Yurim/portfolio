@@ -26,7 +26,7 @@ export default function Modal({ children, onClose }: { children: ReactNode; onCl
   return (
     <div
       onClick={onClose}
-      className="fixed left-0 top-0 z-10 flex h-screen w-screen items-center justify-center bg-gray-950/60"
+      className="fixed left-0 top-0 z-10 flex h-screen w-screen items-center justify-center bg-gray-950/70"
     >
       <motion.div
         ref={ref}
@@ -34,9 +34,11 @@ export default function Modal({ children, onClose }: { children: ReactNode; onCl
         initial={{ opacity: 0, y: 40 }}
         animate={controls}
         exit={{ opacity: 0, y: 100, transition: { duration: 0.3, ease: "easeInOut" } }}
-        className="absolute max-h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
+        className="absolute max-h-[calc(100vh-4rem)] max-w-[1000px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
       >
-        <div className="mx-2 h-full rounded-xl bg-white p-8 shadow-right-down">{children}</div>
+        <div className="mx-2 h-full rounded-xl bg-white p-8 shadow-right-down dark:bg-blue-200">
+          {children}
+        </div>
       </motion.div>
     </div>
   );

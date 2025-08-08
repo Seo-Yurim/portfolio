@@ -15,10 +15,10 @@ export default function ProjectDetailModal({
   return (
     <Modal onClose={onClose}>
       <div className="flex flex-col gap-4 pb-8">
-        <div className="flex w-full max-w-[1200px] rounded-xl text-white shadow-right-down">
+        <div className="flex rounded-xl text-white shadow-right-down">
           <div
             style={{ backgroundColor: project.color }}
-            className="flex w-fit flex-col gap-6 rounded-l-xl p-4"
+            className="flex w-full flex-col gap-6 rounded-l-xl p-4"
           >
             <div className="flex flex-col items-center gap-4 font-GWT">
               <div style={{ color: project.color }} className="text-3xl">
@@ -85,14 +85,16 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 px-4 text-blue-200">
+        <div className="flex flex-col gap-8 px-4 text-blue-200">
           <p className="font-medium">{project.description}</p>
 
-          <div className="flex items-center gap-2">
-            <h2>기술스택</h2>
-            {project.tools.map((tool, idx) => (
-              <div key={idx}>{SKILLS[tool]}</div>
-            ))}
+          <div className="flex flex-col gap-2">
+            <h2 className="border-b-2 border-blue-200 font-bold">기술스택</h2>
+            <div className="flex items-center gap-4">
+              {project.tools.map((tool, idx) => (
+                <div key={idx}>{SKILLS[tool]}</div>
+              ))}
+            </div>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -138,20 +140,21 @@ export default function ProjectDetailModal({
 
           <div className="flex flex-col gap-4">
             <h2 className="border-b-2 border-blue-200 font-bold">서비스 관련 자료</h2>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
               {project.links.map((link, idx) => (
                 <Link
                   key={idx}
                   href={link.url}
-                  className="group flex flex-col items-center gap-2"
+                  className="flex items-center gap-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="w-fit rounded-full border-2 border-blue-200 p-2">
+                  <div className="group relative w-fit rounded-full border-2 border-blue-200 p-2 transition-colors duration-300 hover:bg-blue-200 hover:text-white">
                     {PROJECT_LINKS[link.label]}
-                  </div>
-                  <div className="rounded-full bg-blue-200 px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="text-nowrap text-white">{link.label}</p>
+
+                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-blue-200 px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <p className="text-white">{link.label}</p>
+                    </div>
                   </div>
                 </Link>
               ))}
