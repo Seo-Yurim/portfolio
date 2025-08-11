@@ -62,9 +62,29 @@ export const PROJECTS: ProjectItem[] = [
       "PostgreSQL",
       "Supabase",
     ],
-    features: [{ title: "제목", description: "내용" }],
-    contributions: [{ title: "제목", description: "내용" }],
-    issues: [{ problem: "문제점", cause: "발생 이유", solution: "해결 과정" }],
+    features: [
+      { title: "회원가입 기능" },
+      { title: "비밀번호 찾기 기능" },
+      { title: "회원 탈퇴 기능" },
+    ],
+    contributions: [
+      {
+        title: "다양한 화면 퍼블리싱",
+        description:
+          "로그인, 회원가입, 아이디/비밀번호 찾기, 서비스 소개, 마이페이지, UID 검색 결과 등",
+      },
+      { title: "공통 컴포넌트 구현", description: "거래소 테이블, Header, Footer 등" },
+      { title: "QA 반영 및 UI/UX 개선", description: "실무자와 소통하며 피드백을 UI에 즉각 반영" },
+      { title: "반응형 UI 구성", description: "" },
+    ],
+    issues: [
+      {
+        problem:
+          "문제점: 서버 액션(Server Actions)을 처음 사용하면서 구현 과정에서 미숙함이 드러남",
+        solution:
+          "해결 과정: 인턴십 시작 전에 서버 액션 관련 문서와 예제를 학습하여 기반 개념을 익힘, 완벽한 이해는 아니었지만, 사전 학습 덕분에 실제 문제 상황에서 빠르게 적응하고 해결할 수 있었음",
+      },
+    ],
     retrospectives: [{ title: "제목", description: "내용" }],
     links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
   },
@@ -92,10 +112,68 @@ export const PROJECTS: ProjectItem[] = [
       />
     ),
     tools: ["TypeScript", "Next.js", "React-Query", "Tailwind CSS"],
-    features: [{ title: "제목", description: "내용" }],
-    contributions: [{ title: "제목", description: "내용" }],
-    issues: [{ problem: "문제점", cause: "발생 이유", solution: "해결 과정" }],
-    retrospectives: [{ title: "제목", description: "내용" }],
+    features: [
+      {
+        title: "무한 스크롤링",
+        description:
+          "콘텐츠를 스크롤할 때 자동으로 다음 페이지 데이터를 불러오는 무한 스크롤 기능 구현",
+      },
+      {
+        title: "견적 요청/확정/반려 기능",
+        description:
+          "일반 사용자와 강사 모두 견적서를 주고받고, 확정하거나 반려할 수 있는 기능 제공",
+      },
+      {
+        title: "SNS 공유 기능",
+        description: "콘텐츠 공유를 위한 URL 복사, 카카오톡 공유, 페이스북 공유 기능 추가",
+      },
+      {
+        title: "데이터 정렬 및 검색 필터링",
+        description: "리스트형 데이터에 대해 정렬 조건 및 검색 필터를 적용할 수 있는 기능 구현",
+      },
+    ],
+    contributions: [
+      {
+        title: "공통 컴포넌트 개발",
+        description:
+          "Dropdown, Search, Tab, SNS 공유 버튼, 카드/모달 컨테이너 등 UI 구성 요소 직접 개발",
+      },
+      {
+        title: "12개 페이지 구현",
+        description:
+          "일반 유저: 강사 찾기, 레슨 현황, 레슨 내역 등 / 강사: 받은 요청 페이지 / 공통: 랜딩, 404, 접근 제한 페이지",
+      },
+      {
+        title: "UI 개선 작업",
+        description: "기존 피그마 디자인과 불일치한 UI 요소 수정 및 hover 효과 적용",
+      },
+      {
+        title: "PR 템플릿 도입",
+        description: "팀원 간 코드 리뷰 효율성을 높이기 위한 PR 템플릿 작성",
+      },
+      {
+        title: "쿼리 파일 분리 관리",
+        description: "React Query 관련 로직을 모듈화하여 유지보수 효율성 증대",
+      },
+      { title: "반응형 UI 구현", description: "" },
+    ],
+    issues: [
+      {
+        problem:
+          "문제점: 리액트 쿼리를 이용한 데이터 페칭 시, 로그아웃 후 다른 계정으로 로그인했을 때 이전 사용자의 데이터가 계속 화면에 표시되는 문제가 발생",
+        cause:
+          "문제 분석: React Query는 쿼리 키를 기준으로 캐시를 관리하는데, 키가 사용자별로 고유하지 않아 로그아웃 이후에도 캐시된 이전 사용자 데이터가 재사용되고 있었음.",
+        solution:
+          "해결 과정: 쿼리 키에 사용자 고유 ID(userId)를 포함시켜 캐시를 사용자 단위로 분리, 이후에는 현재 로그인된 사용자 데이터만 정상적으로 렌더링됨",
+      },
+    ],
+    retrospectives: [
+      {
+        title: "과도한 컴포넌트 세분화",
+        description:
+          "과도한 컴포넌트 분리로 인해 Prop drilling이 발생, 처음엔 코드 간결함을 위해 세분화했지만, 오히려 유지보수가 어려워짐, 이후에는 재사용성, 상태 흐름, 전역 상태 도입 등을 고려한 설계가 필요하다는 점을 배웠음",
+      },
+    ],
     links: [
       { label: "개발 보고서", url: "https://y-flm.tistory.com/28" },
       { label: "팀 개발 문서", url: "https://www.notion.so/1-174b8d4b66e580bab530e11151097fe4" },
@@ -120,9 +198,38 @@ export const PROJECTS: ProjectItem[] = [
     color: "#fc5230",
     logo: <Image src="/images/VMS_logo.svg" width={150} height={100} alt="VMS logo" />,
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
-    features: [{ title: "", description: "" }],
-    contributions: [{ title: "", description: "" }],
-    issues: [{ problem: "", cause: "", solution: "" }],
+    features: [
+      {
+        title: "기업 투자 기능",
+        description: "사용자들이 기업에 투자할 수 있는 입력 및 제출 기능 구현",
+      },
+      {
+        title: "투자 수정 및 삭제 기능",
+        description: "투자 내역을 사용자가 직접 수정하거나 삭제할 수 있는 기능 제공",
+      },
+    ],
+    contributions: [
+      {
+        title: "프론트엔드",
+        description:
+          "공통 컴포넌트 구현: 네비게이션 바, 컨펌 모달 등 재사용 가능한 UI 요소 개발, 화면 개발: 투자 현황 페이지 및 기업 상세 페이지 구현, 유효성 검사 커스텀 훅: 사용자 입력에 대한 커스텀 유효성 검사 로직 개발, 반응형 UI 구현: 다양한 기기 해상도에 대응하는 레이아웃 구성",
+      },
+      {
+        title: "백엔드",
+        description:
+          "투자 관련 API 구현: 투자 목록 조회, 생성, 수정, 삭제 API 개발, Render 서버 배포: Render 플랫폼을 통한 초기 백엔드 배포 진행 (현재는 중단)",
+      },
+    ],
+    issues: [
+      {
+        problem:
+          "문제점: 투자 생성 시, 클라이언트에서는 실패 메시지가 나타나고, 서버 로그에는 id 필드 중복 오류가 발생",
+        cause:
+          "문제 분석: id 필드는 Autoincrement로 설정되어 있어 자동 증가가 되어야 했으나 초기 Mock Data 삽입 시 수동으로 id 값을 입력하여 시퀀스가 정상 작동하지 않음",
+        solution:
+          "해결 과정: SELECT setval(...) 쿼리를 통해 PostgreSQL 시퀀스를 현재 최대 id 기준으로 수동 초기화, 이후 데이터 충돌 없이 생성 가능해짐",
+      },
+    ],
     retrospectives: [{ title: "", description: "" }],
     links: [
       { label: "개발 보고서", url: "https://y-flm.tistory.com/30" },
@@ -147,13 +254,19 @@ export const PROJECTS: ProjectItem[] = [
     color: "#6D7EE7",
     logo: <Image src="/images/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
     tools: ["TypeScript", "Next.js", "Tailwind CSS"],
-    features: [{ title: "", description: "" }],
-    contributions: [{ title: "", description: "" }],
-    issues: [{ problem: "", cause: "", solution: "" }],
-    retrospectives: [{ title: "", description: "" }],
-    links: [
-      { label: "개발 보고서", url: "" },
-      { label: "GitHub", url: "https://github.com/Seo-Yurim/portfolio" },
+    features: [
+      { title: "다크/라이트 테마 전환 기능" },
+      { title: "공통 컴포넌트 구현: Header, Accordion, Modal, Tab 등" },
+      { title: "애니메이션 및 hover 효과 활용으로 인터랙션 강화" },
+      { title: "반응형 웹 UI 구성" },
     ],
+    retrospectives: [
+      {
+        title: "",
+        description:
+          "처음 기획부터 디자인, 개발까지 전 과정에 참여했지만디자인과 데이터를 동시에 수정하다 보니 일정 지연이 심했고 개발 순서도 비효율적이었음, 개선 계획: 다음 프로젝트부터는 1. 디자인 픽스 2. 데이터 정리 3. UI 구현 4. UX/애니메이션 구현 5. 이후 디자인 수정의 순서로 일정을 짜서 효율성을 높일 예정",
+      },
+    ],
+    links: [{ label: "GitHub", url: "https://github.com/Seo-Yurim/portfolio" }],
   },
 ];

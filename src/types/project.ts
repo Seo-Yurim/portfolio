@@ -7,12 +7,12 @@ interface RoleType {
 
 interface TextBlock {
   title: string;
-  description: string;
+  description?: string;
 }
 
 interface TroubleshootingItem {
   problem: string;
-  cause: string;
+  cause?: string;
   solution: string;
 }
 
@@ -33,9 +33,9 @@ export interface ProjectItem {
   color: string;
   logo: ReactNode;
   tools: string[];
-  features: TextBlock[];
-  contributions: TextBlock[];
-  issues: TroubleshootingItem[];
-  retrospectives: TextBlock[];
+  features?: TextBlock[];
+  contributions?: TextBlock[];
+  issues?: TroubleshootingItem[];
+  retrospectives?: TextBlock[];
   links: Link[];
 }

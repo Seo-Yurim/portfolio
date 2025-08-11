@@ -99,7 +99,7 @@ export default function ProjectDetailModal({
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 font-bold">주요 구현 기능</h2>
-            {project.features.map((feature, idx) => (
+            {project.features?.map((feature, idx) => (
               <div key={idx}>
                 <h2>{feature.title}</h2>
                 <p>{feature.description}</p>
@@ -109,7 +109,7 @@ export default function ProjectDetailModal({
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 font-bold">작업기여도</h2>
-            {project.contributions.map((contribution, idx) => (
+            {project.contributions?.map((contribution, idx) => (
               <div key={idx}>
                 <h2>{contribution.title}</h2>
                 <p>{contribution.description}</p>
@@ -119,7 +119,7 @@ export default function ProjectDetailModal({
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 font-bold">트러블슈팅</h2>
-            {project.issues.map((issue, idx) => (
+            {project.issues?.map((issue, idx) => (
               <div key={idx}>
                 <h3>{issue.problem}</h3>
                 <p>{issue.cause}</p>
@@ -130,7 +130,7 @@ export default function ProjectDetailModal({
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 font-bold">회고</h2>
-            {project.retrospectives.map((retrospective, idx) => (
+            {project.retrospectives?.map((retrospective, idx) => (
               <div key={idx}>
                 <h2>{retrospective.title}</h2>
                 <p>{retrospective.description}</p>
