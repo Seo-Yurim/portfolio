@@ -40,7 +40,7 @@ export default function ProjectDetailModal({
                   {project.period}
                 </p>
 
-                {project.type === "Team" && (
+                {project.type !== "Personal" && (
                   <>
                     <div className="flex items-center gap-1">
                       <p>

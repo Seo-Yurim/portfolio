@@ -24,7 +24,7 @@ interface Link {
 export interface ProjectItem {
   title: string;
   subtitle: string;
-  type: "Team" | "Personal";
+  type: "Team" | "Personal" | "Internship";
   period: string;
   teamSize?: number;
   teamRoles?: RoleType[];

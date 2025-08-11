@@ -7,9 +7,11 @@ import {
   GrDocumentVideo,
   GrGithub,
 } from "react-icons/gr";
+import { IoIosLink } from "react-icons/io";
 import { ProjectItem } from "@/types/project";
 
 export const PROJECTIMG: Record<string, string> = {
+  TetherDrop: "/images/tetherdrop.png",
   핏메이트: "/images/fitmate.png",
   "View My Startup": "/images/view my startup.png",
   포트폴리오: "/images/portfolio.png",
@@ -23,9 +25,49 @@ export const PROJECT_LINKS: Record<string, ReactNode> = {
   GitHub: <GrGithub className="h-6 w-6" />,
   "기존 GitHub": <GrGithub className="h-6 w-6" />,
   "리팩토링 GitHub": <GrGithub className="h-6 w-6" />,
+  "서비스 링크": <IoIosLink className="h-6 w-6" />,
 };
 
 export const PROJECTS: ProjectItem[] = [
+  {
+    title: "TetherDrop",
+    subtitle: "암호화폐 거래소의 페이백 및 수수료 할인 혜택을 제공하는 제휴/셀퍼럴 플랫폼",
+    type: "Internship",
+    period: "25.05.18 ~ 25.06.18",
+    teamSize: 4,
+    teamRoles: [
+      { position: "FE", size: 2 },
+      { position: "BE", size: 2 },
+    ],
+    myRole: [{ position: "FE" }],
+    description:
+      "테더드랍(TetherDrop)은 암호화폐 거래소 이용자들이 '페이백(payback)' 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다",
+    color: "#34d399",
+    logo: (
+      <Image
+        src="/images/icons/tetherdrop_logo.svg"
+        className="rounded-xl bg-white p-2"
+        width={70}
+        height={70}
+        alt="fitmate logo"
+      />
+    ),
+    tools: [
+      "TypeScript",
+      "Next.js",
+      "Zustand",
+      "Radix UI",
+      "Tailwind CSS",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Supabase",
+    ],
+    features: [{ title: "제목", description: "내용" }],
+    contributions: [{ title: "제목", description: "내용" }],
+    issues: [{ problem: "문제점", cause: "발생 이유", solution: "해결 과정" }],
+    retrospectives: [{ title: "제목", description: "내용" }],
+    links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
+  },
   {
     title: "핏메이트",
     subtitle: "1:1 맞춤형 운동 지도 연결 서비스",
