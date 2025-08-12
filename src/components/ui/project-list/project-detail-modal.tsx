@@ -3,6 +3,7 @@ import { SKILLS } from "@/constants/skill";
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectItem } from "@/types/project";
+import Accordion from "@/components/accordion";
 import Modal from "@/components/modal";
 
 export default function ProjectDetailModal({
@@ -89,7 +90,7 @@ export default function ProjectDetailModal({
           <p className="font-medium">{project.description}</p>
 
           <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 font-bold">기술스택</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">기술스택</h2>
             <div className="flex items-center gap-4">
               {project.tools.map((tool, idx) => (
                 <div
@@ -106,17 +107,22 @@ export default function ProjectDetailModal({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 font-bold">주요 구현 기능</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">주요 구현 기능</h2>
+
             {project.features?.map((feature, idx) => (
-              <div key={idx}>
-                <h2>{feature.title}</h2>
+              <Accordion
+                key={idx}
+                title={`${feature.title}`}
+                showIcon={false}
+                titleStyle="w-full bg-gray-100 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
+              >
                 <p>{feature.description}</p>
-              </div>
+              </Accordion>
             ))}
           </div>
 
           <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 font-bold">작업기여도</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">작업기여도</h2>
             {project.contributions?.map((contribution, idx) => (
               <div key={idx}>
                 <h2>{contribution.title}</h2>
@@ -126,7 +132,7 @@ export default function ProjectDetailModal({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 font-bold">트러블슈팅</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">트러블슈팅</h2>
             {project.issues?.map((issue, idx) => (
               <div key={idx}>
                 <h3>{issue.problem}</h3>
@@ -137,7 +143,7 @@ export default function ProjectDetailModal({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 font-bold">회고</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">회고</h2>
             {project.retrospectives?.map((retrospective, idx) => (
               <div key={idx}>
                 <h2>{retrospective.title}</h2>
@@ -147,7 +153,7 @@ export default function ProjectDetailModal({
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="border-b-2 border-blue-200 font-bold">서비스 관련 자료</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">서비스 관련 자료</h2>
             <div className="flex items-center gap-8">
               {project.links.map((link, idx) => (
                 <Link
@@ -170,7 +176,7 @@ export default function ProjectDetailModal({
           </div>
 
           <div className="flex flex-col gap-4">
-            <h2 className="border-b-2 border-blue-200 font-bold">작업 화면</h2>
+            <h2 className="border-b-2 border-blue-200 text-xl font-bold">작업 화면</h2>
             <div className="grid"></div>
           </div>
         </div>

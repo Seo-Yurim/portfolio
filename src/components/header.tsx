@@ -39,7 +39,8 @@ export default function Header() {
       <nav className="flex list-none flex-col gap-8 text-white">
         <Accordion
           title="About Me"
-          className="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+          titleStyle="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+          childrenStyle="pl-10 text-lg font-medium"
         >
           <Link href="#profile">
             <li className={listStyle}>Profile</li>
@@ -50,7 +51,8 @@ export default function Header() {
         </Accordion>
         <Accordion
           title="Projects"
-          className="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+          titleStyle="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+          childrenStyle="pl-10 text-lg font-medium"
         >
           <Link href="#project-list">
             <li className={listStyle}>List</li>

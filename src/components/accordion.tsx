@@ -5,16 +5,23 @@ import { AnimatePresence, motion } from "framer-motion";
 interface AccordionProps {
   title: string;
   children: ReactNode;
-  className?: string;
+  titleStyle?: string;
+  childrenStyle?: string;
   showIcon?: boolean;
 }
 
-export default function Accordion({ title, children, className, showIcon = true }: AccordionProps) {
+export default function Accordion({
+  title,
+  children,
+  titleStyle,
+  childrenStyle,
+  showIcon = true,
+}: AccordionProps) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="flex flex-col gap-2">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-fit" aria-expanded={isOpen}>
+      <button onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen}>
         <div className="flex items-center gap-2">
           {showIcon && (
             <IoIosArrowUp
@@ -24,7 +31,7 @@ export default function Accordion({ title, children, className, showIcon = true 
             />
           )}
 
-          <p className={`text-nowrap ${className}`}>{title}</p>
+          <p className={`text-nowrap ${titleStyle}`}>{title}</p>
         </div>
       </button>
 
@@ -35,7 +42,7 @@ export default function Accordion({ title, children, className, showIcon = true 
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="flex flex-col gap-2 pl-10 text-lg font-medium"
+            className={`flex flex-col gap-2 ${childrenStyle}`}
           >
             {children}
           </motion.div>
