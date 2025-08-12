@@ -41,27 +41,33 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <p
-          style={{ backgroundColor: project.color }}
-          className="w-fit rounded-full px-4 py-1 font-GWT text-lg text-white"
-        >
-          {project.title}
-        </p>
-        <p style={{ color: project.color }} className="text-xs font-extrabold">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center justify-between">
+          <p
+            style={{ backgroundColor: project.color }}
+            className="w-fit rounded-full px-4 py-1 font-GWT text-lg text-white"
+          >
+            {project.title}
+          </p>
+          <p className="text-xs font-semibold text-text-secondary">{project.period}</p>
+        </div>
+
+        <div className="w-full border-b border-gray-100" />
+
+        <p style={{ color: project.color }} className="text-sm font-bold">
           {project.subtitle}
         </p>
       </div>
 
-      <div className="w-full border-b border-text-background" />
-
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4 px-2">
-          {project.tools.map((tool, idx) => (
-            <div key={idx}>{SKILLS[tool]}</div>
-          ))}
-        </div>
-        <p className="text-sm font-medium text-text-secondary">{project.period}</p>
+      <div className="flex w-fit items-center gap-4 rounded-xl bg-gray-100/50 p-2">
+        {project.tools.map((tool, idx) => (
+          <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
+            {SKILLS[tool]}
+            <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <p className="text-white">{tool}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

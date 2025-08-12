@@ -61,6 +61,7 @@ export const PROJECTS: ProjectItem[] = [
       "Prisma ORM",
       "PostgreSQL",
       "Supabase",
+      "Vercel",
     ],
     features: [
       { title: "회원가입 기능" },
@@ -247,13 +248,13 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "포트폴리오",
-    subtitle: "프론트엔드 개발자 서유림의 포트폴리오",
+    subtitle: "프론트엔드 포트폴리오",
     type: "Personal",
     period: "25.06.28 ~",
     description: "",
     color: "#6D7EE7",
     logo: <Image src="/images/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
-    tools: ["TypeScript", "Next.js", "Tailwind CSS"],
+    tools: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
     features: [
       { title: "다크/라이트 테마 전환 기능" },
       { title: "공통 컴포넌트 구현: Header, Accordion, Modal, Tab 등" },

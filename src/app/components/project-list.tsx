@@ -32,10 +32,10 @@ export function ProjectList() {
     return () => {
       container.removeEventListener("wheel", handleWheel);
     };
-  }, [scrollRef.current]);
+  }, [selectedProject]);
 
   return (
-    <section id="project-list" className="flex h-screen flex-col gap-8 py-16">
+    <section id="project-list" className="flex h-screen flex-col gap-8 py-10">
       <Title title="Projects" />
       <div className="container flex flex-col gap-4">
         <Tab width="30rem" categorys={categorys} setCategory={setCategory} />
@@ -43,7 +43,7 @@ export function ProjectList() {
           ref={scrollRef}
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
         >
-          <div className="mb-2 flex h-[400px] w-max gap-4 rounded-2xl bg-primary p-8">
+          <div className="mb-2 flex h-[430px] w-max gap-4 rounded-2xl bg-primary p-6">
             {PROJECTS.map((project) => (
               <ProjectPreview
                 key={project.title}

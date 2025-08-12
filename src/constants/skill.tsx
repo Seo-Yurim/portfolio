@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { BiLogoPostgresql, BiLogoTypescript } from "react-icons/bi";
+import { CgVercel } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
 import {
@@ -28,7 +29,11 @@ export const SKILLS: Record<string, ReactNode> = {
   ),
   "React-Query": <SiReactquery className="h-8 w-8 text-red-500" />,
   Zustand: <Image src="/images/icons/zustand.svg" width={32} height={32} alt="zustand icon" />,
-  "Radix UI": <SiRadixui className="h-8 w-8" />,
+  "Radix UI": (
+    <div className="rounded-full bg-white p-1">
+      <SiRadixui className="h-6 w-6 text-black" />
+    </div>
+  ),
   "Express.js": (
     <div className="rounded-full bg-black p-1">
       <SiExpress className="h-6 w-6 text-white" />
@@ -36,5 +41,14 @@ export const SKILLS: Record<string, ReactNode> = {
   ),
   "Prisma ORM": <SiPrisma className="h-7 w-7 text-cyan-900" />,
   PostgreSQL: <BiLogoPostgresql className="h-8 w-8 text-cyan-700" />,
-  Supabase: <SiSupabase className="h-8 w-8 text-emerald-500" />,
+  Supabase: (
+    <div className="rounded-full bg-black p-2">
+      <SiSupabase className="h-4 w-4 text-emerald-500" />
+    </div>
+  ),
+  Vercel: (
+    <div className="rounded-full bg-black">
+      <CgVercel className="h-8 w-8 text-white" />
+    </div>
+  ),
 };
