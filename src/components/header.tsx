@@ -37,7 +37,10 @@ export default function Header() {
       className={`fixed left-0 top-0 flex h-screen w-[240px] flex-col justify-between bg-primary px-9 py-20 transition-opacity duration-300 ${show ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <nav className="flex list-none flex-col gap-8 text-white">
-        <Accordion title="About Me">
+        <Accordion
+          title="About Me"
+          className="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+        >
           <Link href="#profile">
             <li className={listStyle}>Profile</li>
           </Link>
@@ -45,7 +48,10 @@ export default function Header() {
             <li className={listStyle}>Qualifications</li>
           </Link>
         </Accordion>
-        <Accordion title="Projects">
+        <Accordion
+          title="Projects"
+          className="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
+        >
           <Link href="#project-list">
             <li className={listStyle}>List</li>
           </Link>

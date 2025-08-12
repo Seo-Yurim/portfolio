@@ -85,7 +85,7 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 px-4 text-blue-200">
+        <div className="flex flex-col gap-12 px-4 text-blue-200">
           <p className="font-medium">{project.description}</p>
 
           <div className="flex flex-col gap-2">

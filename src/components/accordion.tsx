@@ -5,23 +5,29 @@ import { AnimatePresence, motion } from "framer-motion";
 interface AccordionProps {
   title: string;
   children: ReactNode;
+  className?: string;
+  showIcon?: boolean;
 }
 
-export default function Accordion({ title, children }: AccordionProps) {
+export default function Accordion({ title, children, className, showIcon = true }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="flex flex-col gap-2">
       <button onClick={() => setIsOpen(!isOpen)} className="w-fit" aria-expanded={isOpen}>
-        <div className="flex items-center gap-2 transition-colors duration-300 hover:text-white/70">
-          <IoIosArrowUp
-            className={`h-6 w-6 transform transition-transform duration-300 ${
-              isOpen ? "rotate-180" : "rotate-0"
-            }`}
-          />
-          <p className="text-nowrap font-GWT text-2xl">{title}</p>
+        <div className="flex items-center gap-2">
+          {showIcon && (
+            <IoIosArrowUp
+              className={`h-6 w-6 transform transition-transform duration-300 ${
+                isOpen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          )}
+
+          <p className={`text-nowrap ${className}`}>{title}</p>
         </div>
       </button>
+
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
