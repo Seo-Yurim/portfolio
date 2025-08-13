@@ -8,6 +8,7 @@ import Modal from "@/components/modal";
 import { Contributions } from "./project-detail/contributions";
 import { Features } from "./project-detail/features";
 import { Issues } from "./project-detail/issues";
+import { Retrospectives } from "./project-detail/retrospectives";
 
 export default function ProjectDetailModal({
   project,
@@ -112,16 +113,7 @@ export default function ProjectDetailModal({
           <Features features={project.features} />
           <Contributions contributions={project.contributions} />
           <Issues issues={project.issues} />
-
-          <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">회고</h2>
-            {project.retrospectives?.map((retrospective, idx) => (
-              <div key={idx}>
-                <h2>{retrospective.title}</h2>
-                <p>{retrospective.description}</p>
-              </div>
-            ))}
-          </div>
+          <Retrospectives retrospectives={project.retrospectives} />
 
           <div className="flex flex-col gap-4">
             <h2 className="border-b-2 border-blue-200 text-xl font-bold">서비스 관련 자료</h2>
