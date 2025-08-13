@@ -16,7 +16,7 @@ export interface TroubleshootingItem {
   solution: string;
 }
 
-interface Link {
+export interface LinkItem {
   label: string;
   url: string;
 }
@@ -37,5 +37,5 @@ export interface ProjectItem {
   contributions?: TextBlock[];
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
-  links: Link[];
+  links: LinkItem[];
 }

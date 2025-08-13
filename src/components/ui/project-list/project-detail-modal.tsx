@@ -8,6 +8,7 @@ import Modal from "@/components/modal";
 import { Contributions } from "./project-detail/contributions";
 import { Features } from "./project-detail/features";
 import { Issues } from "./project-detail/issues";
+import { Links } from "./project-detail/links";
 import { Retrospectives } from "./project-detail/retrospectives";
 
 export default function ProjectDetailModal({
@@ -114,29 +115,7 @@ export default function ProjectDetailModal({
           <Contributions contributions={project.contributions} />
           <Issues issues={project.issues} />
           <Retrospectives retrospectives={project.retrospectives} />
-
-          <div className="flex flex-col gap-4">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">서비스 관련 자료</h2>
-            <div className="flex items-center gap-8">
-              {project.links.map((link, idx) => (
-                <Link
-                  key={idx}
-                  href={link.url}
-                  className="flex items-center gap-4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="group relative w-fit rounded-full border-2 border-blue-200 p-2 transition-colors duration-300 hover:bg-blue-200 hover:text-white">
-                    {PROJECT_LINKS[link.label]}
-
-                    <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-blue-200 px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <p className="text-white">{link.label}</p>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Links links={project.links} />
 
           <div className="flex flex-col gap-4">
             <h2 className="border-b-2 border-blue-200 text-xl font-bold">작업 화면</h2>
