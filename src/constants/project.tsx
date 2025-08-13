@@ -80,6 +80,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     issues: [
       {
+        title: "서버 액션 사용 미숙",
         problem:
           "문제점: 서버 액션(Server Actions)을 처음 사용하면서 구현 과정에서 미숙함이 드러남",
         solution:
@@ -161,6 +162,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     issues: [
       {
+        title: "사용자 로그인 시 데이터 불일치",
         problem:
           "문제점: 리액트 쿼리를 이용한 데이터 페칭 시, 로그아웃 후 다른 계정으로 로그인했을 때 이전 사용자의 데이터가 계속 화면에 표시되는 문제가 발생",
         cause:
@@ -225,6 +227,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     issues: [
       {
+        title: "투자 생성 시 id 필드 중복 오류",
         problem:
           "문제점: 투자 생성 시, 클라이언트에서는 실패 메시지가 나타나고, 서버 로그에는 id 필드 중복 오류가 발생",
         cause:

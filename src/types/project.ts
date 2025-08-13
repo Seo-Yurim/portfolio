@@ -11,6 +11,7 @@ export interface TextBlock {
 }
 
 export interface TroubleshootingItem {
+  title: string;
   problem: string;
   cause?: string;
   solution: string;
