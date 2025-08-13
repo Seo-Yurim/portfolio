@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ProjectItem } from "@/types/project";
 import Accordion from "@/components/accordion";
 import Modal from "@/components/modal";
+import { Contributions } from "./project-detail/contributions";
 import { Features } from "./project-detail/features";
 
 export default function ProjectDetailModal({
@@ -108,16 +109,7 @@ export default function ProjectDetailModal({
           </div>
 
           <Features features={project.features} />
-
-          <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">작업기여도</h2>
-            {project.contributions?.map((contribution, idx) => (
-              <div key={idx}>
-                <h2>{contribution.title}</h2>
-                <p>{contribution.description}</p>
-              </div>
-            ))}
-          </div>
+          <Contributions contributions={project.contributions} />
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 text-xl font-bold">트러블슈팅</h2>
