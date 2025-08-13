@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/context/theme-context";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import Header from "@/components/header";
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${notoSansKR.variable} antialiased`}>
-        <Header />
-        {children}
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { RiTeamFill } from "react-icons/ri";
 import { ProjectItem } from "@/types/project";
 import { PROJECT_IMG, PROJECT_ROLE } from "@/constants/project";
 import Modal from "@/components/modal";
+import ThemeSwitcher from "@/components/theme-switcher";
 import {
   Contributions,
   Features,
@@ -25,34 +26,44 @@ export default function ProjectDetailModal({
   return (
     <Modal onClose={onClose}>
       <div className="flex flex-col gap-4 pb-8">
-        <div className="flex w-fit rounded-xl text-white shadow-right-down">
+        <div className="flex justify-between">
+          <div className="flex items-center gap-4 text-nowrap font-GWT">
+            <h1
+              style={{ borderColor: project.color, color: project.color }}
+              className="rounded-full border px-4 py-2 text-xl"
+            >
+              {project.title}
+            </h1>
+            <h2 className="text-blue-200 dark:text-white">{project.subtitle}</h2>
+          </div>
+
+          <div className="w-36 drop-shadow-lg">
+            <ThemeSwitcher />
+          </div>
+        </div>
+
+        <div className="flex rounded-xl text-white shadow-right-down">
           <div
             style={{ backgroundColor: project.color }}
-            className="flex flex-col gap-6 rounded-l-xl p-6"
+            className="flex w-full flex-col gap-8 rounded-l-xl p-6"
           >
-            <div className="flex flex-col items-center gap-4">
-              {project.logo}
-              <h2 className="whitespace-pre-line text-center font-GWT text-white">
-                {project.subtitle}
-              </h2>
-            </div>
-
-            <div className="flex">
+            {project.logo}
+            <div className="flex w-fit">
               <div className="h-full border-l-2 border-white" />
-              <div className="flex flex-col gap-3 px-2 text-sm font-semibold">
+              <div className="flex flex-col gap-4 text-nowrap px-2 text-sm font-semibold text-white">
                 <p className="w-fit rounded-full bg-highlight px-3 py-1 font-extrabold text-blue-200 shadow-right-down">
                   {project.type} Proejct
                 </p>
 
                 <div className="flex items-center gap-2">
-                  <MdDateRange className="h-6 w-6 text-white" />
+                  <MdDateRange className="h-6 w-6" />
                   <p>{project.period}</p>
                 </div>
 
                 {project.type !== "Personal" && (
                   <>
                     <div className="flex items-center gap-2">
-                      <RiTeamFill className="h-6 w-6 text-white" />
+                      <RiTeamFill className="h-6 w-6" />
                       <p>{project.teamSize}명</p>
 
                       <div className="flex items-center gap-1">
@@ -68,7 +79,7 @@ export default function ProjectDetailModal({
                     </div>
 
                     <div className="flex items-center gap-2">
-                      <GiSkills className="h-6 w-6 text-white" />
+                      <GiSkills className="h-6 w-6" />
                       <div className="flex items-center gap-1">
                         {project.myRole?.map((role, idx) => (
                           <p key={idx}>{PROJECT_ROLE[role.position] || role.position}</p>
@@ -82,7 +93,7 @@ export default function ProjectDetailModal({
             </div>
           </div>
 
-          <div className="relative min-h-[300px] min-w-[600px]">
+          <div className="relative h-full min-h-[300px] w-full min-w-[600px]">
             <Image
               src={PROJECT_IMG[project.title]}
               fill
@@ -92,7 +103,7 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex flex-col gap-12 px-4 text-blue-200">
+        <div className="flex flex-col gap-12 px-4 text-blue-200 dark:text-white">
           <p className="text-center font-medium">{project.description}</p>
           <Tools tools={project.tools} />
           <Features features={project.features} />

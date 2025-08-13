@@ -1,29 +1,8 @@
-import { useEffect, useState } from "react";
+import { useTheme } from "@/context/theme-context";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      setTheme(saved as "light" | "dark");
-      document.documentElement.classList.toggle("dark", saved === "dark");
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (prefersDark) {
-        setTheme("dark");
-        document.documentElement.classList.add("dark");
-      }
-    }
-  }, []);
-
-  const toggleTheme = (value?: "light" | "dark") => {
-    const newTheme = value || (theme === "light" ? "dark" : "light");
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div

@@ -37,9 +37,7 @@ export const PROJECT_LINKS: Record<string, ReactNode> = {
 export const PROJECTS: ProjectItem[] = [
   {
     title: "TetherDrop",
-    subtitle: `암호화폐 거래소의 페이백 및 
-    수수료 할인 혜택을 제공하는 
-    제휴/셀퍼럴 플랫폼`,
+    subtitle: `암호화폐 거래소의 페이백 및 수수료 할인 혜택을 제공하는 제휴/셀퍼럴 플랫폼`,
     type: "Internship",
     period: "25.05.18 ~ 25.06.18",
     teamSize: 4,
@@ -196,8 +194,7 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "View My Startup",
-    subtitle: `스타트업 정보 조회 및
-    모의 투자 시뮬레이션 서비스`,
+    subtitle: `스타트업 정보 조회 및 모의 투자 시뮬레이션 서비스`,
     type: "Team",
     period: "24.09.25 ~ 24.10.17",
     teamSize: 6,
