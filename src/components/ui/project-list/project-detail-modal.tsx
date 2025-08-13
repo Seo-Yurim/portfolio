@@ -7,6 +7,7 @@ import Accordion from "@/components/accordion";
 import Modal from "@/components/modal";
 import { Contributions } from "./project-detail/contributions";
 import { Features } from "./project-detail/features";
+import { Issues } from "./project-detail/issues";
 
 export default function ProjectDetailModal({
   project,
@@ -110,17 +111,7 @@ export default function ProjectDetailModal({
 
           <Features features={project.features} />
           <Contributions contributions={project.contributions} />
-
-          <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">트러블슈팅</h2>
-            {project.issues?.map((issue, idx) => (
-              <div key={idx}>
-                <h3>{issue.problem}</h3>
-                <p>{issue.cause}</p>
-                <p>{issue.solution}</p>
-              </div>
-            ))}
-          </div>
+          <Issues issues={project.issues} />
 
           <div className="flex flex-col gap-2">
             <h2 className="border-b-2 border-blue-200 text-xl font-bold">회고</h2>

@@ -10,7 +10,7 @@ export interface TextBlock {
   description?: string;
 }
 
-interface TroubleshootingItem {
+export interface TroubleshootingItem {
   problem: string;
   cause?: string;
   solution: string;
