@@ -5,7 +5,7 @@ interface RoleType {
   size?: number;
 }
 
-interface TextBlock {
+export interface TextBlock {
   title: string;
   description?: string;
 }
@@ -33,7 +33,7 @@ export interface ProjectItem {
   color: string;
   logo: ReactNode;
   tools: string[];
-  features?: TextBlock[];
+  features: TextBlock[];
   contributions?: TextBlock[];
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
