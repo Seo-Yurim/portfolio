@@ -40,7 +40,7 @@ export default function Header() {
         <Accordion
           title="About Me"
           titleStyle="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
-          childrenStyle="pl-10 text-lg font-medium"
+          childrenStyle="pl-8 text-lg font-medium"
         >
           <Link href="#profile">
             <li className={listStyle}>Profile</li>
@@ -52,7 +52,7 @@ export default function Header() {
         <Accordion
           title="Projects"
           titleStyle="font-GWT text-2xl transition-colors duration-300 hover:text-white/70"
-          childrenStyle="pl-10 text-lg font-medium"
+          childrenStyle="pl-8 text-lg font-medium"
         >
           <Link href="#project-list">
             <li className={listStyle}>List</li>

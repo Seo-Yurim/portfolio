@@ -10,7 +10,13 @@ import {
 import { IoIosLink } from "react-icons/io";
 import { ProjectItem } from "@/types/project";
 
-export const PROJECTIMG: Record<string, string> = {
+export const PROJECT_ROLE: Record<string, string> = {
+  FE: "프론트엔드",
+  BE: "백엔드",
+  "Full-Stack": "풀스택",
+};
+
+export const PROJECT_IMG: Record<string, string> = {
   TetherDrop: "/images/tetherdrop.png",
   핏메이트: "/images/fitmate.png",
   "View My Startup": "/images/view my startup.png",
@@ -31,7 +37,9 @@ export const PROJECT_LINKS: Record<string, ReactNode> = {
 export const PROJECTS: ProjectItem[] = [
   {
     title: "TetherDrop",
-    subtitle: "암호화폐 거래소의 페이백 및 수수료 할인 혜택을 제공하는 제휴/셀퍼럴 플랫폼",
+    subtitle: `암호화폐 거래소의 페이백 및 
+    수수료 할인 혜택을 제공하는 
+    제휴/셀퍼럴 플랫폼`,
     type: "Internship",
     period: "25.05.18 ~ 25.06.18",
     teamSize: 4,
@@ -41,16 +49,13 @@ export const PROJECTS: ProjectItem[] = [
     ],
     myRole: [{ position: "FE" }],
     description:
-      "테더드랍(TetherDrop)은 암호화폐 거래소 이용자들이 '페이백(payback)' 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다",
+      "'테더드랍'은 암호화폐 거래소 이용자들이 페이백 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다.",
     color: "#34d399",
     logo: (
-      <Image
-        src="/images/icons/tetherdrop_logo.svg"
-        className="rounded-xl bg-white p-2"
-        width={70}
-        height={70}
-        alt="fitmate logo"
-      />
+      <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2">
+        <Image src="/images/icons/tetherdrop_logo.svg" width={45} height={45} alt="fitmate logo" />
+        <h1 className="text-3xl font-extrabold text-[#34d399]">TetherDrop</h1>
+      </div>
     ),
     tools: [
       "TypeScript",
@@ -87,7 +92,6 @@ export const PROJECTS: ProjectItem[] = [
           "해결 과정: 인턴십 시작 전에 서버 액션 관련 문서와 예제를 학습하여 기반 개념을 익힘, 완벽한 이해는 아니었지만, 사전 학습 덕분에 실제 문제 상황에서 빠르게 적응하고 해결할 수 있었음",
       },
     ],
-    retrospectives: [{ title: "제목", description: "내용" }],
     links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
     taskScreens: <></>,
   },
@@ -108,7 +112,7 @@ export const PROJECTS: ProjectItem[] = [
     logo: (
       <Image
         src="/images/fitmate_logo.png"
-        className="rounded-full bg-white px-2"
+        className="rounded-xl bg-white px-2"
         width={180}
         height={100}
         alt="fitmate logo"
@@ -192,14 +196,15 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "View My Startup",
-    subtitle: "스타트업 정보 조회 및 모의 투자 시뮬레이션 서비스",
+    subtitle: `스타트업 정보 조회 및
+    모의 투자 시뮬레이션 서비스`,
     type: "Team",
     period: "24.09.25 ~ 24.10.17",
     teamSize: 6,
     teamRoles: [{ position: "Full-Stack" }],
     myRole: [{ position: "Full-Stack" }],
-    description:
-      "View My Startup은 개인 투자자들이 스타트업 정보를 쉽게 확인하고, 다양한 기준으로 비교하여 투자 시뮬레이션을 진행할 수 있는 모의 투자 서비스입니다.",
+    description: `개인 투자자들의 스타트업에 대한 관심이 증가하고 있지만, 스타트업 정보의 접근성은 여전히 부족합니다. 이러한 시장 가능성을 바탕으로, 개인 투자자들이 스타트업 정보를 제공받고, 누적 투자금액, 매출액, 고용 인원 등을 기준으로 스타트업을 비교하여 투자 결과를 확인할 수 있는 모의 투자 서비스입니다.
+우리 서비스는 다른 서비스와의 차별점으로 번거롭게 로그인할 필요 없이 임의의 닉네임과 비밀번호만을 이용하여 모의 투자 시뮬레이션을 진행할 수 있으며, 비교 분석을 통해 성과를 기준으로 평가하고, 최적의 투자 대상을 결정할 수 있습니다.`,
     color: "#fc5230",
     logo: <Image src="/images/VMS_logo.svg" width={150} height={100} alt="VMS logo" />,
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],

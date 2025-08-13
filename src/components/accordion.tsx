@@ -42,7 +42,7 @@ export default function Accordion({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`flex flex-col gap-2 ${childrenStyle}`}
+            className={`ml-2 flex flex-col gap-2 ${childrenStyle}`}
           >
             {children}
           </motion.div>

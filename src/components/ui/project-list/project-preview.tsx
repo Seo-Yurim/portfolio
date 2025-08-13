@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ProjectItem } from "@/types/project";
-import { PROJECTIMG } from "@/constants/project";
+import { PROJECT_IMG } from "@/constants/project";
 import { SKILLS } from "@/constants/skill";
 
 interface ProjectPreviewProps {
@@ -16,7 +16,7 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
         className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105"
       >
         <Image
-          src={PROJECTIMG[project.title] || "사진 업데이트 예정"}
+          src={PROJECT_IMG[project.title] || "사진 업데이트 예정"}
           alt="project-img"
           fill
           className="rounded-lg object-cover object-center"
@@ -36,7 +36,7 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
           </div>
         </div>
 
-        <div className="absolute right-2 top-2 rounded-full bg-highlight px-2 py-4 font-GWT text-blue-200 shadow-right-down">
+        <div className="absolute right-2 top-2 rounded-full bg-highlight px-4 py-3 font-GWT text-blue-200 shadow-right-down">
           {project.type}
         </div>
       </div>
