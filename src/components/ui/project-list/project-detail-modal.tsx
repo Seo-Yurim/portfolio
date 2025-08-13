@@ -2,13 +2,15 @@ import { PROJECTIMG } from "@/constants/project";
 import Image from "next/image";
 import { ProjectItem } from "@/types/project";
 import Modal from "@/components/modal";
-import { Contributions } from "./project-detail/contributions";
-import { Features } from "./project-detail/features";
-import { Issues } from "./project-detail/issues";
-import { Links } from "./project-detail/links";
-import { Retrospectives } from "./project-detail/retrospectives";
-import { TaskScreens } from "./project-detail/task-screens";
-import { Tools } from "./project-detail/tools";
+import {
+  Contributions,
+  Features,
+  Issues,
+  Links,
+  Retrospectives,
+  TaskScreens,
+  Tools,
+} from "./project-detail";
 
 export default function ProjectDetailModal({
   project,
