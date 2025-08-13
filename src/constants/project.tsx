@@ -88,6 +88,7 @@ export const PROJECTS: ProjectItem[] = [
     ],
     retrospectives: [{ title: "제목", description: "내용" }],
     links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
+    taskScreens: <></>,
   },
   {
     title: "핏메이트",
@@ -185,6 +186,7 @@ export const PROJECTS: ProjectItem[] = [
       },
       { label: "GitHub", url: "https://github.com/FS-part4-1team-FitMate/FitMate-FE" },
     ],
+    taskScreens: <></>,
   },
   {
     title: "View My Startup",
@@ -245,6 +247,7 @@ export const PROJECTS: ProjectItem[] = [
         url: "https://github.com/Seo-Yurim/season2-View-My-Startup-3team-FE",
       },
     ],
+    taskScreens: <></>,
   },
   {
     title: "포트폴리오",
@@ -269,5 +272,6 @@ export const PROJECTS: ProjectItem[] = [
       },
     ],
     links: [{ label: "GitHub", url: "https://github.com/Seo-Yurim/portfolio" }],
+    taskScreens: <></>,
   },
 ];

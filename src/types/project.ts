@@ -38,4 +38,5 @@ export interface ProjectItem {
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
   links: LinkItem[];
+  taskScreens: ReactNode;
 }

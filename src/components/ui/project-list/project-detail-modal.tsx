@@ -1,15 +1,14 @@
-import { PROJECTIMG, PROJECT_LINKS } from "@/constants/project";
-import { SKILLS } from "@/constants/skill";
+import { PROJECTIMG } from "@/constants/project";
 import Image from "next/image";
-import Link from "next/link";
 import { ProjectItem } from "@/types/project";
-import Accordion from "@/components/accordion";
 import Modal from "@/components/modal";
 import { Contributions } from "./project-detail/contributions";
 import { Features } from "./project-detail/features";
 import { Issues } from "./project-detail/issues";
 import { Links } from "./project-detail/links";
 import { Retrospectives } from "./project-detail/retrospectives";
+import { TaskScreens } from "./project-detail/task-screens";
+import { Tools } from "./project-detail/tools";
 
 export default function ProjectDetailModal({
   project,
@@ -93,34 +92,13 @@ export default function ProjectDetailModal({
 
         <div className="flex flex-col gap-12 px-4 text-blue-200">
           <p className="font-medium">{project.description}</p>
-
-          <div className="flex flex-col gap-2">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">기술스택</h2>
-            <div className="flex items-center gap-4">
-              {project.tools.map((tool, idx) => (
-                <div
-                  key={idx}
-                  className="group relative transition-all duration-300 hover:scale-110"
-                >
-                  {SKILLS[tool]}
-                  <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <p className="text-white">{tool}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          <Tools tools={project.tools} />
           <Features features={project.features} />
           <Contributions contributions={project.contributions} />
           <Issues issues={project.issues} />
           <Retrospectives retrospectives={project.retrospectives} />
           <Links links={project.links} />
-
-          <div className="flex flex-col gap-4">
-            <h2 className="border-b-2 border-blue-200 text-xl font-bold">작업 화면</h2>
-            <div className="grid"></div>
-          </div>
+          <TaskScreens taskScreens={project.taskScreens} />
         </div>
       </div>
     </Modal>
