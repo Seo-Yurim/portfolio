@@ -1,6 +1,6 @@
-import { PROJECT_LINKS } from "@/constants/project";
 import Link from "next/link";
 import { LinkItem } from "@/types/project";
+import { PROJECT_LINKS } from "@/constants/project";
 
 export function Links({ links }: { links: LinkItem[] }) {
   return (

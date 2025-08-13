@@ -5,7 +5,7 @@
     "^react(.*)",
     "^framer-motion(.*)",
     "^@/types/(.*)$",
-    "^@/constanats/(.*)$",
+    "^@/constants/(.*)$",
     "^@/components/(.*)$",
     "^@/pages/(.*)$",
     "^@/public/assets/(.*)$",

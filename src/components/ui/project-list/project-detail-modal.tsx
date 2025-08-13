@@ -1,6 +1,6 @@
-import { PROJECTIMG } from "@/constants/project";
 import Image from "next/image";
 import { ProjectItem } from "@/types/project";
+import { PROJECTIMG } from "@/constants/project";
 import Modal from "@/components/modal";
 import {
   Contributions,

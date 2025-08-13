@@ -1,9 +1,9 @@
 "use client";
 
-import { PROJECTS } from "@/constants/project";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ProjectItem } from "@/types/project";
+import { PROJECTS } from "@/constants/project";
 import Tab from "@/components/tab";
 import Title from "@/components/title";
 import ProjectDetailModal from "@/components/ui/project-list/project-detail-modal";

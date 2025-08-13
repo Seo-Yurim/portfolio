@@ -1,7 +1,7 @@
-import { PROJECTIMG } from "@/constants/project";
-import { SKILLS } from "@/constants/skill";
 import Image from "next/image";
 import { ProjectItem } from "@/types/project";
+import { PROJECTIMG } from "@/constants/project";
+import { SKILLS } from "@/constants/skill";
 
 interface ProjectPreviewProps {
   project: ProjectItem;
