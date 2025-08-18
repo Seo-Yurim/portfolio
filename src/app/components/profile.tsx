@@ -37,13 +37,13 @@ export function Profile() {
           <div className="group relative h-[250px] w-[250px] cursor-pointer overflow-hidden rounded-full bg-primary">
             <Image
               className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-0"
-              src="/images/미모티콘.png"
+              src="/images/portfolio/미모티콘.png"
               alt="profile img"
               fill
             />
             <Image
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              src="/images/미모티콘2.png"
+              src="/images/portfolio/미모티콘2.png"
               alt="profile img hover"
               width={180}
               height={180}
