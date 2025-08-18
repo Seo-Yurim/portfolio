@@ -128,7 +128,7 @@ export default function ProjectDetailModal({
           {project.issues && <Issues issues={project.issues} />}
           {project.retrospectives && <Retrospectives retrospectives={project.retrospectives} />}
           <Links links={project.links} />
-          <TaskScreens taskScreens={project.taskScreens} />
+          {project.taskScreens && <TaskScreens taskScreens={project.taskScreens} />}
         </div>
       </div>
     </Modal>

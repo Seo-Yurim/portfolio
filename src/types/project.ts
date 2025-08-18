@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export interface ImageItem {
   label: string;
   url: string;
+  thumbnail?: string;
 }
 export interface RoleType {
   position: "FE" | "BE" | "Full-Stack" | "파트장";
@@ -45,5 +46,5 @@ export interface ProjectItem {
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
   links: LinkItem[];
-  taskScreens: ReactNode;
+  taskScreens?: ReactNode;
 }

@@ -17,10 +17,10 @@ export const PROJECT_ROLE: Record<string, string> = {
 };
 
 export const PROJECT_IMG: Record<string, string> = {
-  TetherDrop: "/images/tetherdrop.png",
-  핏메이트: "/images/fitmate.png",
-  "View My Startup": "/images/view my startup.png",
-  포트폴리오: "/images/portfolio.png",
+  TetherDrop: "/images/tetherdrop/tetherdrop_main_img.png",
+  핏메이트: "/images/fitmate/fitmate_landing.png",
+  "View My Startup": "/images/view_my_startup/VMS_landing.png",
+  포트폴리오: "/images/portfolio/portfolio.png",
 };
 
 export const PROJECT_LINKS: Record<string, ReactNode> = {
@@ -152,8 +152,58 @@ export const PROJECTS: ProjectItem[] = [
         title: "다양한 화면 퍼블리싱",
         description:
           "로그인, 회원가입, 아이디/비밀번호 찾기, 서비스 소개, 마이페이지, UID 검색 결과 등",
+        img: [
+          {
+            label: "Tetherdrop 비회원 랜딩 페이지",
+            url: "/images/tetherdrop/tetherdrop_landing.mov",
+            thumbnail: "/images/tetherdrop/tetherdrop_main_img.png",
+          },
+          {
+            label: "Tetherdrop 회원 랜딩 페이지",
+            url: "/images/tetherdrop/tetherdrop_logged_landing.mov",
+            thumbnail: "/images/tetherdrop/thumbnail/logged_landing_thumbnail.png",
+          },
+          {
+            label: "Tetherdrop 서비스 소개 페이지",
+            url: "/images/tetherdrop/tetherdrop_services.mov",
+            thumbnail: "/images/tetherdrop/thumbnail/services_thumbnail.png",
+          },
+          {
+            label: "Tetherdrop 서비스 이용방법 페이지",
+            url: "/images/tetherdrop/tetherdrop_service_guide.mov",
+            thumbnail: "/images/tetherdrop/thumbnail/service_guide_thumbnail.png",
+          },
+          {
+            label: "Tetherdrop UID 검색 결과 페이지",
+            url: "/images/tetherdrop/tetherdrop_UID_result.png",
+          },
+          {
+            label: "Tetherdrop 마이페이지",
+            url: "/images/tetherdrop/tetherdrop_mypage.mov",
+            thumbnail: "/images/tetherdrop/thumbnail/mypage_thumbnail.png",
+          },
+          { label: "Tetherdrop 파트너 페이지", url: "/images/tetherdrop/tetherdrop_partner.png" },
+          {
+            label: "Tetherdrop 아이디 찾기 페이지",
+            url: "/images/tetherdrop/tetherdrop_find_id.png",
+          },
+        ],
       },
-      { title: "공통 컴포넌트 구현", description: "거래소 테이블, Header, Footer 등" },
+      {
+        title: "공통 컴포넌트 구현",
+        description: "거래소 테이블, Header, Footer 등",
+        img: [
+          {
+            label: "Tetherdrop 거래소 테이블",
+            url: "/images/tetherdrop/tetherdrop_common_table.png",
+          },
+          {
+            label: "Tetherdrop 로고 애니메이션 구현",
+            url: "/images/tetherdrop/tetherdrop_logo_animation.mov",
+            thumbnail: "/images/tetherdrop/thumbnail/logo_animation_thumbnail.png",
+          },
+        ],
+      },
       { title: "QA 반영 및 UI/UX 개선", description: "실무자와 소통하며 피드백을 UI에 즉각 반영" },
       {
         title: "반응형 UI 구성",
@@ -161,7 +211,6 @@ export const PROJECTS: ProjectItem[] = [
       },
     ],
     links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
-    taskScreens: <></>,
   },
   {
     title: "핏메이트",
@@ -182,7 +231,7 @@ export const PROJECTS: ProjectItem[] = [
     color: "#18a8f1",
     logo: (
       <Image
-        src="/images/fitmate_logo.png"
+        src="/images/fitmate/fitmate_logo.png"
         className="rounded-xl bg-white px-2"
         width={180}
         height={100}
@@ -280,7 +329,9 @@ export const PROJECTS: ProjectItem[] = [
     ViewMyStartup은 투자금, 매출 등을 기준으로 스타트업을 비교·분석하고, 투자 결과를 확인할 수 있는 모의 투자 서비스입니다.
     로그인 없이 닉네임과 비밀번호만으로 참여 가능하며, 분석을 통해 최적의 투자 대상을 판단할 수 있습니다.`,
     color: "#fc5230",
-    logo: <Image src="/images/VMS_logo.svg" width={150} height={100} alt="VMS logo" />,
+    logo: (
+      <Image src="/images/view_my_startup/VMS_logo.svg" width={150} height={100} alt="VMS logo" />
+    ),
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
     features: [
       {
@@ -340,7 +391,9 @@ export const PROJECTS: ProjectItem[] = [
     개발자로서의 역량과 프로젝트 경험을 체계적으로 정리한 개인 포트폴리오 사이트입니다.
     TypeScript, Next.js 등을 활용해 콘텐츠를 구성하고, 다크모드 / 반응형 디자인 등 사용자 편의성을 고려해 개발했습니다.`,
     color: "#6D7EE7",
-    logo: <Image src="/images/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
+    logo: (
+      <Image src="/images/portfolio/미모티콘2.png" width={70} height={70} alt="portfolio logo" />
+    ),
     tools: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
     features: [
       { title: "다크/라이트 테마 전환 기능" },
