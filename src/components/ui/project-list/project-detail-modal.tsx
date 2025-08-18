@@ -34,11 +34,11 @@ export default function ProjectDetailModal({
             >
               {project.title}
             </h1>
-            <h2 className="text-blue-200 dark:text-white">{project.subtitle}</h2>
+            <h2 className="text-lg text-blue-200 dark:text-white">{project.subtitle}</h2>
           </div>
 
           <div className="w-36 drop-shadow-lg">
-            <ThemeSwitcher />
+            <ThemeSwitcher size="md" />
           </div>
         </div>
 

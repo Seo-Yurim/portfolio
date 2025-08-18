@@ -21,7 +21,7 @@ export const SKILLS: Record<string, ReactNode> = {
       <FaReact className="h-6 w-6 text-sky-400" />
     </div>
   ),
-  "Next.js": <SiNextdotjs className="h-8 w-8 text-black" />,
+  "Next.js": <SiNextdotjs className="h-8 w-8 text-foreground" />,
   "Tailwind CSS": (
     <div className="rounded-full bg-sky-950 p-1">
       <RiTailwindCssFill className="h-6 w-6 text-cyan-600" />
@@ -30,8 +30,8 @@ export const SKILLS: Record<string, ReactNode> = {
   "React-Query": <SiReactquery className="h-8 w-8 text-red-500" />,
   Zustand: <Image src="/images/icons/zustand.svg" width={32} height={32} alt="zustand icon" />,
   "Radix UI": (
-    <div className="rounded-full bg-white p-1">
-      <SiRadixui className="h-6 w-6 text-black" />
+    <div className="rounded-full bg-foreground p-2">
+      <SiRadixui className="h-4 w-4 text-background" />
     </div>
   ),
   "Express.js": (
