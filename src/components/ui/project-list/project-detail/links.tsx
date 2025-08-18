@@ -7,7 +7,7 @@ export function Links({ links }: { links: LinkItem[] }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
-        <IoDocumentsSharp className="h-4 w-4" />
+        <IoDocumentsSharp className="h-5 w-5" />
         <h2 className="text-xl font-bold">서비스 관련 자료</h2>
       </div>
 
