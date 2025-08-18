@@ -46,8 +46,8 @@ export const PROJECTS: ProjectItem[] = [
       { position: "BE", size: 2 },
     ],
     myRole: [{ position: "FE" }],
-    description:
-      "'테더드랍'은 암호화폐 거래소 이용자들이 페이백 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다.",
+    description: `
+      테더드랍은 암호화폐 거래소 이용자들이 페이백 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다.`,
     color: "#34d399",
     logo: (
       <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2">
@@ -104,8 +104,11 @@ export const PROJECTS: ProjectItem[] = [
       { position: "BE", size: 3 },
     ],
     myRole: [{ position: "FE" }, { position: "파트장" }],
-    description:
-      "핏메이트는 운동 전문가(강사)와 운동을 배우고 싶은 유저를 연결하여, 1:1 맞춤형 운동 프로그램을 제공하는 서비스입니다. 유저는 자신의 운동 목표, 선호도에 맞는 운동 강사를 찾아 맞춤형 운동 지도를 받을 수 있으며 이를 통해 보다 효율적이고 지속 가능한 운동 계획을 세울 수 있습니다. 강사는 유저의 목표와 상황에 맞춘 체계적인 운동 계획을 제시하고 지도를 통해 유저가 올바른 운동 습관을 형성하도록 돕습니다.",
+    description: `
+    핏메이트는 운동 전문가(강사)와 운동을 배우고 싶은 유저를 연결하여, 1:1 맞춤형 운동 프로그램을 제공하는 서비스입니다.
+
+    유저는 운동 목표에 맞는 강사에게 맞춤 지도를 받아 효율적이고 지속 가능한 운동 계획을 세울 수 있습니다.
+    강사는 유저의 목표와 상황에 맞춘 체계적인 운동 계획을 제시하고 지도를 통해 유저가 올바른 운동 습관을 형성하도록 돕습니다.`,
     color: "#18a8f1",
     logo: (
       <Image
@@ -200,8 +203,9 @@ export const PROJECTS: ProjectItem[] = [
     teamSize: 6,
     teamRoles: [{ position: "Full-Stack" }],
     myRole: [{ position: "Full-Stack" }],
-    description: `개인 투자자들의 스타트업에 대한 관심이 증가하고 있지만, 스타트업 정보의 접근성은 여전히 부족합니다. 이러한 시장 가능성을 바탕으로, 개인 투자자들이 스타트업 정보를 제공받고, 누적 투자금액, 매출액, 고용 인원 등을 기준으로 스타트업을 비교하여 투자 결과를 확인할 수 있는 모의 투자 서비스입니다.
-우리 서비스는 다른 서비스와의 차별점으로 번거롭게 로그인할 필요 없이 임의의 닉네임과 비밀번호만을 이용하여 모의 투자 시뮬레이션을 진행할 수 있으며, 비교 분석을 통해 성과를 기준으로 평가하고, 최적의 투자 대상을 결정할 수 있습니다.`,
+    description: `
+    ViewMyStartup은 투자금, 매출 등을 기준으로 스타트업을 비교·분석하고, 투자 결과를 확인할 수 있는 모의 투자 서비스입니다.
+    로그인 없이 닉네임과 비밀번호만으로 참여 가능하며, 분석을 통해 최적의 투자 대상을 판단할 수 있습니다.`,
     color: "#fc5230",
     logo: <Image src="/images/VMS_logo.svg" width={150} height={100} alt="VMS logo" />,
     tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
@@ -256,10 +260,12 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     title: "포트폴리오",
-    subtitle: "프론트엔드 포트폴리오",
+    subtitle: "개인 프론트엔드 포트폴리오",
     type: "Personal",
     period: "25.06.28 ~",
-    description: "",
+    description: `
+    개발자로서의 역량과 프로젝트 경험을 체계적으로 정리한 개인 포트폴리오 사이트입니다.
+    TypeScript, Next.js 등을 활용해 콘텐츠를 구성하고, 다크모드 / 반응형 디자인 등 사용자 편의성을 고려해 개발했습니다.`,
     color: "#6D7EE7",
     logo: <Image src="/images/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
     tools: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],

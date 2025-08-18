@@ -25,8 +25,8 @@ export default function ProjectDetailModal({
 }) {
   return (
     <Modal onClose={onClose}>
-      <div className="flex flex-col gap-4 pb-8">
-        <div className="flex justify-between">
+      <div className="flex flex-col items-center gap-6 pb-8">
+        <div className="flex w-full justify-between">
           <div className="flex items-center gap-4 text-nowrap font-GWT">
             <h1
               style={{ borderColor: project.color, color: project.color }}
@@ -42,7 +42,7 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex rounded-xl text-white shadow-right-down">
+        <div className="flex w-full rounded-xl text-white shadow-right-down">
           <div
             style={{ backgroundColor: project.color }}
             className="flex w-full flex-col gap-8 rounded-l-xl p-6"
@@ -103,8 +103,19 @@ export default function ProjectDetailModal({
           </div>
         </div>
 
-        <div className="flex flex-col gap-12 px-4 text-blue-200 dark:text-white">
-          <p className="text-center font-medium">{project.description}</p>
+        <div className="h-8 border-l" />
+
+        <div className="flex flex-col gap-12 px-4 py-2 text-blue-200 dark:text-white">
+          <div
+            style={{ borderColor: `${project.color}` }}
+            className="shadow-inner-all rounded-xl border-l-[16px] bg-white p-4 text-blue-200"
+          >
+            <div className="flex items-center gap-4 px-3">
+              <h3 className="text-nowrap font-GWT text-lg font-bold">프로젝트 소개</h3>
+              <div className="w-full border-b border-blue-200" />
+            </div>
+            <p className="whitespace-pre-wrap font-semibold">{project.description}</p>
+          </div>
           <Tools tools={project.tools} />
           <Features features={project.features} />
           {project.contributions && <Contributions contributions={project.contributions} />}

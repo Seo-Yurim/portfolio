@@ -55,6 +55,7 @@ const config = {
       boxShadow: {
         "right-down": "4px 4px 4px rgba(0, 0, 0, 0.25)",
         "left-up": "-4px -4px 4px rgba(0, 0, 0, 0.25)",
+        "inner-all": "inset -4px -4px 4px rgba(0, 0, 0, 0.1), inset 4px 4px 4px rgba(0, 0, 0, 0.1)",
         "inner-right": "inset -4px -4px 4px rgba(0, 0, 0, 0.25)",
         "inner-left": "inset 4px 4px 4px rgba(0, 0, 0, 0.25)",
       },
