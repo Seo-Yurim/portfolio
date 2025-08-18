@@ -46,8 +46,12 @@ export const PROJECTS: ProjectItem[] = [
       { position: "BE", size: 2 },
     ],
     myRole: [{ position: "FE" }],
-    description: `
-      테더드랍은 암호화폐 거래소 이용자들이 페이백 및 수수료 할인 혜택을 받을 수 있도록 지원하는 제휴·셀퍼럴 플랫폼입니다.`,
+    description: (
+      <p className="px-2">
+        <strong>테더드랍</strong>은 암호화폐 거래소 이용자들이 페이백 및 수수료 할인 혜택을 받을 수
+        있도록 지원하는 <span className="underline">제휴·셀퍼럴 플랫폼</span>입니다.
+      </p>
+    ),
     color: "#34d399",
     logo: (
       <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2">
@@ -68,23 +72,79 @@ export const PROJECTS: ProjectItem[] = [
     ],
     features: [
       {
-        title: "로그인/회원가입 기능",
-        description: `이메일, 비밀번호 확인, 추천인 코드 입력, 가입 경로 선택, 약관 동의 기능 등을 포함한 회원가입 폼을 구현하였으며,
-react-hook-form과 zod를 활용해 실시간 유효성 검사를 처리하고, 
-회원가입 시에는 약관 전체 동의 여부에 따른 제한 로직도 포함했습니다.
-또한, 비밀번호 보기 토글, 가입 경로 아코디언, toast 메시지 등 UX 개선 요소도 반영했습니다.`,
+        title: "로그인 / 회원가입 기능",
+        description: (
+          <ul className="list-disc px-4">
+            <li>
+              이메일, 비밀번호 확인, 추천인 코드 입력, 가입 경로 선택, 약관 동의 기능 등을 포함한
+              회원가입 폼을 구현하였으며,
+            </li>
+            react-hook-form과 zod로 실시간 유효성 검사를 처리하고, 회원가입 시 약관 전체 동의 여부에
+            따른 제한 로직도 포함했습니다.
+            <br />
+            <li>
+              또한, 비밀번호 보기 토글, 가입 경로 아코디언, toast 메시지 등 UX 개선 요소도
+              반영했습니다.
+            </li>
+          </ul>
+        ),
+        img: [
+          { label: "Tetherdrop 로그인 페이지", url: "/images/tetherdrop/tetherdrop_signin.png" },
+          { label: "Tetherdrop 회원가입 페이지", url: "/images/tetherdrop/tetherdrop_signup.png" },
+        ],
       },
       {
         title: "비밀번호 찾기 기능",
-        description: `zustand 기반 상태 저장소를 통해 인증 과정에서 필요한 이메일 및 인증 토큰 상태를 관리하고,
-react-hook-form과 zod를 사용하여 각 단계에서의 유효성 검증을 적용했습니다.
-사용자 경험 강화를 위해 인증 타이머 표시, 인증 실패 처리, 완료 후 로그인 유도 등의 요소를 구현하였습니다.`,
+        description: (
+          <ul className="list-disc px-4">
+            <li>
+              zustand 기반 상태 저장소를 통해 인증 과정에서 필요한 이메일 및 인증 토큰 상태를
+              관리하고,
+            </li>
+            react-hook-form과 zod를 사용하여 각 단계에서의 유효성 검증을 적용했습니다.
+            <br />
+            <li>
+              사용자 경험 강화를 위해 인증 타이머 표시, 인증 실패 처리, 완료 후 로그인 유도 등의
+              요소를 구현하였습니다.
+            </li>
+          </ul>
+        ),
+        img: [
+          {
+            label: "Tetherdrop 비밀번호 찾기 페이지 Step 1",
+            url: "/images/tetherdrop/tetherdrop_find_pw_1.png",
+          },
+          {
+            label: "Tetherdrop 비밀번호 찾기 페이지 Step 2",
+            url: "/images/tetherdrop/tetherdrop_find_pw_2.png",
+          },
+          {
+            label: "Tetherdrop 비밀번호 찾기 페이지 Step 3",
+            url: "/images/tetherdrop/tetherdrop_find_pw_3.png",
+          },
+          {
+            label: "Tetherdrop 비밀번호 찾기 페이지 Step 4",
+            url: "/images/tetherdrop/tetherdrop_find_pw_4.png",
+          },
+        ],
       },
       {
         title: "회원 탈퇴 기능",
-        description: `사용자가 자신의 계정을 직접 삭제할 수 있는 회원 탈퇴 기능을 구현하였습니다.
-탈퇴 요청 후 세션을 안전하게 종료하고, 홈 페이지로 리디렉션 되도록 처리하였습니다.
-탈퇴 실패 시에는 적절한 에러 메시지를 토스트로 안내합니다.`,
+        description: (
+          <ul className="list-disc px-4">
+            <li>사용자가 자신의 계정을 직접 삭제할 수 있는 회원 탈퇴 기능을 구현하였습니다.</li>
+            <li>
+              탈퇴 요청 후 세션을 안전하게 종료하고, 홈 페이지로 리디렉션 되도록 처리하였습니다.
+            </li>
+            <li>탈퇴 실패 시에는 적절한 에러 메시지를 토스트로 안내합니다.</li>
+          </ul>
+        ),
+        img: [
+          {
+            label: "Tetherdrop 회원 탈퇴 페이지",
+            url: "/images/tetherdrop/tetherdrop_user_delete.png",
+          },
+        ],
       },
     ],
     contributions: [

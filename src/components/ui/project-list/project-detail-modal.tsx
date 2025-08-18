@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BiSolidMegaphone } from "react-icons/bi";
 import { GiSkills } from "react-icons/gi";
 import { MdDateRange } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
@@ -105,17 +106,22 @@ export default function ProjectDetailModal({
 
         <div className="h-8 border-l" />
 
-        <div className="flex flex-col gap-12 whitespace-pre-wrap px-4 py-2 text-blue-200 dark:text-white">
+        <div className="flex w-full flex-col gap-12 px-4 py-2 text-blue-200 dark:text-white">
           <div
             style={{ borderColor: `${project.color}` }}
-            className="shadow-inner-all rounded-xl border-l-[16px] bg-white p-4 text-blue-200"
+            className="shadow-inner-all flex flex-col gap-2 rounded-xl border-l-[16px] bg-white p-4 dark:bg-blue-200"
           >
-            <div className="flex items-center gap-4 px-3">
-              <h3 className="text-nowrap font-GWT text-lg font-bold">프로젝트 소개</h3>
-              <div className="w-full border-b border-blue-200" />
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <BiSolidMegaphone className="h-5 w-5" />
+                <h3 className="text-nowrap font-GWT text-lg font-bold">프로젝트 소개</h3>
+              </div>
+              <div className="w-full border-b border-blue-200 dark:border-white" />
             </div>
-            <p className="font-semibold">{project.description}</p>
+
+            {project.description}
           </div>
+
           <Tools tools={project.tools} />
           <Features features={project.features} />
           {project.contributions && <Contributions contributions={project.contributions} />}

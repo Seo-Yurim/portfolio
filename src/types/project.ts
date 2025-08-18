@@ -1,20 +1,26 @@
 import { ReactNode } from "react";
 
-interface RoleType {
+export interface ImageItem {
+  label: string;
+  url: string;
+}
+export interface RoleType {
   position: "FE" | "BE" | "Full-Stack" | "파트장";
   size?: number;
 }
 
 export interface TextBlock {
   title: string;
-  description?: string;
+  description?: ReactNode;
+  img?: ImageItem[];
 }
 
 export interface TroubleshootingItem {
   title: string;
-  problem: string;
-  cause?: string;
-  solution: string;
+  problem: ReactNode;
+  cause?: ReactNode;
+  solution: ReactNode;
+  img?: ReactNode;
 }
 
 export interface LinkItem {
@@ -30,7 +36,7 @@ export interface ProjectItem {
   teamSize?: number;
   teamRoles?: RoleType[];
   myRole?: RoleType[];
-  description: string;
+  description: ReactNode;
   color: string;
   logo: ReactNode;
   tools: string[];
