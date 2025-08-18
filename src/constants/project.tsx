@@ -67,9 +67,25 @@ export const PROJECTS: ProjectItem[] = [
       "Vercel",
     ],
     features: [
-      { title: "회원가입 기능" },
-      { title: "비밀번호 찾기 기능" },
-      { title: "회원 탈퇴 기능" },
+      {
+        title: "로그인/회원가입 기능",
+        description: `이메일, 비밀번호 확인, 추천인 코드 입력, 가입 경로 선택, 약관 동의 기능 등을 포함한 회원가입 폼을 구현하였으며,
+react-hook-form과 zod를 활용해 실시간 유효성 검사를 처리하고, 
+회원가입 시에는 약관 전체 동의 여부에 따른 제한 로직도 포함했습니다.
+또한, 비밀번호 보기 토글, 가입 경로 아코디언, toast 메시지 등 UX 개선 요소도 반영했습니다.`,
+      },
+      {
+        title: "비밀번호 찾기 기능",
+        description: `zustand 기반 상태 저장소를 통해 인증 과정에서 필요한 이메일 및 인증 토큰 상태를 관리하고,
+react-hook-form과 zod를 사용하여 각 단계에서의 유효성 검증을 적용했습니다.
+사용자 경험 강화를 위해 인증 타이머 표시, 인증 실패 처리, 완료 후 로그인 유도 등의 요소를 구현하였습니다.`,
+      },
+      {
+        title: "회원 탈퇴 기능",
+        description: `사용자가 자신의 계정을 직접 삭제할 수 있는 회원 탈퇴 기능을 구현하였습니다.
+탈퇴 요청 후 세션을 안전하게 종료하고, 홈 페이지로 리디렉션 되도록 처리하였습니다.
+탈퇴 실패 시에는 적절한 에러 메시지를 토스트로 안내합니다.`,
+      },
     ],
     contributions: [
       {
@@ -79,15 +95,9 @@ export const PROJECTS: ProjectItem[] = [
       },
       { title: "공통 컴포넌트 구현", description: "거래소 테이블, Header, Footer 등" },
       { title: "QA 반영 및 UI/UX 개선", description: "실무자와 소통하며 피드백을 UI에 즉각 반영" },
-      { title: "반응형 UI 구성", description: "" },
-    ],
-    issues: [
       {
-        title: "서버 액션 사용 미숙",
-        problem:
-          "문제점: 서버 액션(Server Actions)을 처음 사용하면서 구현 과정에서 미숙함이 드러남",
-        solution:
-          "해결 과정: 인턴십 시작 전에 서버 액션 관련 문서와 예제를 학습하여 기반 개념을 익힘, 완벽한 이해는 아니었지만, 사전 학습 덕분에 실제 문제 상황에서 빠르게 적응하고 해결할 수 있었음",
+        title: "반응형 UI 구성",
+        description: "반응형 UI 구성으로 모든 디바이스에 최적화된 레이아웃 제공",
       },
     ],
     links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],
@@ -163,7 +173,10 @@ export const PROJECTS: ProjectItem[] = [
         title: "쿼리 파일 분리 관리",
         description: "React Query 관련 로직을 모듈화하여 유지보수 효율성 증대",
       },
-      { title: "반응형 UI 구현", description: "" },
+      {
+        title: "반응형 UI 구현",
+        description: "반응형 UI 구성으로 모든 디바이스에 최적화된 레이아웃 제공",
+      },
     ],
     issues: [
       {

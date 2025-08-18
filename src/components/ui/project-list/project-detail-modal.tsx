@@ -29,15 +29,15 @@ export default function ProjectDetailModal({
         <div className="flex w-full justify-between">
           <div className="flex items-center gap-4 text-nowrap font-GWT">
             <h1
-              style={{ borderColor: project.color, color: project.color }}
-              className="rounded-full border px-4 py-2 text-xl"
+              style={{ backgroundColor: project.color }}
+              className="rounded-full px-4 py-2 text-xl text-white"
             >
               {project.title}
             </h1>
             <h2 className="text-lg text-blue-200 dark:text-white">{project.subtitle}</h2>
           </div>
 
-          <div className="w-36 drop-shadow-lg">
+          <div className="w-28 drop-shadow-lg">
             <ThemeSwitcher size="md" />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function ProjectDetailModal({
 
         <div className="h-8 border-l" />
 
-        <div className="flex flex-col gap-12 px-4 py-2 text-blue-200 dark:text-white">
+        <div className="flex flex-col gap-12 whitespace-pre-wrap px-4 py-2 text-blue-200 dark:text-white">
           <div
             style={{ borderColor: `${project.color}` }}
             className="shadow-inner-all rounded-xl border-l-[16px] bg-white p-4 text-blue-200"
@@ -114,7 +114,7 @@ export default function ProjectDetailModal({
               <h3 className="text-nowrap font-GWT text-lg font-bold">프로젝트 소개</h3>
               <div className="w-full border-b border-blue-200" />
             </div>
-            <p className="whitespace-pre-wrap font-semibold">{project.description}</p>
+            <p className="font-semibold">{project.description}</p>
           </div>
           <Tools tools={project.tools} />
           <Features features={project.features} />

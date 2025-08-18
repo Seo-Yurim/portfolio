@@ -1,12 +1,15 @@
+import { MdReportProblem } from "react-icons/md";
 import { TroubleshootingItem } from "@/types/project";
 import Accordion from "@/components/accordion";
 
 export function Issues({ issues }: { issues?: TroubleshootingItem[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="border-b-2 border-blue-200 text-xl font-bold dark:border-white">
-        트러블 슈팅
-      </h2>
+      <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
+        <MdReportProblem className="h-5 w-5" />
+        <h2 className="text-xl font-bold">트러블 슈팅</h2>
+      </div>
+
       {issues?.map((issue, idx) => (
         <Accordion
           key={idx}

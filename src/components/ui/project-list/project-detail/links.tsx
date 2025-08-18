@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { IoDocumentsSharp } from "react-icons/io5";
 import { LinkItem } from "@/types/project";
 import { PROJECT_LINKS } from "@/constants/project";
 
 export function Links({ links }: { links: LinkItem[] }) {
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="border-b-2 border-blue-200 text-xl font-bold dark:border-white">
-        서비스 관련 자료
-      </h2>
+      <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
+        <IoDocumentsSharp className="h-4 w-4" />
+        <h2 className="text-xl font-bold">서비스 관련 자료</h2>
+      </div>
+
       <div className="flex items-center gap-8">
         {links.map((link, idx) => (
           <Link

@@ -1,10 +1,15 @@
+import { FaCommentDots } from "react-icons/fa";
 import { TextBlock } from "@/types/project";
 import Accordion from "@/components/accordion";
 
 export function Retrospectives({ retrospectives }: { retrospectives?: TextBlock[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="border-b-2 border-blue-200 text-xl font-bold dark:border-white">회고</h2>
+      <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
+        <FaCommentDots className="h-5 w-5" />
+        <h2 className="text-xl font-bold">회고</h2>
+      </div>
+
       {retrospectives?.map((retrospective, idx) => (
         <Accordion
           key={idx}

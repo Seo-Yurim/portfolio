@@ -1,9 +1,14 @@
+import { FaTools } from "react-icons/fa";
 import { SKILLS } from "@/constants/skill";
 
 export function Tools({ tools }: { tools: string[] }) {
   return (
     <div className="flex flex-col gap-2">
-      <h2 className="border-b-2 border-blue-200 text-xl font-bold dark:border-white">기술스택</h2>
+      <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
+        <FaTools className="h-4 w-4" />
+        <h2 className="text-xl font-bold">기술스택</h2>
+      </div>
+
       <div className="flex items-center gap-4">
         {tools.map((tool, idx) => (
           <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
