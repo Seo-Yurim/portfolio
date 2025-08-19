@@ -22,7 +22,7 @@ export function Features({ features }: { features: TextBlock[] }) {
           showIcon={false}
           titleStyle="w-full bg-gray-100 dark:bg-gray-100/50 dark:hover:bg-gray-100/30 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
         >
-          <ul className="list-disc px-4">{feature.description}</ul>
+          <ul className="flex list-disc flex-col gap-2 px-4">{feature.description}</ul>
 
           <div className="grid grid-cols-2 gap-4 pb-4">
             {feature.img?.map((image, i) => {

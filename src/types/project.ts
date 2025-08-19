@@ -16,6 +16,12 @@ export interface TextBlock {
   img?: ImageItem[];
 }
 
+export interface Refactoring {
+  content: TextBlock;
+  before?: { graph: ImageItem; metrics: ImageItem }[];
+  after?: { graph: ImageItem; metrics: ImageItem }[];
+}
+
 export interface TroubleshootingItem {
   title: string;
   problem: ReactNode;
@@ -45,6 +51,7 @@ export interface ProjectItem {
   contributions?: TextBlock[];
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
+  refactoring?: Refactoring[];
   links: LinkItem[];
   taskScreens?: ImageItem[];
 }
