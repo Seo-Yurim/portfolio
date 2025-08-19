@@ -26,5 +26,5 @@ export const portfolio: ProjectItem = {
     },
   ],
   links: [{ label: "GitHub", url: "https://github.com/Seo-Yurim/portfolio" }],
-  taskScreens: <></>,
+  taskScreens: [],
 };

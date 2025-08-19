@@ -17,7 +17,7 @@ export function Retrospectives({ retrospectives }: { retrospectives?: TextBlock[
           showIcon={false}
           titleStyle="w-full dark:bg-gray-100/50 dark:hover:bg-gray-100/30 bg-gray-100 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
         >
-          <p>{retrospective.description}</p>
+          <ul className="list-disc px-4">{retrospective.description}</ul>
         </Accordion>
       ))}
     </div>

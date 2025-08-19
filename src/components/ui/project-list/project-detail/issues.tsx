@@ -17,9 +17,24 @@ export function Issues({ issues }: { issues?: TroubleshootingItem[] }) {
           showIcon={false}
           titleStyle="w-full dark:bg-gray-100/50 dark:hover:bg-gray-100/30 bg-gray-100 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
         >
-          <p>{issue.problem}</p>
-          <p>{issue.cause}</p>
-          <p>{issue.solution}</p>
+          <div className="flex items-baseline gap-2">
+            <p className="text-nowrap rounded-full bg-primary-foreground px-2 py-1 text-xs font-semibold text-white">
+              문제점
+            </p>
+            {issue.problem}
+          </div>
+          <div className="flex items-baseline gap-2">
+            <p className="text-nowrap rounded-full bg-primary-foreground px-2 py-1 text-xs font-semibold text-white">
+              문제 분석
+            </p>
+            {issue.cause}
+          </div>
+          <div className="flex items-baseline gap-2">
+            <p className="text-nowrap rounded-full bg-primary-foreground px-2 py-1 text-xs font-semibold text-white">
+              해결 과정
+            </p>
+            {issue.solution}
+          </div>
         </Accordion>
       ))}
     </div>

@@ -22,7 +22,8 @@ export function Contributions({ contributions }: { contributions?: TextBlock[] }
           showIcon={false}
           titleStyle="w-full bg-gray-100 px-2 py-1 text-left font-semibold hover:bg-gray-100/70 dark:bg-gray-100/50 dark:hover:bg-gray-100/30"
         >
-          <p>{contribution.description}</p>
+          <ul className="list-disc px-4">{contribution.description}</ul>
+
           <div className="grid grid-cols-2 gap-4 pb-4">
             {contribution.img?.map((image, i) => {
               const isVideo = image.url.endsWith(".mov") || image.url.endsWith(".mp4");
