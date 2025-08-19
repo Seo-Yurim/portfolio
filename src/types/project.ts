@@ -16,7 +16,7 @@ export interface TextBlock {
   img?: ImageItem[];
 }
 
-export interface Refactoring {
+export interface RefactoringItem {
   content: TextBlock;
   before?: { graph: ImageItem; metrics: ImageItem }[];
   after?: { graph: ImageItem; metrics: ImageItem }[];
@@ -51,7 +51,7 @@ export interface ProjectItem {
   contributions?: TextBlock[];
   issues?: TroubleshootingItem[];
   retrospectives?: TextBlock[];
-  refactoring?: Refactoring[];
+  refactoring?: RefactoringItem[];
   links: LinkItem[];
   taskScreens?: ImageItem[];
 }

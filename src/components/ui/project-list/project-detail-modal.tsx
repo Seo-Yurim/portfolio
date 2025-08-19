@@ -17,6 +17,7 @@ import {
   TaskScreens,
   Tools,
 } from "./project-detail";
+import { Refactoring } from "./project-detail/refactoring";
 
 export default function ProjectDetailModal({
   project,
@@ -128,6 +129,7 @@ export default function ProjectDetailModal({
           {project.contributions && <Contributions contributions={project.contributions} />}
           {project.issues && <Issues issues={project.issues} />}
           {project.retrospectives && <Retrospectives retrospectives={project.retrospectives} />}
+          {project.refactoring && <Refactoring refactoring={project.refactoring} />}
           <Links links={project.links} />
           {project.taskScreens && <TaskScreens taskScreens={project.taskScreens} />}
         </div>

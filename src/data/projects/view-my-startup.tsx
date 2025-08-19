@@ -173,103 +173,103 @@ export const viewMyStartup: ProjectItem = {
         {
           graph: {
             label: "기존 랜딩페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업_그래프",
+            url: "/images/view_my_startup/refactoring/기업_그래프.png",
           },
           metrics: {
             label: "기존 랜딩페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업_지표",
+            url: "/images/view_my_startup/refactoring/기업_지표.png",
           },
         },
         {
           graph: {
             label: "기존 기업 상세 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업상세_그래프",
+            url: "/images/view_my_startup/refactoring/기업상세_그래프.png",
           },
           metrics: {
             label: "기존 기업 상세 페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업상세_지표",
+            url: "/images/view_my_startup/refactoring/기업상세_지표.png",
           },
         },
         {
           graph: {
             label: "기존 기업 비교 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업비교_그래프",
+            url: "/images/view_my_startup/refactoring/기업비교_그래프.png",
           },
           metrics: {
             label: "기존 기업 비교 페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업비교_지표",
+            url: "/images/view_my_startup/refactoring/기업비교_지표.png",
           },
         },
         {
           graph: {
             label: "기존 비교 현황 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/비교현황_그래프",
+            url: "/images/view_my_startup/refactoring/비교현황_그래프.png",
           },
           metrics: {
             label: "기존 비교 현황 페이지 지표",
-            url: "/images/view_my_startup/refactoring/비교현황_지표",
+            url: "/images/view_my_startup/refactoring/비교현황_지표.png",
           },
         },
         {
           graph: {
             label: "기존 투자 현황 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/투자현황_그래프",
+            url: "/images/view_my_startup/refactoring/투자현황_그래프.png",
           },
           metrics: {
             label: "기존 투자 현황 페이지 지표",
-            url: "/images/view_my_startup/refactoring/투자현황_지표",
+            url: "/images/view_my_startup/refactoring/투자현황_지표.png",
           },
         },
       ],
       after: [
         {
           graph: {
-            label: "리팩토링 후 랜딩페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업_리팩토링_그래프",
+            label: "랜딩페이지 리팩토링 그래프",
+            url: "/images/view_my_startup/refactoring/기업_리팩토링_그래프.png",
           },
           metrics: {
-            label: "리팩토링 후 랜딩페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업_리팩토링_지표",
+            label: "랜딩페이지 리팩토링 지표",
+            url: "/images/view_my_startup/refactoring/기업_리팩토링_지표.png",
           },
         },
         {
           graph: {
-            label: "리팩토링 후 기업 상세 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업상세_리팩토링_그래프",
+            label: "기업 상세 페이지 리팩토링 그래프",
+            url: "/images/view_my_startup/refactoring/기업상세_리팩토링_그래프.png",
           },
           metrics: {
-            label: "리팩토링 후 기업 상세 페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업상세_리팩토링_지표",
+            label: "기업 상세 페이지 리팩토링 지표",
+            url: "/images/view_my_startup/refactoring/기업상세_리팩토링_지표.png",
           },
         },
         {
           graph: {
-            label: "리팩토링 후 기업 비교 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/기업비교_리팩토링_그래프",
+            label: "기업 비교 페이지 리팩토링 그래프",
+            url: "/images/view_my_startup/refactoring/기업비교_리팩토링_그래프.png",
           },
           metrics: {
-            label: "리팩토링 후 기업 비교 페이지 지표",
-            url: "/images/view_my_startup/refactoring/기업비교_리팩토링_지표",
+            label: "기업 비교 페이지 리팩토링 지표",
+            url: "/images/view_my_startup/refactoring/기업비교_리팩토링_지표.png",
           },
         },
         {
           graph: {
-            label: "리팩토링 후 비교 현황 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/비교현황_리팩토링_그래프",
+            label: "비교 현황 페이지 리팩토링 그래프",
+            url: "/images/view_my_startup/refactoring/비교현황_리팩토링_그래프.png",
           },
           metrics: {
-            label: "리팩토링 후 비교 현황 페이지 지표",
-            url: "/images/view_my_startup/refactoring/비교현황_리팩토링_지표",
+            label: "비교 현황 페이지 리팩토링 지표",
+            url: "/images/view_my_startup/refactoring/비교현황_리팩토링_지표.png",
           },
         },
         {
           graph: {
-            label: "리팩토링 후 투자 현황 페이지 그래프",
-            url: "/images/view_my_startup/refactoring/투자현황_리팩토링_그래프",
+            label: "투자 현황 페이지 리팩토링 그래프",
+            url: "/images/view_my_startup/refactoring/투자현황_리팩토링_그래프.png",
           },
           metrics: {
-            label: "리팩토링 후 투자 현황 페이지 지표",
-            url: "/images/view_my_startup/refactoring/투자현황_리팩토링_지표",
+            label: "투자 현황 페이지 리팩토링 지표",
+            url: "/images/view_my_startup/refactoring/투자현황_리팩토링_지표.png",
           },
         },
       ],
