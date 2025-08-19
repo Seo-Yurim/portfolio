@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaRocket, FaSearchPlus } from "react-icons/fa";
-import { TbXboxXFilled } from "react-icons/tb";
-import { AnimatePresence } from "framer-motion";
 import { ImageItem, TextBlock } from "@/types/project";
 import Accordion from "@/components/accordion";
+import ImgDetailModal from "@/components/img-detail-modal";
 
 export function Features({ features }: { features: TextBlock[] }) {
   const [selectedImg, setSelectedImg] = useState<ImageItem | null>(null);
@@ -74,35 +73,7 @@ export function Features({ features }: { features: TextBlock[] }) {
         </Accordion>
       ))}
 
-      <AnimatePresence>
-        {selectedImg && (
-          <div
-            onClick={() => setSelectedImg(null)}
-            className="fixed left-0 top-0 z-10 flex h-screen w-screen items-center justify-center bg-gray-950/70"
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="flex flex-col gap-4 rounded-xl bg-white px-8 py-4 dark:bg-blue-200"
-            >
-              <div className="flex items-center gap-4 dark:text-white">
-                <h2 className="text-nowrap font-GWT text-2xl">{selectedImg.label}</h2>
-                <div className="w-full border-b border-blue-200 dark:border-white" />
-                <TbXboxXFilled
-                  onClick={() => setSelectedImg(null)}
-                  className="h-12 w-12 cursor-pointer"
-                />
-              </div>
-              <Image
-                src={selectedImg.url}
-                className="rounded-xl"
-                height={600}
-                width={1000}
-                alt="선택한 작업 화면"
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
+      <ImgDetailModal selectedImg={selectedImg} onClose={() => setSelectedImg(null)} />
     </div>
   );
 }

@@ -4,7 +4,8 @@ import { GiSkills } from "react-icons/gi";
 import { MdDateRange } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { ProjectItem } from "@/types/project";
-import { PROJECT_IMG, PROJECT_ROLE } from "@/constants/project";
+import { PROJECT_IMG } from "@/constants/projectImg";
+import { PROJECT_ROLE } from "@/constants/projectRole";
 import Modal from "@/components/modal";
 import ThemeSwitcher from "@/components/theme-switcher";
 import {
@@ -109,7 +110,7 @@ export default function ProjectDetailModal({
         <div className="flex w-full flex-col gap-12 px-4 py-2 text-blue-200 dark:text-white">
           <div
             style={{ borderColor: `${project.color}` }}
-            className="shadow-inner-all flex flex-col gap-2 rounded-xl border-l-[16px] bg-white p-4 dark:bg-blue-200"
+            className="flex flex-col gap-2 rounded-xl border-l-[16px] bg-white p-4 shadow-inner-all dark:bg-blue-200"
           >
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">

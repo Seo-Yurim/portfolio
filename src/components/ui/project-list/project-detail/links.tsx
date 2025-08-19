@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { IoDocumentsSharp } from "react-icons/io5";
 import { LinkItem } from "@/types/project";
-import { PROJECT_LINKS } from "@/constants/project";
+import { PROJECT_LINKS } from "@/constants/projectLinks";
 
 export function Links({ links }: { links: LinkItem[] }) {
   return (
