@@ -36,7 +36,7 @@ export const fitmate: ProjectItem = {
   logo: (
     <Image
       src="/images/fitmate/fitmate_logo.png"
-      className="rounded-xl bg-white px-2"
+      className="rounded-xl bg-white px-2 max-md:h-[40px] max-md:w-[140px]"
       width={180}
       height={100}
       alt="fitmate logo"

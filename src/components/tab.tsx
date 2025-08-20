@@ -41,7 +41,7 @@ export default function Tab({
   return (
     <div
       style={{ width: width }}
-      className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3 max-md:px-4 max-md:py-2"
+      className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3 max-md:px-4"
     >
       {categorys?.map((label, idx) => (
         <button

@@ -18,7 +18,15 @@ export const portfolio: ProjectItem = {
     </p>
   ),
   color: "#6D7EE7",
-  logo: <Image src="/images/portfolio/미모티콘2.png" width={70} height={70} alt="portfolio logo" />,
+  logo: (
+    <Image
+      src="/images/portfolio/미모티콘2.png"
+      className="max-md:h-[50px] max-md:w-[50px]"
+      width={70}
+      height={70}
+      alt="portfolio logo"
+    />
+  ),
   tools: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
   features: [
     {

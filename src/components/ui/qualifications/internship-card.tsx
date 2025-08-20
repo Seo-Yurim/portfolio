@@ -44,7 +44,7 @@ export function InternshipCard() {
             <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
               {SKILLS[tool]}
               <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <p className="text-white">{tool}</p>
+                <p className="text-white max-md:text-sm">{tool}</p>
               </div>
             </div>
           ))}

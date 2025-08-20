@@ -10,10 +10,10 @@ interface ProjectPreviewProps {
 
 export default function ProjectPreview({ project, onClick }: ProjectPreviewProps) {
   return (
-    <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-6 shadow-right-down">
+    <div className="flex w-[500px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-6 shadow-right-down max-md:w-[300px] max-md:p-4">
       <div
         onClick={onClick}
-        className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105"
+        className="group relative h-[200px] w-full rounded-lg shadow-right-down transition-transform duration-300 hover:scale-105 max-md:h-[150px] max-md:w-[270px]"
       >
         <Image
           src={PROJECT_IMG[project.title] || "사진 업데이트 예정"}
@@ -29,14 +29,14 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
           <div className="flex h-full items-center justify-center rounded-b-lg bg-white/70">
             <button
               style={{ backgroundColor: project.color }}
-              className="rounded-2xl px-4 py-2 font-GWT text-lg text-white shadow-right-down"
+              className="rounded-2xl px-4 py-2 font-GWT text-lg text-white shadow-right-down max-md:text-sm"
             >
               상세보기
             </button>
           </div>
         </div>
 
-        <div className="absolute right-2 top-2 rounded-full bg-highlight px-4 py-3 font-GWT text-blue-200 shadow-right-down">
+        <div className="absolute right-2 top-2 rounded-full bg-highlight px-4 py-3 font-GWT text-blue-200 shadow-right-down max-md:py-2 max-md:text-sm">
           {project.type}
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
         <div className="flex items-center justify-between">
           <p
             style={{ backgroundColor: project.color }}
-            className="w-fit rounded-full px-4 py-1 font-GWT text-lg text-white"
+            className="w-fit rounded-full px-4 py-1 font-GWT text-lg text-white max-md:px-3 max-md:text-sm"
           >
             {project.title}
           </p>
@@ -54,17 +54,17 @@ export default function ProjectPreview({ project, onClick }: ProjectPreviewProps
 
         <div className="w-full border-b border-gray-100" />
 
-        <p style={{ color: project.color }} className="text-sm font-bold">
+        <p style={{ color: project.color }} className="text-sm font-bold max-md:text-xs">
           {project.subtitle}
         </p>
       </div>
 
-      <div className="flex w-fit items-center gap-4 rounded-xl bg-gray-100/50 p-2">
+      <div className="flex w-fit flex-wrap items-center gap-4 rounded-xl bg-gray-100/50 p-2">
         {project.tools.map((tool, idx) => (
           <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
             {SKILLS[tool]}
-            <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <p className="text-white">{tool}</p>
+            <div className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <p className="text-white max-md:text-sm">{tool}</p>
             </div>
           </div>
         ))}

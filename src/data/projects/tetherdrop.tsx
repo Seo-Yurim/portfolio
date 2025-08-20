@@ -20,9 +20,15 @@ export const tetherdrop: ProjectItem = {
   ),
   color: "#34d399",
   logo: (
-    <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2">
-      <Image src="/images/icons/tetherdrop_logo.svg" width={45} height={45} alt="fitmate logo" />
-      <h1 className="text-3xl font-extrabold text-[#34d399]">TetherDrop</h1>
+    <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2 max-md:p-1">
+      <Image
+        src="/images/icons/tetherdrop_logo.svg"
+        className="max-md:h-[20px] max-md:w-[20px]"
+        width={45}
+        height={45}
+        alt="fitmate logo"
+      />
+      <h1 className="text-3xl font-extrabold text-[#34d399] max-md:text-base">TetherDrop</h1>
     </div>
   ),
   tools: [

@@ -38,15 +38,17 @@ export function ProjectList() {
     category === "All" ? PROJECTS : PROJECTS.filter((project) => project.type === category);
 
   return (
-    <section id="project-list" className="flex h-screen flex-col gap-8 py-10">
+    <section id="project-list" className="flex h-full flex-col gap-8 py-10">
       <Title title="Projects" />
-      <div className="container flex flex-col gap-4">
-        <Tab width="30rem" categorys={categorys} setCategory={setCategory} />
+      <div className="container flex flex-col gap-4 max-md:px-4">
+        <div className="max-w-[500px]">
+          <Tab categorys={categorys} setCategory={setCategory} />
+        </div>
         <div
           ref={scrollRef}
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
         >
-          <div className="mb-2 flex h-[430px] w-max gap-4 rounded-2xl bg-primary p-6">
+          <div className="mb-2 flex h-[430px] w-max gap-4 rounded-2xl bg-primary p-6 max-md:p-4">
             {filteredProjects.map((project) => (
               <ProjectPreview
                 key={project.title}

@@ -34,7 +34,7 @@ export default function Header() {
         opacity: show ? 1 : 0,
         transition: { duration: 0.4, ease: "easeOut" },
       }}
-      className={`fixed left-0 top-0 z-50 flex h-screen w-fit flex-col justify-between bg-primary px-9 py-20 transition-opacity duration-300 max-lg:h-fit max-lg:w-screen max-lg:flex-row max-lg:py-4 max-md:px-2 ${show ? "opacity-100" : "pointer-events-none opacity-0"}`}
+      className={`fixed left-0 top-0 z-40 flex h-screen w-fit flex-col justify-between bg-primary px-9 py-20 transition-opacity duration-300 max-lg:h-fit max-lg:w-screen max-lg:flex-row max-lg:py-4 max-md:px-2 ${show ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
       {/* PC */}
       <nav className="flex w-fit list-none flex-col gap-8 text-white max-lg:hidden">

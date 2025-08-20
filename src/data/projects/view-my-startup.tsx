@@ -20,7 +20,13 @@ export const viewMyStartup: ProjectItem = {
   ),
   color: "#fc5230",
   logo: (
-    <Image src="/images/view_my_startup/VMS_logo.svg" width={150} height={100} alt="VMS logo" />
+    <Image
+      src="/images/view_my_startup/VMS_logo.svg"
+      className="max-md:h-[50px] max-md:w-[100px]"
+      width={150}
+      height={100}
+      alt="VMS logo"
+    />
   ),
   tools: ["JavaScript", "React", "Express.js", "Prisma ORM", "PostgreSQL"],
   features: [

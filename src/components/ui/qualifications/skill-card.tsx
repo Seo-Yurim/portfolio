@@ -32,7 +32,7 @@ export function SkillCard() {
             <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
               {SKILLS[skill]}
               <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-1 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <p className="text-white">{skill}</p>
+                <p className="text-white max-md:text-sm">{skill}</p>
               </div>
             </div>
           ))}
