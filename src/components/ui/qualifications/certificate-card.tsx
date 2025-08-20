@@ -9,7 +9,7 @@ export function CertificateCard() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className={`flex flex-col gap-8 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}
+      className={`flex flex-col gap-8 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60 max-md:p-4`}
     >
       <div className="flex items-center justify-between">
         <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
@@ -17,7 +17,7 @@ export function CertificateCard() {
         </p>
         <PiCertificate className="h-10 w-10 text-foreground" />
       </div>
-      <div className={`grid w-full grid-cols-2 gap-4`}>
+      <div className={`grid w-full grid-cols-1 gap-4`}>
         <Card
           icon="/images/icons/한국산업인력공단.svg"
           certificateName="정보처리기사"
@@ -44,9 +44,9 @@ interface CardProps {
 
 export function Card({ icon, certificateName, issueDate, issuer }: CardProps) {
   return (
-    <div className="relative flex h-fit flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-right-down">
+    <div className="relative flex h-fit min-w-[200px] flex-col gap-1 rounded-2xl bg-white px-6 py-4 shadow-right-down">
       <Image
-        className="absolute right-6 top-0"
+        className="absolute right-6 top-0 max-md:h-8 max-md:w-6"
         src="/images/icons/bookmark.svg"
         width={30}
         height={50}
@@ -58,8 +58,8 @@ export function Card({ icon, certificateName, issueDate, issuer }: CardProps) {
         textStyle="text-black font-GWT"
       />
       <div className="flex flex-col px-7">
-        <p className="text-sm font-medium text-text-secondary">{issueDate}</p>
-        <p className="text-lg font-bold text-black">{certificateName}</p>
+        <p className="text-sm font-medium text-text-secondary max-md:text-xs">{issueDate}</p>
+        <p className="text-lg font-bold text-black max-md:text-base">{certificateName}</p>
       </div>
     </div>
   );

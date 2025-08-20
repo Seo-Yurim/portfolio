@@ -41,7 +41,7 @@ export default function Tab({
   return (
     <div
       style={{ width: width }}
-      className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3"
+      className="relative inline-flex items-center justify-between rounded-full bg-primary px-8 py-3 max-md:px-4 max-md:py-2"
     >
       {categorys?.map((label, idx) => (
         <button
@@ -50,7 +50,7 @@ export default function Tab({
             tabRefs.current[idx] = el;
           }}
           onClick={() => handleClick(label, idx)}
-          className={`z-10 text-nowrap text-center font-GWT text-lg transition-colors duration-300 hover:text-white ${
+          className={`z-10 text-nowrap text-center font-GWT text-lg transition-colors duration-300 hover:text-white max-md:text-xs ${
             activeIndex === idx ? "text-white" : "text-primary-foreground"
           }`}
         >

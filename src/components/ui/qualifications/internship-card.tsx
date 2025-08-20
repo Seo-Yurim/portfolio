@@ -1,13 +1,8 @@
-import Image from "next/image";
 import { FaBriefcase } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiRadixui,
-  SiReacthookform,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
 import { motion } from "framer-motion";
+import { SKILLS } from "@/constants/skill";
+
+const tools = ["TypeScript", "Next.js", "Tailwind CSS", "Zustand", "React-Hook-Form", "Radix UI"];
 
 export function InternshipCard() {
   return (
@@ -15,7 +10,7 @@ export function InternshipCard() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className={`flex flex-col gap-4 overflow-hidden rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60`}
+      className={`flex flex-col gap-4 rounded-2xl bg-primary/20 p-6 dark:bg-blue-200/60 max-md:p-4`}
     >
       <div className="flex items-center justify-between">
         <p className="w-fit rounded-2xl bg-white px-4 py-2 font-GWT text-2xl text-black shadow-right-down">
@@ -26,11 +21,13 @@ export function InternshipCard() {
 
       <div className={`flex flex-col gap-4 px-2 pt-4`}>
         <div className="flex flex-col">
-          <p className="font-GWT text-2xl">코드스테이션</p>
-          <p className="text-sm font-medium text-text-secondary">2025.05 ~ 2025.06</p>
+          <p className="font-GWT text-2xl max-md:text-xl">코드스테이션</p>
+          <p className="text-sm font-medium text-text-secondary max-md:text-xs">
+            2025.05 ~ 2025.06
+          </p>
         </div>
 
-        <ul className="list-disc px-5 text-sm font-medium">
+        <ul className="list-disc px-5 text-sm font-medium max-md:text-xs">
           <li>거래소 수수료 페이백 서비스 웹사이트 제작 참여</li>
           <li>TypeScript와 Next.js 기반의 프론트엔드 개발 담당</li>
           <li>퍼블리싱 및 회원가입, 비밀번호 재설정 등의 로직 구현</li>
@@ -42,19 +39,15 @@ export function InternshipCard() {
           </li>
         </ul>
 
-        <div className="flex items-center gap-4 px-5 py-2">
-          <SiTypescript className="h-10 w-10 text-sky-600" />
-          <SiNextdotjs className="h-10 w-10 text-black" />
-          <div className="rounded-full bg-sky-950 p-1">
-            <SiTailwindcss className="h-8 w-8 text-teal-600" />
-          </div>
-          <Image src="/images/icons/zustand.svg" width={45} height={40} alt="zustand icon" />
-          <div className="rounded-full bg-pink-500 p-2">
-            <SiReacthookform className="h-6 w-6 text-white" />
-          </div>
-          <div className="rounded-full bg-black p-2">
-            <SiRadixui className="h-6 w-6 text-white" />
-          </div>
+        <div className="flex flex-wrap items-center gap-4 overflow-visible px-5 py-2 max-md:gap-2 max-md:px-2">
+          {tools.map((tool, idx) => (
+            <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
+              {SKILLS[tool]}
+              <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="text-white">{tool}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </motion.div>

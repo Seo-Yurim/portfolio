@@ -28,11 +28,11 @@ export function Profile() {
   return (
     <section
       id="profile"
-      className="animate relative flex h-screen flex-col items-end gap-16 py-12 max-lg:py-20"
+      className="relative flex h-full flex-col items-end gap-16 py-12 max-lg:py-20"
     >
       <Title title="About Me" />
 
-      <div className="container flex items-center justify-center gap-8 max-md:flex-col">
+      <div className="container flex items-center justify-center gap-8 max-md:flex-col max-md:px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function Profile() {
               fill
             />
             <Image
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100 max-lg:h-[100px] max-lg:w-[100px]"
               src="/images/portfolio/미모티콘2.png"
               alt="profile img hover"
               width={180}
@@ -110,7 +110,7 @@ export function Profile() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-lg:mx-auto">
             {tags.map((tag, i) => (
               <motion.p
                 key={tag}
