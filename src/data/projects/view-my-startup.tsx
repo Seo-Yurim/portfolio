@@ -14,6 +14,7 @@ export const viewMyStartup: ProjectItem = {
       <strong>ViewMyStartup</strong>은 투자금, 매출 등을 기준으로 스타트업을 비교·분석하고, 투자
       결과를 확인할 수 있는 <span className="font-bold underline">모의 투자 서비스</span>입니다.
       <br />
+      <br />
       로그인 없이 닉네임과 비밀번호만으로 참여 가능하며, 분석을 통해 최적의 투자 대상을 판단할 수
       있습니다.
     </p>
@@ -52,27 +53,31 @@ export const viewMyStartup: ProjectItem = {
       description: (
         <>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               공통 컴포넌트 구현
             </span>{" "}
+            <br className="hidden max-md:block" />
             네비게이션 바, 컨펌 모달 등 재사용 가능한 UI 요소 개발
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               화면 개발
             </span>{" "}
+            <br className="hidden max-md:block" />
             투자 현황 페이지 및 기업 상세 페이지 구현
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               유효성 검사 커스텀 훅
             </span>{" "}
+            <br className="hidden max-md:block" />
             사용자 입력에 대한 커스텀 유효성 검사 로직 개발
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               반응형 UI 구현
             </span>{" "}
+            <br className="hidden max-md:block" />
             다양한 기기 해상도에 대응하는 레이아웃 구성
           </li>
         </>
@@ -83,15 +88,17 @@ export const viewMyStartup: ProjectItem = {
       description: (
         <>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               투자 관련 API 구현
             </span>{" "}
+            <br className="hidden max-md:block" />
             투자 목록 조회, 생성, 수정, 삭제 API 개발
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               Render 서버 배포
             </span>{" "}
+            <br className="hidden max-md:block" />
             Render 플랫폼을 통한 초기 백엔드 배포 진행 (현재는 중단)
           </li>
         </>

@@ -20,10 +20,12 @@ export const fitmate: ProjectItem = {
       <span className="font-bold underline">1:1 맞춤형 운동 프로그램을 제공하는 서비스</span>
       입니다.
       <br />
+      <br />
       <span className="font-semibold text-blue-100">유저</span>는 운동 목표에 맞는 강사에게 맞춤
       지도를 받아{" "}
       <span className="font-semibold text-blue-100">효율적이고 지속 가능한 운동 계획</span>을 세울
       수 있습니다.
+      <br />
       <br />
       <span className="font-semibold text-blue-100">강사</span>는 유저의{" "}
       <span className="font-semibold text-blue-100">
@@ -97,20 +99,21 @@ export const fitmate: ProjectItem = {
       description: (
         <>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               유저 전용 페이지
             </span>{" "}
+            <br className="hidden max-md:block" />
             강사 목록, 강사 상세 정보, 대기중인 견적, 견적 상세, 진행중인 레슨, 받았던 레슨, 레슨
             내역 페이지
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               강사 전용 페이지
             </span>{" "}
             받은 요청 페이지
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               공통 페이지
             </span>{" "}
             랜딩, 404, 접근 제한 페이지
@@ -131,15 +134,15 @@ export const fitmate: ProjectItem = {
       title: "PR 템플릿 도입",
       description: (
         <li>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-md:flex-col max-md:items-start">
             <p>팀원 간 코드 리뷰 효율성을 높이기 위한 PR 템플릿 작성</p>
             <Link
               href="https://y-flm.tistory.com/31"
-              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70"
+              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70 max-md:text-[10px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              관련 블로그 보러가기
+              관련 블로그
               <FaExternalLinkAlt className="h-3 w-3" />
             </Link>
           </div>
@@ -150,20 +153,20 @@ export const fitmate: ProjectItem = {
       title: "쿼리 파일 분리 관리",
       description: (
         <li>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 max-md:flex-col max-md:items-start">
             <p>React Query 관련 로직을 모듈화하여 유지보수 효율성 증대</p>
             <Link
               href="https://y-flm.tistory.com/33"
-              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70"
+              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70 max-md:text-[10px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              관련 블로그 보러가기
+              관련 블로그
               <FaExternalLinkAlt className="h-3 w-3" />
             </Link>
             <Link
               href="https://github.com/FS-part4-1team-FitMate/FitMate-FE/blob/dev/src/lib/api/queries/lesson.ts"
-              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70"
+              className="flex w-fit items-center gap-2 rounded-xl bg-primary-foreground px-3 py-1 text-xs font-semibold text-white hover:bg-primary-foreground/70 max-md:text-[10px]"
               target="_blank"
               rel="noopener noreferrer"
             >

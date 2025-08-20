@@ -20,15 +20,15 @@ export const tetherdrop: ProjectItem = {
   ),
   color: "#34d399",
   logo: (
-    <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2 max-md:p-1">
+    <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-2 max-md:px-2 max-md:py-1">
       <Image
         src="/images/icons/tetherdrop_logo.svg"
         className="max-md:h-[20px] max-md:w-[20px]"
-        width={45}
-        height={45}
+        width={40}
+        height={40}
         alt="fitmate logo"
       />
-      <h1 className="text-3xl font-extrabold text-[#34d399] max-md:text-base">TetherDrop</h1>
+      <h1 className="text-2xl font-extrabold text-[#34d399] max-md:text-base">TetherDrop</h1>
     </div>
   ),
   tools: [
@@ -61,8 +61,8 @@ export const tetherdrop: ProjectItem = {
         </>
       ),
       img: [
-        { label: "Tetherdrop 로그인 페이지", url: "/images/tetherdrop/tetherdrop_signin.png" },
-        { label: "Tetherdrop 회원가입 페이지", url: "/images/tetherdrop/tetherdrop_signup.png" },
+        { label: "로그인 페이지", url: "/images/tetherdrop/tetherdrop_signin.png" },
+        { label: "회원가입 페이지", url: "/images/tetherdrop/tetherdrop_signup.png" },
       ],
     },
     {
@@ -83,19 +83,19 @@ export const tetherdrop: ProjectItem = {
       ),
       img: [
         {
-          label: "Tetherdrop 비밀번호 찾기 페이지 Step 1",
+          label: "비밀번호 찾기 페이지 Step 1",
           url: "/images/tetherdrop/tetherdrop_find_pw_1.png",
         },
         {
-          label: "Tetherdrop 비밀번호 찾기 페이지 Step 2",
+          label: "비밀번호 찾기 페이지 Step 2",
           url: "/images/tetherdrop/tetherdrop_find_pw_2.png",
         },
         {
-          label: "Tetherdrop 비밀번호 찾기 페이지 Step 3",
+          label: "비밀번호 찾기 페이지 Step 3",
           url: "/images/tetherdrop/tetherdrop_find_pw_3.png",
         },
         {
-          label: "Tetherdrop 비밀번호 찾기 페이지 Step 4",
+          label: "비밀번호 찾기 페이지 Step 4",
           url: "/images/tetherdrop/tetherdrop_find_pw_4.png",
         },
       ],
@@ -113,7 +113,7 @@ export const tetherdrop: ProjectItem = {
       ),
       img: [
         {
-          label: "Tetherdrop 회원 탈퇴 페이지",
+          label: "회원 탈퇴 페이지",
           url: "/images/tetherdrop/tetherdrop_user_delete.png",
         },
       ],
@@ -122,55 +122,56 @@ export const tetherdrop: ProjectItem = {
   contributions: [
     {
       title: "다양한 화면 퍼블리싱",
-      description:
-        "로그인, 회원가입, 아이디/비밀번호 찾기, 서비스 소개, 마이페이지, UID 검색 결과 등",
+      description: (
+        <li>로그인, 회원가입, 아이디/비밀번호 찾기, 서비스 소개, 마이페이지, UID 검색 결과 등</li>
+      ),
       img: [
         {
-          label: "Tetherdrop 비회원 랜딩 페이지",
+          label: "비회원 랜딩 페이지",
           url: "/images/tetherdrop/tetherdrop_landing.mov",
           thumbnail: "/images/tetherdrop/tetherdrop_main_img.png",
         },
         {
-          label: "Tetherdrop 회원 랜딩 페이지",
+          label: "회원 랜딩 페이지",
           url: "/images/tetherdrop/tetherdrop_logged_landing.mov",
           thumbnail: "/images/tetherdrop/thumbnail/logged_landing_thumbnail.png",
         },
         {
-          label: "Tetherdrop 서비스 소개 페이지",
+          label: "서비스 소개 페이지",
           url: "/images/tetherdrop/tetherdrop_services.mov",
           thumbnail: "/images/tetherdrop/thumbnail/services_thumbnail.png",
         },
         {
-          label: "Tetherdrop 서비스 이용방법 페이지",
+          label: "서비스 이용방법 페이지",
           url: "/images/tetherdrop/tetherdrop_service_guide.mov",
           thumbnail: "/images/tetherdrop/thumbnail/service_guide_thumbnail.png",
         },
         {
-          label: "Tetherdrop UID 검색 결과 페이지",
+          label: "UID 검색 결과 페이지",
           url: "/images/tetherdrop/tetherdrop_UID_result.png",
         },
         {
-          label: "Tetherdrop 마이페이지",
+          label: "마이페이지",
           url: "/images/tetherdrop/tetherdrop_mypage.mov",
           thumbnail: "/images/tetherdrop/thumbnail/mypage_thumbnail.png",
         },
-        { label: "Tetherdrop 파트너 페이지", url: "/images/tetherdrop/tetherdrop_partner.png" },
+        { label: "파트너 페이지", url: "/images/tetherdrop/tetherdrop_partner.png" },
         {
-          label: "Tetherdrop 아이디 찾기 페이지",
+          label: "아이디 찾기 페이지",
           url: "/images/tetherdrop/tetherdrop_find_id.png",
         },
       ],
     },
     {
       title: "공통 컴포넌트 구현",
-      description: "거래소 테이블, Header, Footer 등",
+      description: <li>거래소 테이블, Header, Footer 등</li>,
       img: [
         {
-          label: "Tetherdrop 거래소 테이블",
+          label: "거래소 테이블",
           url: "/images/tetherdrop/tetherdrop_common_table.png",
         },
         {
-          label: "Tetherdrop 로고 애니메이션 구현",
+          label: "로고 애니메이션 구현",
           url: "/images/tetherdrop/tetherdrop_logo_animation.mov",
           thumbnail: "/images/tetherdrop/thumbnail/logo_animation_thumbnail.png",
         },
@@ -178,12 +179,13 @@ export const tetherdrop: ProjectItem = {
     },
     {
       title: "QA 반영 및 UI/UX 개선",
-      description:
-        "실무 관계자와 직접 소통하며 QA 피드백을 반영하고, UI/UX 품질을 개선하는 데 기여",
+      description: (
+        <li>실무 관계자와 직접 소통하며 QA 피드백을 반영하고, UI/UX 품질을 개선하는 데 기여</li>
+      ),
     },
     {
       title: "반응형 UI 구성",
-      description: "반응형 UI 구성으로 모든 디바이스에 최적화된 레이아웃 제공",
+      description: <li>반응형 UI 구성으로 모든 디바이스에 최적화된 레이아웃 제공</li>,
     },
   ],
   links: [{ label: "서비스 링크", url: "https://www.tetherdrop.io/" }],

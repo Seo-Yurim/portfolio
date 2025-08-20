@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import { FaCog, FaRocket, FaSearchPlus } from "react-icons/fa";
-import { RiArrowDownDoubleFill } from "react-icons/ri";
+import { FaCog, FaSearchPlus } from "react-icons/fa";
 import { RefactoringItem } from "@/types/project";
 import { ImageItem } from "@/types/project";
 import Accordion from "@/components/accordion";
@@ -13,8 +12,8 @@ export function Refactoring({ refactoring }: { refactoring: RefactoringItem[] })
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-2 border-b-2 border-blue-200 dark:border-white">
-        <FaCog className="h-4 w-4" />
-        <h2 className="text-xl font-bold">리팩토링</h2>
+        <FaCog className="h-4 w-4 max-md:h-3 max-md:w-3" />
+        <h2 className="text-xl font-bold max-md:text-base">리팩토링</h2>
       </div>
 
       {refactoring?.map((item, idx) => (
@@ -22,9 +21,11 @@ export function Refactoring({ refactoring }: { refactoring: RefactoringItem[] })
           key={idx}
           title={`${item.content.title}`}
           showIcon={false}
-          titleStyle="w-full bg-gray-100 dark:bg-gray-100/50 dark:hover:bg-gray-100/30 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
+          titleStyle="w-full max-md:text-sm bg-gray-100 dark:bg-gray-100/50 dark:hover:bg-gray-100/30 px-2 py-1 text-left font-semibold hover:bg-gray-100/70"
         >
-          <ul className="flex list-disc flex-col gap-2 px-4">{item.content.description}</ul>
+          <ul className="flex list-disc flex-col gap-2 px-4 max-md:text-xs">
+            {item.content.description}
+          </ul>
 
           {item.before && item.after && (
             <div className="flex flex-col gap-4 pb-4">

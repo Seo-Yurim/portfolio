@@ -36,7 +36,7 @@ export default function Modal({ children, onClose }: { children: ReactNode; onCl
         exit={{ opacity: 0, y: 100, transition: { duration: 0.3, ease: "easeInOut" } }}
         className="absolute max-h-[calc(100vh-4rem)] w-full min-w-[375px] max-w-[1000px] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
       >
-        <div className="mx-4 h-full rounded-xl bg-white p-8 shadow-right-down dark:bg-blue-200">
+        <div className="mx-2 h-full rounded-xl bg-white p-8 shadow-right-down dark:bg-blue-200 max-lg:p-4">
           {children}
         </div>
       </motion.div>

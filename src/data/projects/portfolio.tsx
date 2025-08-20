@@ -13,6 +13,7 @@ export const portfolio: ProjectItem = {
     <p className="px-2">
       개발자로서의 역량과 프로젝트 경험을 정리한 <strong>개인 포트폴리오 사이트</strong>입니다.
       <br />
+      <br />
       TypeScript, Next.js 등을 활용해 콘텐츠를 구성하고, 다크모드 / 반응형 디자인 등{" "}
       <span className="underline">사용자 편의성을 고려해 개발</span>했습니다.
     </p>
@@ -72,7 +73,7 @@ export const portfolio: ProjectItem = {
             비효율적이었습니다.
           </li>
           <li>
-            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white">
+            <span className="rounded-full bg-primary-foreground px-2 py-1 text-xs font-bold text-white max-md:text-[10px]">
               개선 계획
             </span>
             <br />

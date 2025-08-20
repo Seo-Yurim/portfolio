@@ -25,10 +25,15 @@ export default function ImgDetailModal({
             className="absolute max-h-[80%] max-w-[90%] overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
           >
             <div className="mx-2 flex flex-col gap-4 rounded-xl bg-white px-8 py-4 dark:bg-blue-200">
-              <div className="flex items-center gap-4 text-blue-200 dark:text-white">
-                <h2 className="text-nowrap font-GWT text-2xl">{selectedImg.label}</h2>
+              <div className="flex items-center gap-4 text-blue-200 dark:text-white max-md:gap-2">
+                <h2 className="text-nowrap font-GWT text-2xl max-md:text-sm">
+                  {selectedImg.label}
+                </h2>
                 <div className="w-full border-b border-blue-200 dark:border-white" />
-                <TbXboxXFilled onClick={onClose} className="h-12 w-12 cursor-pointer" />
+                <TbXboxXFilled
+                  onClick={onClose}
+                  className="h-12 w-12 cursor-pointer max-md:h-full max-md:w-full"
+                />
               </div>
 
               {selectedImg.url.endsWith(".mov") || selectedImg.url.endsWith(".mp4") ? (
