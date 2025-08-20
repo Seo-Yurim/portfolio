@@ -13,7 +13,7 @@ const introduce = [
 ];
 const tags = ["열정", "협업", "자기주도적", "배려", "책임감"];
 const highlight =
-  "text-primary-foreground font-extrabold text-3xl font-extrabold group-hover:underline";
+  "text-primary-foreground font-extrabold text-3xl font-extrabold max-lg:text-2xl max-md:text-xl group-hover:underline";
 
 export function Profile() {
   const [index, setIndex] = useState<number>(0);
@@ -28,22 +28,22 @@ export function Profile() {
   return (
     <section
       id="profile"
-      className="animate relative flex h-screen flex-col items-end gap-16 py-12"
+      className="animate relative flex h-screen flex-col items-end gap-16 py-12 max-lg:py-20"
     >
       <Title title="About Me" />
 
-      <div className="container flex items-center justify-center gap-8">
+      <div className="container flex items-center justify-center gap-8 max-md:flex-col">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           className="flex flex-col items-center gap-4"
         >
-          <h2 className="rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down">
+          <h2 className="rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down max-lg:px-4 max-lg:py-1 max-lg:text-2xl">
             Profile
           </h2>
 
-          <div className="group relative h-[250px] w-[250px] cursor-pointer overflow-hidden rounded-full bg-primary">
+          <div className="group relative h-[250px] w-[250px] cursor-pointer overflow-hidden rounded-full bg-primary max-lg:h-[150px] max-lg:w-[150px]">
             <Image
               className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-0"
               src="/images/portfolio/미모티콘.png"
@@ -61,7 +61,7 @@ export function Profile() {
 
           <div className="flex flex-col items-center gap-1">
             <p className="text-sm font-medium text-text-secondary">2000.11.05</p>
-            <p className="text-lg font-extrabold">
+            <p className="text-lg font-extrabold max-lg:text-base">
               서유림 <span className="font-medium">Seo-Yurim</span>
             </p>
           </div>
@@ -71,10 +71,10 @@ export function Profile() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="flex flex-col gap-8"
+          className="flex flex-col gap-8 max-lg:gap-4"
         >
-          <div className="flex items-center gap-2 font-GWT text-2xl">
-            <TbTargetArrow className="h-8 w-8 text-red-500" />
+          <div className="flex items-center gap-2 font-GWT text-2xl max-lg:text-xl max-md:text-sm">
+            <TbTargetArrow className="h-8 w-8 text-red-500 max-md:h-5 max-md:w-5" />
             <p className="text-primary">나의 지향점: </p>
             <AnimatePresence mode="wait">
               <motion.p
@@ -90,7 +90,7 @@ export function Profile() {
             </AnimatePresence>
           </div>
 
-          <div className="group flex cursor-pointer flex-col gap-2 rounded-2xl border border-primary-foreground p-4 font-GWS text-2xl font-semibold text-primary">
+          <div className="group flex cursor-pointer flex-col gap-2 rounded-2xl border border-primary-foreground p-4 font-GWS text-2xl font-semibold text-primary max-lg:text-xl max-md:text-lg">
             <p>
               <span className={highlight}>사용자 경험(UI/UX)</span>은 물론,{" "}
               <span className={highlight}>개발자 경험(DX)</span>까지 고려한 개발을 지향합니다.
@@ -117,7 +117,7 @@ export function Profile() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.1 }}
-                className="rounded-full bg-primary-foreground px-4 py-1 font-GWS text-xl font-semibold text-white"
+                className="text-nowrap rounded-full bg-primary-foreground px-4 py-1 font-GWS text-xl font-semibold text-white max-lg:text-base max-md:px-2"
               >
                 #{tag}
               </motion.p>

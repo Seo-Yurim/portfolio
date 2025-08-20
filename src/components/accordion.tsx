@@ -20,7 +20,7 @@ export default function Accordion({
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex w-fit flex-col gap-2">
       <button onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen}>
         <div className="flex items-center gap-2">
           {showIcon && (

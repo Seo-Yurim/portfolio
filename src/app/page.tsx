@@ -27,7 +27,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="ml-[240px]"
+        className="ml-[240px] max-lg:ml-0"
       >
         <Profile />
         <Qualifications />
