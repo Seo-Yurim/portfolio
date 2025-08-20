@@ -1,16 +1,19 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { TbTargetArrow } from "react-icons/tb";
 import { AnimatePresence, motion } from "framer-motion";
 import Title from "@/components/title";
 
 const introduce = [
+  "UI/UX를 중시하는 개발자",
   "지속적으로 성장하는 개발자",
   "끊임없이 도전하는 개발자",
   "함께 일하고 싶은 동료",
   "긍정적인 에너지를 주는 동료",
 ];
 const tags = ["열정", "협업", "자기주도적", "배려", "책임감"];
-const highlight = "text-primary-foreground font-extrabold text-3xl group-hover:underline";
+const highlight =
+  "text-primary-foreground font-extrabold text-3xl font-extrabold group-hover:underline";
 
 export function Profile() {
   const [index, setIndex] = useState<number>(0);
@@ -29,11 +32,17 @@ export function Profile() {
     >
       <Title title="About Me" />
 
-      <div className="container flex items-center justify-center gap-16">
-        <div className="flex flex-col items-center gap-4">
+      <div className="container flex items-center justify-center gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col items-center gap-4"
+        >
           <h2 className="rounded-3xl bg-white px-6 py-2 font-GWT text-3xl text-black shadow-right-down">
             Profile
           </h2>
+
           <div className="group relative h-[250px] w-[250px] cursor-pointer overflow-hidden rounded-full bg-primary">
             <Image
               className="absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-0"
@@ -49,17 +58,24 @@ export function Profile() {
               height={180}
             />
           </div>
+
           <div className="flex flex-col items-center gap-1">
             <p className="text-sm font-medium text-text-secondary">2000.11.05</p>
             <p className="text-lg font-extrabold">
               서유림 <span className="font-medium">Seo-Yurim</span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="group flex cursor-pointer flex-col gap-8 font-GWS text-2xl font-bold text-primary">
-          <div className="flex items-center gap-2">
-            <p className="font-GWT text-3xl">나의 지향점: </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col gap-8"
+        >
+          <div className="flex items-center gap-2 font-GWT text-2xl">
+            <TbTargetArrow className="h-8 w-8 text-red-500" />
+            <p className="text-primary">나의 지향점: </p>
             <AnimatePresence mode="wait">
               <motion.p
                 key={introduce[index]}
@@ -67,14 +83,14 @@ export function Profile() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="w-fit rounded-2xl bg-primary-foreground px-4 py-1 font-GWT text-3xl text-white shadow-right-down"
+                className="w-fit rounded-2xl bg-primary-foreground px-4 py-1 text-white shadow-right-down"
               >
                 {introduce[index]}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          <div className="flex flex-col gap-2 rounded-2xl border border-primary-foreground p-4">
+          <div className="group flex cursor-pointer flex-col gap-2 rounded-2xl border border-primary-foreground p-4 font-GWS text-2xl font-semibold text-primary">
             <p>
               <span className={highlight}>사용자 경험(UI/UX)</span>은 물론,{" "}
               <span className={highlight}>개발자 경험(DX)</span>까지 고려한 개발을 지향합니다.
@@ -95,13 +111,19 @@ export function Profile() {
           </div>
 
           <div className="flex items-center gap-2">
-            {tags.map((tag) => (
-              <p key={tag} className="rounded-full bg-primary-foreground px-4 py-1 text-white">
+            {tags.map((tag, i) => (
+              <motion.p
+                key={tag}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.1 }}
+                className="rounded-full bg-primary-foreground px-4 py-1 font-GWS text-xl font-semibold text-white"
+              >
                 #{tag}
-              </p>
+              </motion.p>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
