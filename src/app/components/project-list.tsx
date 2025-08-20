@@ -9,7 +9,7 @@ import Title from "@/components/title";
 import ProjectDetailModal from "@/components/ui/project-list/project-detail-modal";
 import ProjectPreview from "@/components/ui/project-list/project-preview";
 
-const categorys = ["All", "Team", "Personal"];
+const categorys = ["All", "Team", "Personal", "Internship"];
 
 export function ProjectList() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -34,6 +34,9 @@ export function ProjectList() {
     };
   }, [selectedProject]);
 
+  const filteredProjects =
+    category === "All" ? PROJECTS : PROJECTS.filter((project) => project.type === category);
+
   return (
     <section id="project-list" className="flex h-screen flex-col gap-8 py-10">
       <Title title="Projects" />
@@ -44,7 +47,7 @@ export function ProjectList() {
           className="overflow-x-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-foreground"
         >
           <div className="mb-2 flex h-[430px] w-max gap-4 rounded-2xl bg-primary p-6">
-            {PROJECTS.map((project) => (
+            {filteredProjects.map((project) => (
               <ProjectPreview
                 key={project.title}
                 project={project}
