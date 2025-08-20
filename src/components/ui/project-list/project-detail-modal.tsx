@@ -63,35 +63,31 @@ export default function ProjectDetailModal({
                   <p>{project.period}</p>
                 </div>
 
-                {project.type !== "Personal" && (
-                  <>
-                    <div className="flex items-center gap-2">
-                      <RiTeamFill className="h-6 w-6" />
-                      <p>{project.teamSize}명</p>
+                <div className="flex items-center gap-2">
+                  <RiTeamFill className="h-6 w-6" />
+                  <p>{project.teamSize}명</p>
 
-                      <div className="flex items-center gap-1">
-                        (
-                        {project.teamRoles?.map((role, idx) => (
-                          <div key={idx} className="flex">
-                            <p>{role.position}</p>
-                            {role.size && <p>: {role.size}명</p>}
-                          </div>
-                        ))}
-                        )
+                  <div className="flex items-center gap-1">
+                    (
+                    {project.teamRoles?.map((role, idx) => (
+                      <div key={idx} className="flex">
+                        <p>{role.position}</p>
+                        {role.size && <p>: {role.size}명</p>}
                       </div>
-                    </div>
+                    ))}
+                    )
+                  </div>
+                </div>
 
-                    <div className="flex items-center gap-2">
-                      <GiSkills className="h-6 w-6" />
-                      <div className="flex items-center gap-1">
-                        {project.myRole?.map((role, idx) => (
-                          <p key={idx}>{PROJECT_ROLE[role.position] || role.position}</p>
-                        ))}
-                        <span>담당</span>
-                      </div>
-                    </div>
-                  </>
-                )}
+                <div className="flex items-center gap-2">
+                  <GiSkills className="h-6 w-6" />
+                  <div className="flex items-center gap-1">
+                    {project.myRole?.map((role, idx) => (
+                      <p key={idx}>{PROJECT_ROLE[role.position] || role.position}</p>
+                    ))}
+                    <span>담당</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
