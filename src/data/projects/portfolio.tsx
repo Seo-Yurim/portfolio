@@ -95,5 +95,19 @@ export const portfolio: ProjectItem = {
     },
   ],
   links: [{ label: "GitHub", url: "https://github.com/Seo-Yurim/portfolio" }],
-  taskScreens: [],
+  taskScreens: [
+    { label: "Hero", url: "/images/portfolio/hero-section.png" },
+    { label: "Profile", url: "/images/portfolio/profile-section.png" },
+    {
+      label: "Qualifications",
+      url: "/images/portfolio/qualifications-section.png",
+    },
+    { label: "Project List", url: "/images/portfolio/project-list-section.png" },
+    {
+      label: "Project Detail",
+      url: "/images/portfolio/project-detail.mov",
+      thumbnail: "/images/portfolio/project-detail-thumbnail.png",
+    },
+    { label: "Peer Review", url: "/images/portfolio/peer-review-section.png" },
+  ],
 };
