@@ -32,7 +32,7 @@ export default function ImgDetailModal({
                 <div className="w-full border-b border-blue-200 dark:border-white" />
                 <TbXboxXFilled
                   onClick={onClose}
-                  className="h-12 w-12 cursor-pointer max-md:h-full max-md:w-full"
+                  className="h-12 w-12 cursor-pointer max-md:h-8 max-md:w-8"
                 />
               </div>
 
