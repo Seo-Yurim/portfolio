@@ -5,10 +5,19 @@ import { SKILLS } from "@/constants/skill";
 import Tab from "@/components/tab";
 
 const categorys = ["전체", "언어", "라이브러리/프레임워크", "스타일"];
-const skills = ["JavaScript", "TypeScript", "React", "Next.js", "React-Query", "Tailwind CSS"];
+const skills = [
+  { label: "JavaScript", type: "언어" },
+  { label: "TypeScript", type: "언어" },
+  { label: "React", type: "라이브러리/프레임워크" },
+  { label: "Next.js", type: "라이브러리/프레임워크" },
+  { label: "React-Query", type: "라이브러리/프레임워크" },
+  { label: "Tailwind CSS", type: "스타일" },
+];
 
 export function SkillCard() {
   const [category, setCategory] = useState<string>(categorys[0]);
+  const filteredSkills =
+    category === "전체" ? skills : skills.filter((skill) => skill.type === category);
 
   return (
     <motion.div
@@ -28,11 +37,11 @@ export function SkillCard() {
         <Tab categorys={categorys} setCategory={setCategory} />
 
         <div className="flex flex-wrap items-center gap-6 px-8 max-md:gap-4">
-          {skills.map((skill, idx) => (
+          {filteredSkills.map((skill, idx) => (
             <div key={idx} className="group relative transition-all duration-300 hover:scale-110">
-              {SKILLS[skill]}
+              {SKILLS[skill.label]}
               <div className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-1 -translate-x-1/2 whitespace-nowrap rounded-xl bg-primary-foreground px-4 py-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <p className="text-white max-md:text-sm">{skill}</p>
+                <p className="text-white max-md:text-sm">{skill.label}</p>
               </div>
             </div>
           ))}
