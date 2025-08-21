@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import { motion } from "framer-motion";

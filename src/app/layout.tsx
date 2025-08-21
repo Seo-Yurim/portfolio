@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${notoSansKR.variable} antialiased`}>
         <ThemeProvider>
           <Header />
-          {children}
+          <main className={"flex flex-col"}>{children}</main>
         </ThemeProvider>
       </body>
     </html>
