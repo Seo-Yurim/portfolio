@@ -1,19 +1,28 @@
 "use client";
 
+import { useTheme } from "@/context/theme-context";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { IoLinkOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
-import ThemeSwitcher from "@/components/theme-switcher";
 import Title from "@/components/title";
 
 export function Hero() {
+  const { theme, toggleTheme } = useTheme();
   const [light, setLight] = useState<boolean>(true);
   const [clicked, setClicked] = useState<boolean>(false);
+  const [counts, setCounts] = useState({ today: 0, total: 0 });
+
+  useEffect(() => {
+    fetch("/api/visit", { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => setCounts(data));
+  }, []);
 
   const handleClick = () => {
     setClicked(true);
+    toggleTheme();
     setLight(!light);
     setTimeout(() => setClicked(false), 600);
   };
@@ -23,10 +32,7 @@ export function Hero() {
       id="hero"
       className="container relative flex h-screen flex-col items-center justify-center bg-primary max-md:px-4 max-md:py-4"
     >
-      <div className="absolute left-0 top-0 flex items-center gap-4 p-4">
-        <div className="w-[150px] max-lg:w-fit">
-          <ThemeSwitcher />
-        </div>
+      <div className="absolute right-0 top-0 flex items-center gap-4 p-4">
         <Link
           href="https://github.com/Seo-Yurim"
           className="group relative"
@@ -38,6 +44,9 @@ export function Hero() {
             <p className="text-nowrap font-GWT text-white">GitHub 바로가기</p>
           </div>
         </Link>
+        <div className="rounded-lg bg-background px-4 py-2 text-sm font-bold text-primary-foreground shadow-inner-all">
+          Today: {counts.today} | Total: {counts.total}
+        </div>
       </div>
 
       {/* 조명 */}
@@ -83,7 +92,7 @@ export function Hero() {
 
       {/* 컴퓨터 */}
       <div className="absolute bottom-0 flex w-full max-w-[1200px] flex-col items-center">
-        <div className="shadow-inner-all-strong flex w-full flex-col items-center gap-8 rounded-t-full bg-background px-10 py-12 font-GWT max-md:py-16">
+        <div className="flex w-full flex-col items-center gap-8 rounded-t-full bg-background px-10 py-12 font-GWT shadow-inner-all-strong max-md:py-16">
           <div className="flex flex-col pt-8">
             <p className="text-nowrap px-12 text-3xl max-md:text-lg">Seo-Yurim</p>
             <Title title="Portfolio." />
@@ -93,7 +102,7 @@ export function Hero() {
           </div>
 
           <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center text-text-secondary">
-            <div className="dark:shadow-inner-all-white flex w-full flex-col items-center gap-2 rounded-xl px-2 py-4 shadow-inner-all dark:bg-gray-200/10">
+            <div className="flex w-full flex-col items-center gap-2 rounded-xl px-2 py-4 shadow-inner-all dark:bg-gray-200/10 dark:shadow-inner-all-white">
               <div className="flex items-center gap-4">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
