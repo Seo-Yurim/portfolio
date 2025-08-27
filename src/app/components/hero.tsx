@@ -9,15 +9,26 @@ import { AnimatePresence, motion } from "framer-motion";
 import Title from "@/components/title";
 
 export function Hero() {
-  const { theme, toggleTheme } = useTheme();
-  const [light, setLight] = useState<boolean>(true);
+  const { toggleTheme } = useTheme();
+  const [light, setLight] = useState<boolean>(false);
   const [clicked, setClicked] = useState<boolean>(false);
-  const [counts, setCounts] = useState({ today: 0, total: 0 });
+  const [counts, setCounts] = useState<{ today: number | null; total: number | null }>({
+    today: null,
+    total: null,
+  });
 
   useEffect(() => {
-    fetch("/api/visit", { method: "POST" })
-      .then((res) => res.json())
-      .then((data) => setCounts(data));
+    const isProduction = window.location.hostname !== "localhost";
+
+    if (isProduction) {
+      fetch("/api/hit", {
+        method: "POST",
+      })
+        .then((res) => res.json())
+        .then((data) => setCounts(data));
+    } else {
+      setCounts({ today: 24, total: 216 });
+    }
   }, []);
 
   const handleClick = () => {
@@ -44,9 +55,13 @@ export function Hero() {
             <p className="text-nowrap font-GWT text-white">GitHub 바로가기</p>
           </div>
         </Link>
-        <div className="rounded-lg bg-background px-4 py-2 text-sm font-bold text-primary-foreground shadow-inner-all">
-          Today: {counts.today} | Total: {counts.total}
-        </div>
+        {counts.today === null || counts.total === null ? (
+          <div className="h-6 w-24 animate-pulse rounded-md bg-highlight" />
+        ) : (
+          <div className="rounded-lg bg-background px-4 py-2 text-sm font-bold text-primary-foreground shadow-inner-all">
+            Today: {counts.today} | Total: {counts.total}
+          </div>
+        )}
       </div>
 
       {/* 조명 */}
