@@ -21,7 +21,7 @@ export function Hero() {
     const isProduction = window.location.hostname !== "localhost";
 
     if (isProduction) {
-      fetch("/api/hit", {
+      fetch("/api/visit", {
         method: "POST",
       })
         .then((res) => res.json())
