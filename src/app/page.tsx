@@ -26,6 +26,18 @@ export default function Home() {
       </div>
 
       <div className="fixed bottom-0 right-0 flex flex-col gap-4 text-nowrap p-4">
+        <Link
+          href="https://github.com/Seo-Yurim"
+          className="group relative"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className={CTAStyle} />
+          <div className="absolute right-14 top-[50%] hidden -translate-y-1/2 rounded-full bg-primary-foreground px-4 py-1 shadow-right-down group-hover:block max-md:right-10">
+            <p className="text-nowrap font-GWT text-white max-md:text-sm">GitHub 바로가기</p>
+          </div>
+        </Link>
+
         <div
           className="relative"
           onClick={() => setShowEmail(!showEmail)}

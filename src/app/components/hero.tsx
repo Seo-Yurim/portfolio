@@ -1,9 +1,7 @@
 "use client";
 
 import { useTheme } from "@/context/theme-context";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaGithub } from "react-icons/fa";
 import { IoLinkOutline } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
 import Title from "@/components/title";
@@ -43,23 +41,12 @@ export function Hero() {
       id="hero"
       className="container relative flex h-screen flex-col items-center justify-center bg-primary max-md:px-4 max-md:py-4"
     >
-      <div className="absolute right-0 top-0 flex items-center gap-4 p-4">
-        <Link
-          href="https://github.com/Seo-Yurim"
-          className="group relative"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub className="h-12 w-12 cursor-pointer rounded-full border-2 border-foreground bg-background p-1 shadow-right-down" />
-          <div className="absolute left-[50%] top-full mt-2 -translate-x-1/2 rounded-full bg-primary-foreground px-4 py-1 opacity-0 shadow-right-down transition-opacity duration-300 group-hover:opacity-100">
-            <p className="text-nowrap font-GWT text-white">GitHub 바로가기</p>
-          </div>
-        </Link>
+      <div className="absolute left-4 top-4 flex items-center gap-4 max-md:left-3 max-md:top-3">
         {counts.today === null || counts.total === null ? (
           <div className="h-6 w-24 animate-pulse rounded-md bg-highlight" />
         ) : (
-          <div className="rounded-lg bg-background px-4 py-2 text-sm font-bold text-primary-foreground shadow-inner-all">
-            Today: {counts.today} | Total: {counts.total}
+          <div className="flex items-center gap-1 rounded-lg bg-background px-4 py-2 text-sm font-bold text-primary-foreground shadow-inner-all max-md:px-2 max-md:py-1 max-md:text-xs">
+            <p>Today: {counts.today}</p> / <p>Total: {counts.total}</p>
           </div>
         )}
       </div>
@@ -105,9 +92,8 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* 컴퓨터 */}
       <div className="absolute bottom-0 flex w-full max-w-[1200px] flex-col items-center">
-        <div className="flex w-full flex-col items-center gap-8 rounded-t-full bg-background px-10 py-12 font-GWT shadow-inner-all-strong max-md:py-16">
+        <div className="flex w-full flex-col items-center gap-8 rounded-t-full bg-background px-10 py-12 font-GWT shadow-inner-all-strong max-md:py-14">
           <div className="flex flex-col pt-8">
             <p className="text-nowrap px-12 text-3xl max-md:text-lg">Seo-Yurim</p>
             <Title title="Portfolio." />
