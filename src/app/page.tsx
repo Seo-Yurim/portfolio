@@ -48,12 +48,7 @@ export default function Home() {
 
           {isVisible && (
             <div className="absolute right-14 top-1/2 z-50 flex -translate-y-1/2 flex-col items-center gap-2 rounded-xl bg-primary-foreground px-4 py-2 font-GWT text-white shadow-right-down max-md:right-10 max-md:text-sm">
-              <Link
-                href="mailto:yurim2204@gmail.com"
-                className="button rounded-xl p-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="mailto:yurim2204@gmail.com" className="button rounded-xl p-2">
                 이메일 보내기
               </Link>
               <button
